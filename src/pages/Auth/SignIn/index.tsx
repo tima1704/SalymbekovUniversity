@@ -3,7 +3,7 @@ import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline'
 
 export const SignIn = () => {
 
-  const [type, setType] = React.useState('text')
+  const [type, setType] = React.useState('password')
 
   const passwordInputRef = React.useRef<HTMLInputElement>(null)
 
@@ -50,7 +50,7 @@ export const SignIn = () => {
                   className="absolute right-2 z-0 w-[20px] h-[20px] top-1/2 -translate-y-1/2 border-none outline-none"
                   onClick={onToggle}
                 >
-                  {type ? <EyeIcon className="text-indigo-600" /> : <EyeSlashIcon className="text-indigo-600" />}
+                  {type === 'password' ? <EyeIcon className="text-indigo-600" /> : <EyeSlashIcon className="text-indigo-600" />}
                 </button>
               </label>
 
