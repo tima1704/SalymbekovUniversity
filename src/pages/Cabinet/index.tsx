@@ -1,14 +1,14 @@
-import React from 'react'
-import { Header } from '../../components/main/Header'
-import SideBarBlock from '../../components/main/SideBar'
-import { AppWrapper } from '../../components/main/AppWrapper'
+import React from "react";
+import { AppWrapper } from "../../components/main/AppWrapper";
+import { useAppDispatch } from "../../hooks/redux";
 
 export const Cabinet = () => {
+
   return (
     <React.Fragment>
       <AppWrapper>
-        card
+        Never get over get under you
       </AppWrapper>
     </React.Fragment>
-  )
-}
+  );
+};
