@@ -1,5 +1,4 @@
 import React from "react";
-import { Header } from "../Header";
 import SideBarBlock from "../SideBar";
 
 interface IWrapper {

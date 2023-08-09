@@ -10,7 +10,11 @@ interface ILinks {
 
 const sidebarLinks: ILinks[] = [
   {
-    name: "Templates",
+    name: "Создать новый макет",
+    modal: "create",
+  },
+  {
+    name: "Готовые макеты",
     modal: "templates",
   },
 ];
@@ -26,12 +30,11 @@ const Sidebar: React.FC = () => {
     >
       <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto">
         <div>
-          <Link
-            to="/"
+          <p
             className="flex items-center pl-2.5 mt-5 text-white text-2xl"
           >
-            Admin page
-          </Link>
+            Admin страница
+          </p>
           <ul className="space-y-2 font-medium mt-10">
             {sidebarLinks.map((item, index) => (
               <li key={index}>
@@ -52,13 +55,13 @@ const Sidebar: React.FC = () => {
             type="button"
             className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
-            Sign Out
+            выйти
           </button>
           <button
             type="button"
             className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
-            Back to client
+            Вернуться на сайт
           </button>
         </div>
       </div>

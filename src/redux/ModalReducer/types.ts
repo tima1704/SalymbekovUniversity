@@ -4,6 +4,7 @@ export interface IModalView {
 
 export type TModals =
   | "templates"
+  | "create"
   
 
 export enum ModalActionsTypes {

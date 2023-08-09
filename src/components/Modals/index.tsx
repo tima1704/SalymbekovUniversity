@@ -34,13 +34,8 @@ export const Modals: React.FC = () => {
             X
           </button>
         </div>
-        {typeModal === "templates" && (
-          <div className="text-black">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            eligendi atque doloribus! Magnam repellendus corrupti cupiditate
-            delectus deserunt atque possimus, ipsam et, molestias dolore
-            deleniti repudiandae odit omnis laudantium voluptatem.
-          </div>
+        {typeModal === "create" && (
+          <div className="text-black"></div>
         )}
       </div>
     </div>
