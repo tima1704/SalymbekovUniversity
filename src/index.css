@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  margin: 0;
+  width: 100%;
+}
+
+.scale {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 16px;
+  top: 30px;
+  right: 30px;
+  transition: 0.2s;
+  position: absolute;
+  color: white;
+  background: none;
+  font-weight: bold;
+  border: 3px solid white;
+}
+.scale:hover {
+  background-color: white;
+  color: black;
+}
