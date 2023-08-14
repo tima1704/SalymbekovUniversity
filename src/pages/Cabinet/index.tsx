@@ -1,6 +1,5 @@
 import React from "react";
 import { AppWrapper } from "../../components/main/AppWrapper";
-import { useAppDispatch } from "../../hooks/redux";
 
 export const Cabinet = () => {
 

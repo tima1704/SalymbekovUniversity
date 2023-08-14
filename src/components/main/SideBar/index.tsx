@@ -9,12 +9,16 @@ interface ILinks {
 
 const sidebarModalText: ILinks[] = [
   {
-    name: "Создать новый макет",
-    modal: "create",
+    name: "Переключить страницу",
+    modal: "switchPages",
   },
   {
-    name: "Готовые макеты",
-    modal: "templates",
+    name: "Добавить блок",
+    modal: "addBlocks",
+  },
+  {
+    name: "Изменить контент",
+    modal: "modifyContent",
   },
 ];
 
@@ -24,7 +28,7 @@ const Sidebar: React.FC = () => {
   return (
     <aside
       id="logo-sidebar"
-      className="fixed top-0 left-0 z-40 w-67 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-50 dark:bg-gray-800"
+      className="fixed top-0 left-0 z-40 w-1/6 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-50 dark:bg-gray-800"
       aria-label="Sidebar"
     >
       <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto">
@@ -76,7 +80,7 @@ const SideBarBlock: React.FC<ISideBarBlock> = ({ children }) => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="p-4 sm:ml-64">{children}</div>
+      <div className="p-4 w-5/6 absolute right-0">{children}</div>
     </div>
   );
 };

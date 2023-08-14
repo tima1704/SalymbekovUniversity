@@ -3,8 +3,9 @@ export interface IModalView {
 }
 
 export type TModals =
-  | "templates"
-  | "create"
+  | "switchPages"
+  | "addBlocks"
+  | "modifyContent"
   
 
 export enum ModalActionsTypes {
