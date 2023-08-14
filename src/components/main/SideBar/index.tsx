@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../../hooks/redux";
 import { TModals } from "../../../redux/ModalReducer/types";
 
@@ -8,7 +7,7 @@ interface ILinks {
   modal: TModals;
 }
 
-const sidebarLinks: ILinks[] = [
+const sidebarModalText: ILinks[] = [
   {
     name: "Создать новый макет",
     modal: "create",
@@ -20,7 +19,7 @@ const sidebarLinks: ILinks[] = [
 ];
 
 const Sidebar: React.FC = () => {
-  const { setModalViewAction } = useAppDispatch();
+  const { setModalViewAction } = useAppDispatch()
 
   return (
     <aside
@@ -33,10 +32,10 @@ const Sidebar: React.FC = () => {
           <p
             className="flex items-center pl-2.5 mt-5 text-white text-2xl"
           >
-            Admin страница
+            Salymbekov admin
           </p>
           <ul className="space-y-2 font-medium mt-10">
-            {sidebarLinks.map((item, index) => (
+            {sidebarModalText.map((item, index) => (
               <li key={index}>
                 <p
                   className="block px-4 py-2 cursor-pointer font-medium text-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"

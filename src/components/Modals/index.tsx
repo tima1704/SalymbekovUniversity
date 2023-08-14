@@ -2,6 +2,8 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { useGetBody } from "../../hooks/common";
 import cls from "./index.module.css";
+import { CreateModal } from "./components/CreateModal";
+import { TemplatesModal } from "./components/TemplatesModal";
 
 export const Modals: React.FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
@@ -34,9 +36,8 @@ export const Modals: React.FC = () => {
             X
           </button>
         </div>
-        {typeModal === "create" && (
-          <div className="text-black"></div>
-        )}
+        {typeModal === "create" && <CreateModal />}
+        {typeModal === "templates" && <TemplatesModal />}
       </div>
     </div>
   );
