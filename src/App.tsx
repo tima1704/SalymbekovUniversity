@@ -4,8 +4,11 @@ import { Routes, Route } from "react-router-dom";
 import { ROUTES } from "./constants/routes";
 import { AuthLayout } from "./pages/Auth";
 import { Modals } from "./components/Modals";
+import CheckTokenExpirationAndRefresh from "./hooks/api/checkToken";
 
 const App = () => {
+  setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000)
+
   return (
     <React.Fragment>
       <Modals />
