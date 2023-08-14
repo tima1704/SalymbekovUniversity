@@ -1,12 +1,13 @@
 import { $API } from ".";
 
-interface IForm {
-  name: string;
-  password: string;
-}
+export default class AuthService {
+  static async login(username: string, password: string) {
+    return $API.post('/users/token/', {username, password})
+    .then(response => response.data)
+  }
 
-export const AuthService = {
-  async getAuthUser (data: any) {
-    return $API.post('/users/token/', data)
+  static async refreshAccessToken(token: string) {
+    return $API.post('/users/token/verify/', {token})
+    .then(response => response.data)
   }
 }
