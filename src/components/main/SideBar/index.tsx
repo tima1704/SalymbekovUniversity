@@ -23,7 +23,7 @@ const sidebarModalText: ILinks[] = [
 ];
 
 const Sidebar: React.FC = () => {
-  const { setModalViewAction } = useAppDispatch()
+  const { setModalViewAction } = useAppDispatch();
 
   return (
     <aside
@@ -33,9 +33,7 @@ const Sidebar: React.FC = () => {
     >
       <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto">
         <div>
-          <p
-            className="flex items-center pl-2.5 mt-5 text-white text-2xl"
-          >
+          <p className="flex items-center pl-2.5 mt-5 text-white text-2xl">
             Salymbekov admin
           </p>
           <ul className="space-y-2 font-medium mt-10">
@@ -44,7 +42,7 @@ const Sidebar: React.FC = () => {
                 <p
                   className="block px-4 py-2 cursor-pointer font-medium text-lg text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                   onClick={() => {
-                    setModalViewAction(item.modal)
+                    setModalViewAction(item.modal);
                   }}
                 >
                   {item.name}

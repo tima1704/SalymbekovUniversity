@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FORMERRORMESAGE, FORMREGEX } from "../../../constants/common";
-import { AuthService } from "../../../helpers/api/authorization";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../constants/routes";
+import AuthService from "../../../helpers/api/authorization";
 
 interface IForm {
   username: string;
@@ -12,17 +14,24 @@ export const SignIn = () => {
   const {
     handleSubmit,
     register,
-    reset,
     formState: { errors },
   } = useForm<IForm>();
 
+  const navigate = useNavigate();
+
   const onSubmit: SubmitHandler<IForm> = async (data) => {
     try {
-      await AuthService.getAuthUser(data).then((res) =>
-        localStorage.setItem("accessToken", res.data.access)
-      );
-    } finally {
-      reset();
+      const { password, username } = data;
+      const response = await AuthService.login(password, username)
+
+      if(response.access && response.refresh) {
+        localStorage.setItem('accessToken', response.access)
+        localStorage.setItem('refreshToken', response.refresh)
+
+        navigate(ROUTES.home)
+      }
+    } catch(error) {
+      console.error("Login failed", error);
     }
   };
 
