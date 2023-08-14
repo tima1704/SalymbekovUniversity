@@ -1,68 +1,101 @@
-import React from 'react'
-import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline'
+import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { FORMERRORMESAGE, FORMREGEX } from "../../../constants/common";
+import { AuthService } from "../../../helpers/api/authorization";
+
+interface IForm {
+  username: string;
+  password: string;
+}
 
 export const SignIn = () => {
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors },
+  } = useForm<IForm>();
 
-  const [type, setType] = React.useState('password')
-
-  const passwordInputRef = React.useRef<HTMLInputElement>(null)
-
-  const onToggle = () => {
-
-    setType(current => current === 'text' ? 'password' : 'text')
-
-    passwordInputRef.current?.focus()
-    const passwordLength = passwordInputRef.current?.value.length ?? null
-    setTimeout(() => {
-      passwordInputRef.current?.setSelectionRange(passwordLength, passwordLength)
-    }, 1)
-  }
+  const onSubmit: SubmitHandler<IForm> = async (data) => {
+    try {
+      await AuthService.getAuthUser(data).then((res) =>
+        localStorage.setItem("accessToken", res.data.access)
+      );
+    } finally {
+      reset();
+    }
+  };
 
   return (
     <header>
       <div className="h-screen bg-gray-100 flex justify-center items-center">
         <div className="py-6 px-8 h-80 w-96 bg-white rounded shadow-xl">
-          <form action="">
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-6">
-              <label htmlFor="name" className="block text-gray-800 font-bold">Name:</label>
+              <label htmlFor="name" className="block text-gray-800 font-bold">
+                Name:
+              </label>
               <input
                 type="text"
-                name="name"
                 id="name"
+                {...register("username", {
+                  required: FORMERRORMESAGE.required,
+                  maxLength: {
+                    value: 15,
+                    message: FORMERRORMESAGE.username.maxLength,
+                  },
+                  minLength: {
+                    value: 3,
+                    message: FORMERRORMESAGE.username.minLength,
+                  },
+                  pattern: {
+                    value: FORMREGEX.username,
+                    message: FORMERRORMESAGE.username.pattern,
+                  },
+                })}
                 placeholder="Username"
                 className="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600"
               />
+              {errors.username && (
+                <p className="text-red-600">{errors.username?.message}</p>
+              )}
             </div>
-
             <div>
-              <label htmlFor="password" className="block text-gray-800 font-bold">Password:</label>
+              <label
+                htmlFor="password"
+                className="block text-gray-800 font-bold"
+              >
+                Password:
+              </label>
               <label htmlFor="password" className="relative">
                 <input
-                  ref={passwordInputRef}
-                  type={type}
-                  name="password"
+                  type="password"
+                  {...register("password", {
+                    required: FORMERRORMESAGE.required,
+                    maxLength: {
+                      value: 40,
+                      message: FORMERRORMESAGE.password.maxLength,
+                    },
+                    minLength: {
+                      value: 5,
+                      message: FORMERRORMESAGE.password.minLength,
+                    },
+                  })}
                   id="password"
                   placeholder="Password"
                   className="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600 pr-8"
                 />
-                <button
-                  type="button"
-                  className="absolute right-2 z-0 w-[20px] h-[20px] top-1/2 -translate-y-1/2 border-none outline-none"
-                  onClick={onToggle}
-                >
-                  {type === 'password' ? <EyeIcon className="text-indigo-600" /> : <EyeSlashIcon className="text-indigo-600" />}
-                </button>
+                {errors.password && (
+                  <p className="text-red-600">{errors.password?.message}</p>
+                )}
               </label>
-
             </div>
-            <button
-              className="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded"
-            >
+            <button className="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded">
               Login
             </button>
           </form>
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
