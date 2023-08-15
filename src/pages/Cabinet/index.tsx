@@ -1,6 +1,6 @@
-import React from "react";
-import { AppWrapper } from "../../components/main/AppWrapper";
-import { NoAccess } from "../../components/common/NoAccess";
+import React from "react"
+import { AppWrapper } from "../../components/main/AppWrapper"
+import { NoAccess } from "../../components/common/NoAccess"
 
 export const Cabinet = () => {
   const user = localStorage.getItem('accessToken')
