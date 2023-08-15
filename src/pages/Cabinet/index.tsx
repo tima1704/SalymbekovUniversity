@@ -1,13 +1,11 @@
-import React from "react";
-import { AppWrapper } from "../../components/main/AppWrapper";
-import { useAppDispatch } from "../../hooks/redux";
-import { Navigate } from "react-router-dom";
-import { ROUTES } from "../../constants/routes";
+import React from "react"
+import { AppWrapper } from "../../components/main/AppWrapper"
+import { NoAccess } from "../../components/common/NoAccess"
 
 export const Cabinet = () => {
   const user = localStorage.getItem('accessToken')
-  
-  if(!user) return <Navigate to={ROUTES.auth.authRoute} />
+
+  if(!user) return <NoAccess />
   
   return (
     <React.Fragment>

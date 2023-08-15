@@ -5,13 +5,16 @@ import { ROUTES } from "./constants/routes";
 import { AuthLayout } from "./pages/Auth";
 import { Modals } from "./components/Modals";
 import CheckTokenExpirationAndRefresh from "./hooks/api/checkToken";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000)
+  setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000);
 
   return (
     <React.Fragment>
       <Modals />
+      <ToastContainer position="bottom-right" />
       <Routes>
         <Route path={ROUTES.home} element={<Cabinet />} />
         <Route path={ROUTES.auth.authRoute} element={<AuthLayout />} />

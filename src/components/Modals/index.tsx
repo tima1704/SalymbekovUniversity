@@ -2,8 +2,9 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { useGetBody } from "../../hooks/common";
 import cls from "./index.module.css";
-import { CreateModal } from "./components/CreateModal";
-import { TemplatesModal } from "./components/TemplatesModal";
+import { SwitchPagesModal } from "./components/SwitchPagesModal";
+import { AddBlocksModal } from "./components/AddBlocksModal";
+import { ModifyContentModal } from './components/ModifyContentModal';
 
 export const Modals: React.FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
@@ -21,8 +22,7 @@ export const Modals: React.FC = () => {
       } else {
         bodyRef.current.style.overflowY = "auto";
       }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [typeModal]);
+  }, [typeModal, bodyRef]);
 
   if (!typeModal) {
     return null;
@@ -36,8 +36,9 @@ export const Modals: React.FC = () => {
             X
           </button>
         </div>
-        {typeModal === "create" && <CreateModal />}
-        {typeModal === "templates" && <TemplatesModal />}
+        {typeModal === "switchPages" && <SwitchPagesModal />}
+        {typeModal === "addBlocks" && <AddBlocksModal />}
+        {typeModal === "modifyContent" && <ModifyContentModal />}
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import React from "react";
 import { useAppDispatch } from "../../../hooks/redux";
 import { TModals } from "../../../redux/ModalReducer/types";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../constants/routes";
 
 interface ILinks {
   name: string;
@@ -9,22 +11,35 @@ interface ILinks {
 
 const sidebarModalText: ILinks[] = [
   {
-    name: "Создать новый макет",
-    modal: "create",
+    name: "Переключить страницу",
+    modal: "switchPages",
   },
   {
-    name: "Готовые макеты",
-    modal: "templates",
+    name: "Добавить блок",
+    modal: "addBlocks",
+  },
+  {
+    name: "Изменить контент",
+    modal: "modifyContent",
   },
 ];
 
 const Sidebar: React.FC = () => {
   const { setModalViewAction } = useAppDispatch();
 
+  const navigate = useNavigate();
+
+  const handleExit = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+
+    navigate(ROUTES.auth.authRoute);
+  };
+
   return (
     <aside
       id="logo-sidebar"
-      className="fixed top-0 left-0 z-40 w-63 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-50 dark:bg-gray-800 mr-5"
+      className="fixed top-0 left-0 z-40 w-1/6 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-gray-50 dark:bg-gray-800"
       aria-label="Sidebar"
     >
       <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto">
@@ -49,14 +64,15 @@ const Sidebar: React.FC = () => {
         </div>
         <div className="flex mt-auto">
           <button
+            onClick={handleExit}
             type="button"
-            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
             выйти
           </button>
           <button
             type="button"
-            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
             Вернуться на сайт
           </button>
@@ -74,7 +90,7 @@ const SideBarBlock: React.FC<ISideBarBlock> = ({ children }) => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="p-4 sm:ml-64">{children}</div>
+      <div className="p-4 w-5/6 absolute right-0">{children}</div>
     </div>
   );
 };
