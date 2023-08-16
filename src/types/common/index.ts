@@ -3,3 +3,8 @@ export interface IValidError {
   message: string;
   detail: string;
 }
+
+export interface IDataImages {
+  id: number
+  image: string
+}

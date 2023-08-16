@@ -20,6 +20,10 @@ const sidebarModalText: ILinks[] = [
     name: "Изменить контент",
     modal: "modifyContent",
   },
+  {
+    name: "Загрузить фото",
+    modal: "uploadImages",
+  }
 ];
 
 const Sidebar: React.FC = () => {

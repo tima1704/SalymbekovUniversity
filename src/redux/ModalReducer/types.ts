@@ -6,6 +6,7 @@ export type TModals =
   | "switchPages"
   | "addBlocks"
   | "modifyContent"
+  | "uploadImages"
   
 
 export enum ModalActionsTypes {
