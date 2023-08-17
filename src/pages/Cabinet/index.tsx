@@ -2,16 +2,35 @@ import React from "react";
 import { AppWrapper } from "../../components/main/AppWrapper";
 import { Navigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
+import { useAppSelector } from '../../hooks/redux';
+import parse from 'html-react-parser'
+import { renderToString } from 'react-dom/server'
 
 export const Cabinet = () => {
   const user = localStorage.getItem('accessToken')
-  
-  if(!user) return <Navigate to={ROUTES.auth.authRoute} />
-  
+
+  const addedTemplates = useAppSelector(s => s.Template)
+  if (!user) return <Navigate to={ROUTES.auth.authRoute} />
+
   return (
     <React.Fragment>
       <AppWrapper>
-        Never get over get under you
+        {
+          addedTemplates.map((Template, index) => {
+            if (!Template.placeholders) return;
+            return (
+              <React.Fragment key={index}>
+                {
+                  parse(
+                    Template.placeholders.reduce((total, { key, value }) => {
+                      return total.replace(key, value)
+                    }, renderToString(Template.layout as React.ReactElement))
+                  )
+                }
+              </React.Fragment>
+            )
+          })
+        }
       </AppWrapper>
     </React.Fragment>
   );

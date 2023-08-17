@@ -2,48 +2,72 @@ import React from 'react'
 import templates from '../../../templates'
 import { renderToString } from 'react-dom/server'
 import parse from 'html-react-parser'
+import { ITemplate } from '../../../../redux/TemplatesReducer/types'
+import { useAppDispatch } from '../../../../hooks/redux'
 
 export const AddBlocksModal = () => {
 
-  function selectTemplate(e: React.MouseEvent){
-    let el = e.target as HTMLElement
-    for(;;) {
-      if (el.dataset.container) {
-        console.log(el)
+  const [selectedTemplate, setSelectedTemplate] = React.useState<ITemplate | null>(null)
+
+  const { setTemplateAction } = useAppDispatch()
+
+  function selectTemplate(event: React.MouseEvent, template: ITemplate) {
+    let element = event.target as HTMLElement
+    for (;;) {
+      if (element.dataset.container && element.parentElement) {
+
+        setSelectedTemplate(template)
+
+        element.classList.add('outline', 'outline-4', 'outline-red-500')
+        const children = element.parentElement.children
+        for (const child of children) {
+          if (child !== element) {
+            child.classList.remove('outline', 'outline-4', 'outline-red-500')
+          }
+        }
         break
       } else {
-        el = el.parentElement as HTMLElement
+        element = element.parentElement as HTMLElement
       }
     }
   }
 
+  function addTemplate() {
+    if (!selectedTemplate) return;
+
+    setTemplateAction(selectedTemplate) 
+  }
+
   return (
-    <div className='text-center'>
+    <div className='text-center flex flex-col gap-4'>
       {
         templates.map((Template, index) => {
-          return !Template.placeholders ? (
-            <div>
-              <Template.layout
-                onClick={() => console.log('Hello, Template')}
-                key={index}
-              />
-            </div>
-          ) : (
+          return (
             <div
               key={index}
-              onClick={selectTemplate}
+              onClick={(event) => {
+                selectTemplate(event, Template)
+              }}
+              data-container
             >
               {
                 parse(
                   Template.placeholders.reduce((total, { key, value }) => {
                     return total.replace(key, value)
-                  }, renderToString(<Template.layout />))
+                  }, renderToString(Template.layout))
                 )
               }
             </div>
           )
         })
       }
+
+      <button
+        type="button"
+        className="p-2 border rounded bg-blue-600 text-white w-fit self-end disabled:bg-blue-200"
+        disabled={!!!selectedTemplate}
+        onClick={addTemplate}
+      >Add</button>
     </div>
   )
 }

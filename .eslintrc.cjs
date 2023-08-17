@@ -14,5 +14,6 @@ module.exports = {
       0,
       { allowConstantExport: true },
     ],
+    'no-extra-boolean-cast': [0]
   },
 }
