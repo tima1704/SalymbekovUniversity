@@ -108,10 +108,12 @@ const Layout = ({ ...props }) => {
 const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$HeaderBrandLogo$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/salymbekov-logo.png',
   },
   {
     key: '$HeaderTelephoneLogo$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/telephone.png',
   },
   {
@@ -128,18 +130,22 @@ const placeholders: ITemplatePlaceholder[] = [
   },
   {
     key: '$HeaderNetworkFB$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/facebook.png',
   },
   {
     key: '$HeaderNetworkIN$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/instagram.png',
   },
   {
     key: '$HeaderNetworkVI$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/youtube.png',
   },
   {
     key: '$HeaderNetworkWS$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whatsapp.png',
   },
   {

@@ -16,15 +16,15 @@ export const Cabinet = () => {
     <React.Fragment>
       <AppWrapper>
         {
-          addedTemplates.map((Template, index) => {
-            if (!Template.placeholders) return;
+          addedTemplates.map(({placeholders, layout}, index) => {
+            if (!placeholders) return;
             return (
               <React.Fragment key={index}>
                 {
                   parse(
-                    Template.placeholders.reduce((total, { key, value }) => {
+                    placeholders.reduce((total, { key, value }) => {
                       return total.replace(key, value)
-                    }, renderToString(Template.layout as React.ReactElement))
+                    }, renderToString(layout as React.ReactElement))
                   )
                 }
               </React.Fragment>

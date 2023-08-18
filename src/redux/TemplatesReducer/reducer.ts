@@ -9,7 +9,8 @@ export function TemplateReducer(
   switch (action.type) {
     case TemplateActionsTypes.SET_TEMPLATES:
       return [ ...state, action.payload ];
-
+    case TemplateActionsTypes.EDIT_TEMPLATES:
+      return [...action.payload]
     default:
       return state;
   }

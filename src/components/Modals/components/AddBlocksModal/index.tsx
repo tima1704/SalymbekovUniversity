@@ -41,20 +41,20 @@ export const AddBlocksModal = () => {
   return (
     <div className='text-center flex flex-col gap-4'>
       {
-        templates.map((Template, index) => {
+        templates.map((template, index) => {
           return (
             <div
               key={index}
               onClick={(event) => {
-                selectTemplate(event, Template)
+                selectTemplate(event, template)
               }}
               data-container
             >
               {
                 parse(
-                  Template.placeholders.reduce((total, { key, value }) => {
+                  template.placeholders.reduce((total, { key, value }) => {
                     return total.replace(key, value)
-                  }, renderToString(Template.layout))
+                  }, renderToString(template.layout))
                 )
               }
             </div>

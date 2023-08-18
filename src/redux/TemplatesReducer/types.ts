@@ -8,6 +8,7 @@ export interface ITemplate {
 
 export interface ITemplatePlaceholder {
   key: string
+  type?: string
   value: string
 }
 
@@ -18,11 +19,17 @@ export interface ITemplateFunction {
 
 export enum TemplateActionsTypes {
   SET_TEMPLATES = "SET_TEMPLATES",
+  EDIT_TEMPLATES = "EDIT_TEMPLATES"
 }
 
-export type TemplateActions = ITemplateActions;
+export type TemplateActions = ITemplateSetAction | ITemplateEditAction;
 
-export interface ITemplateActions {
-  type: TemplateActionsTypes.SET_TEMPLATES;
-  payload: ITemplate;
+export interface ITemplateSetAction {
+  type: TemplateActionsTypes.SET_TEMPLATES
+  payload: ITemplate
+}
+
+export interface ITemplateEditAction {
+  type: TemplateActionsTypes.EDIT_TEMPLATES
+  payload: ITemplate[]
 }
