@@ -6,5 +6,6 @@ export interface IValidError {
 
 export interface IDataImages {
   id: number
+  key?: number
   image: string
 }

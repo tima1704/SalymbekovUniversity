@@ -15,3 +15,8 @@ export const postImages = async (newImage: File | null) => {
   const data = await axios.post('http://13.127.216.121/api/v1/images/', formData)
   return data
 }
+
+export const deleteImages = async (id: number) => {
+  const data = await axios.delete(`http://13.127.216.121/api/v1/images/${id}/`)
+  return data
+}

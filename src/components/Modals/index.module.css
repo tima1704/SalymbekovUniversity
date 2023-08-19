@@ -11,7 +11,7 @@
   transition: 0.3s opacity;
 
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1001;
+  z-index: 20;
 }
 
 .modal {
