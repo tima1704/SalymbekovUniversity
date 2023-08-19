@@ -7,16 +7,17 @@ interface IModalProps {
   openModal: boolean
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>
   onClick: GenericFunction
+  deleteSubject: string
 }
 
-const DeleteModal = ({ openModal, setOpenModal, onClick }: IModalProps) => {
+const DeleteModal = ({ openModal, setOpenModal, onClick, deleteSubject }: IModalProps) => {
   return (
     <Modal show={openModal} size="md" popup onClose={() => setOpenModal(false)}>
       <Modal.Header />
       <Modal.Body>
         <div className="text-center">
           <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-            Are you sure you want to delete this product?
+            Are you sure you want to delete this {deleteSubject}?
           </h3>
           <div className="flex justify-center gap-4">
             <Button color="failure" onClick={() => {

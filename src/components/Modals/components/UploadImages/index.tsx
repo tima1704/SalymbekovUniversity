@@ -97,6 +97,7 @@ function Image({ id, image }: IDataImages) {
             openModal={openModal}
             setOpenModal={setOpenModal}
             onClick={() => mutation.mutate(id)}
+            deleteSubject='image'
           />
         )
       }
