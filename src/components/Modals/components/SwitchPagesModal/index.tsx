@@ -1,34 +1,53 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import RouteService from "../../../../helpers/api/routes";
+import { FORMERRORMESAGE } from "../../../../constants/common";
 
-export const SwitchPagesModal = () => {
+interface IForm {
+  route: string;
+}
+
+export const SwitchPagesModal: React.FC = () => {
+  const [loading, setLoading] = React.useState<boolean>(false);
+
   const {
     handleSubmit,
-    reset,
     register,
     formState: { errors },
-  } = useForm()
+  } = useForm<IForm>();
+
+  const onSubmit: SubmitHandler<IForm> = async (formData) => {
+    try {
+      await RouteService.postRoutesApi(formData.route);
+    } catch (error: any) {
+      console.error(error.message + " create page error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="text-center">
       <form className="flex" onSubmit={handleSubmit(onSubmit)}>
         <input
-          {...register("routes", {
-            required: "Обязательно поле!",
+          {...register("route", {
+            required: FORMERRORMESAGE.required,
             minLength: {
               value: 1,
-              message: "Минимум один символ!",
+              message: FORMERRORMESAGE.route.minLength,
             },
             maxLength: {
               value: 20,
-              message: "Максимум 20 символов!",
+              message: FORMERRORMESAGE.route.maxLength,
             },
           })}
           type="text"
           placeholder="create new route"
         />
-        {errors.routes && <p>{errors.routes.message}</p>}
-        <button>send new route</button>
+        {errors.route && <p>{errors.route.message}</p>}
+        <button>
+          {loading ? <span>loading..</span> : <span>send new route</span>}
+        </button>
       </form>
     </div>
   );

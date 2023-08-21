@@ -16,5 +16,9 @@ export const FORMERRORMESAGE = {
   password: {
     maxLength: "Максимум 40 символов!",
     minLength: "Минимум 5 символов!",
+  },
+  route: {
+    minLength: "Минимум один символ!",
+    maxLength: "Максимум 20 символов!",
   }
 }

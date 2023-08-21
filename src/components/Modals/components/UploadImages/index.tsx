@@ -1,11 +1,30 @@
 import React from "react";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { IDataImages } from "../../../../types/common";
-import { useImages } from "../../../../hooks/api/images";
+import {
+  deleteImages,
+  getImages,
+  postImages,
+} from "../../../../hooks/api/images";
+import { TrashIcon } from "@heroicons/react/24/outline";
+import DeleteModal from "../../../ui/DeleteModal";
 
 export const UploadImagesModal = () => {
   const [selectedImage, setSelectedImage] = React.useState<File | null>(null);
 
-  const { isLoading, data, mutation } = useImages();
+  const { data, isLoading } = useQuery({
+    queryKey: ["images"],
+    queryFn: getImages,
+  });
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: postImages,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["images"], { exact: true });
+    },
+  });
 
   if (isLoading) return <h1>Loading...</h1>;
 
@@ -31,11 +50,51 @@ export const UploadImagesModal = () => {
       </div>
       <div className="flex gap-3 flex-wrap items-start">
         {data?.map(({ id, image }: IDataImages) => (
-          <div key={id} className="bg-slate-200 p-1">
-            <img src={image} className="max-w-xs" />
-          </div>
+          <Image id={id} key={id} image={image} />
         ))}
       </div>
     </div>
   );
 };
+
+function Image({ id, image }: IDataImages) {
+  const [isActive, setIsActive] = React.useState(false);
+  const [openModal, setOpenModal] = React.useState(false);
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: deleteImages,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["images"], { exact: true });
+    },
+  });
+
+  return (
+    <div
+      key={id}
+      className="bg-slate-200 p-1 relative min-w-[40px] flex justify-center"
+      onMouseOver={() => setIsActive(true)}
+      onMouseOut={() => setIsActive(false)}
+    >
+      <img src={image} className="max-w-xs" />
+      {isActive && (
+        <button
+          className="bg-red-600 text-white rounded text-xs p-1 absolute right-1 bottom-1 hover:bg-red-700"
+          disabled={mutation.isLoading}
+          onClick={() => setOpenModal(true)}
+        >
+          <TrashIcon className="w-[20px]" />
+        </button>
+      )}
+      {openModal && (
+        <DeleteModal
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          onClick={() => mutation.mutate(id)}
+          deleteSubject="image"
+        />
+      )}
+    </div>
+  );
+}

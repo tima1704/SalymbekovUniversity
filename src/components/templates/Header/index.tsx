@@ -1,5 +1,5 @@
 import React from "react";
-import { ITemplatePlaceholders } from '../../../types/templates';
+import { ITemplatePlaceholder } from '../../../redux/TemplatesReducer/types'
 
 interface IHeader {
   id: number;
@@ -62,9 +62,9 @@ const NETWORKS: IHeader[] = [
 ]
 
 
-const Layout = ({...props}) => {
+const Layout = ({ ...props }) => {
   return (
-    <header className="flex bg-[#01018C]" {...props} data-container>
+    <header className="flex bg-[#01018C]" {...props}>
 
       <div className="flex justify-center text-right w-[23%] py-[30px] bg-[#ffffff] rounded-e-[500px]">
         <img className="cursor-pointer" src="$HeaderBrandLogo$" alt="Salymbekov University" />
@@ -105,13 +105,15 @@ const Layout = ({...props}) => {
 };
 
 
-const placeholders: ITemplatePlaceholders[] = [
+const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$HeaderBrandLogo$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/salymbekov-logo.png',
   },
   {
     key: '$HeaderTelephoneLogo$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/telephone.png',
   },
   {
@@ -128,18 +130,22 @@ const placeholders: ITemplatePlaceholders[] = [
   },
   {
     key: '$HeaderNetworkFB$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/facebook.png',
   },
   {
     key: '$HeaderNetworkIN$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/instagram.png',
   },
   {
     key: '$HeaderNetworkVI$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/youtube.png',
   },
   {
     key: '$HeaderNetworkWS$',
+    type: 'image',
     value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whatsapp.png',
   },
   {
@@ -184,7 +190,7 @@ const functions = [
 ]
 
 export default {
-  layout: Layout,
+  layout: <Layout />,
   placeholders,
   functions,
 }

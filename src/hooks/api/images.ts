@@ -18,21 +18,7 @@ export const postImages = async (newImage: File | null) => {
   return data
 }
 
-export const useImages = () => {
-  
-  const { data, isLoading } = useQuery({
-    queryKey: ['images'],
-    queryFn: getImages
-  })
-
-  const queryClient = useQueryClient()
-
-  const mutation = useMutation({
-    mutationFn: postImages,
-    onSuccess: () => {
-      queryClient.invalidateQueries(['images'], { exact: true })
-    }
-  })
-
-  return {data, isLoading, mutation}
+export const deleteImages = async (id: number) => {
+  const data = await axios.delete(`http://13.127.216.121/api/v1/images/${id}/`)
+  return data
 }
