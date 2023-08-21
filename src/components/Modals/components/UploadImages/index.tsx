@@ -1,37 +1,23 @@
-import React from 'react'
-import { useMutation, useQuery, useQueryClient } from 'react-query'
-import { IDataImages } from '../../../../types/common'
-import { getImages, postImages } from '../../../../hooks/api/images'
+import React from "react";
+import { IDataImages } from "../../../../types/common";
+import { useImages } from "../../../../hooks/api/images";
 
 export const UploadImagesModal = () => {
+  const [selectedImage, setSelectedImage] = React.useState<File | null>(null);
 
-  const { data, isLoading } = useQuery({
-    queryKey: ['images'], 
-    queryFn: getImages
-  })
+  const { isLoading, data, mutation } = useImages();
 
-  const [selectedImage, setSelectedImage] = React.useState<File | null>(null)
-
-  const queryClient = useQueryClient()
-
-  const mutation = useMutation({
-    mutationFn: postImages,
-    onSuccess: () => {
-      queryClient.invalidateQueries(['images'], {exact: true})
-    }
-  })
-
-  if (isLoading) return <h1>Loading...</h1>
+  if (isLoading) return <h1>Loading...</h1>;
 
   return (
-    <div className='text-center'>
+    <div className="text-center">
       <div className="flex items-center justify-between mb-4">
         Upload new image:
         <input
           type="file"
-          onChange={e => {
+          onChange={(e) => {
             if (!e.target.files) return;
-            setSelectedImage(e.target.files[0] as File)
+            setSelectedImage(e.target.files[0] as File);
           }}
         />
         <button
@@ -40,18 +26,16 @@ export const UploadImagesModal = () => {
           onClick={() => mutation.mutate(selectedImage)}
           disabled={mutation.isLoading}
         >
-          {mutation.isLoading ? 'Loading' : 'Upload'}
+          {mutation.isLoading ? "Loading" : "Upload"}
         </button>
       </div>
       <div className="flex gap-3 flex-wrap items-start">
-        {
-          data?.map(({id, image}: IDataImages) => (
-            <div key={id} className="bg-slate-200 p-1">
-              <img src={image} className="max-w-xs"/>
-            </div>
-          ))
-        }
+        {data?.map(({ id, image }: IDataImages) => (
+          <div key={id} className="bg-slate-200 p-1">
+            <img src={image} className="max-w-xs" />
+          </div>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};

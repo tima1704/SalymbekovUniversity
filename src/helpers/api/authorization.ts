@@ -9,5 +9,5 @@ export default class AuthService {
   static async refreshAccessToken(token: string) {
     return $API.post('/users/token/verify/', {token})
     .then(response => response.data)
-  }
+  } 
 }
