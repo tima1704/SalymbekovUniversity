@@ -9,10 +9,20 @@ export const useGetRoutes = () => {
 
 export const useSendRoutes = () => {
   const { mutate, isLoading: sendLoading } = useMutation({
-    mutationFn: (newTodo: string) => {
-      return RouteService.postRoutesApi(newTodo)
+    mutationFn: (newRoute: string) => {
+      return RouteService.postRoutesApi(newRoute)
     },
   })
 
   return { mutate, sendLoading }
+}
+
+export const useDeleteRoutes = () => {
+  const { mutate, isLoading } = useMutation({
+    mutationFn: (delRoute: string | number) => {
+      return RouteService.deleteRoutesApi(delRoute)
+    }
+  })
+
+  return { mutate, isLoading }
 }

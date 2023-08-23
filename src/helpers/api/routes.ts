@@ -9,4 +9,7 @@ export default class RouteService {
     return $API.get('/pages/')
       .then(response => response.data)
   }
+  static async deleteRoutesApi(id: string | number) {
+    return $API.delete(`/pages/${id}/`)
+  }
 }

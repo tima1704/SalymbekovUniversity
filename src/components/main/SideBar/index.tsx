@@ -65,7 +65,7 @@ const Sidebar: React.FC = () => {
             ))}
           </ul>
         </div>
-        <div className="flex mt-auto">
+        <div className="flex mt-auto justify-around">
           <button
             onClick={handleExit}
             type="button"

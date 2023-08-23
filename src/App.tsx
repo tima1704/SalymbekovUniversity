@@ -14,7 +14,14 @@ const App = () => {
     <React.Fragment>
       <Modals />
       <Routes>
-        <Route path={ROUTES.home} element={<Cabinet />} />
+        <Route
+          path={ROUTES.home}
+          element={
+            <AppWrapper>
+              <Cabinet />
+            </AppWrapper>
+          }
+        />
         <Route path={ROUTES.auth.authRoute} element={<AuthLayout />} />
         <Route path={ROUTES.error} element={<h1>Error page..</h1>} />
       </Routes>
