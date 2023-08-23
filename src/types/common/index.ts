@@ -7,3 +7,8 @@ export interface IDataImages {
 export interface IExportRotes {
   route?: string 
 }
+
+export interface IStructureRoutes { 
+  route: string,
+  id: string | number
+}

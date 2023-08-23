@@ -4,8 +4,8 @@ import { useGetBody } from "../../hooks/common";
 import cls from "./index.module.css";
 import { SwitchPagesModal } from "./components/SwitchPagesModal";
 import { AddBlocksModal } from "./components/AddBlocksModal";
-import { ModifyContentModal } from './components/ModifyContentModal';
-import { UploadImagesModal } from './components/UploadImages';
+import { ModifyContentModal } from "./components/ModifyContentModal";
+import { UploadImagesModal } from "./components/UploadImages";
 
 export const Modals: React.FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
@@ -25,9 +25,7 @@ export const Modals: React.FC = () => {
       }
   }, [typeModal, bodyRef]);
 
-  if (!typeModal) {
-    return null;
-  }
+  if (!typeModal) return null;
 
   return (
     <div className={cls["modalWrapper"]}>
