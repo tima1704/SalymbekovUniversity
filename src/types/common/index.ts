@@ -9,6 +9,10 @@ export interface IExportRotes {
 }
 
 export interface IStructureRoutes { 
-  route: string,
+  route: string
   id: string | number
+}
+
+export interface IRoutes {
+  item: IStructureRoutes
 }

@@ -13,12 +13,8 @@ interface IForm {
   route: string;
 }
 
-interface IShowProps {
-  mouse: boolean | null;
-  data: IStructureRoutes;
-}
-
 export const SwitchPagesModal: React.FC = () => {
+  // TODO (Almaz) ! Использовать хук mouse для отображения иконки удаления.
   const [mouse, setMouse] = React.useState<boolean | null>(null);
 
   // Query hooks:
@@ -37,6 +33,9 @@ export const SwitchPagesModal: React.FC = () => {
       await mutate(formData.route);
     } catch (error) {}
   };
+
+  // TODO (Almaz) Создать ui иконку удаления маршрута. Пример использования иконки есть в pages/cabinet.
+  // TODO (Almaz) Сделать проверку конпки на home (route == "/" ? 'home').
 
   const handleDelete = async (id: number | string) => {
     try {
