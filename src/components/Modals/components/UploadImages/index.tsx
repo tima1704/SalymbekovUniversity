@@ -8,6 +8,7 @@ import {
 } from "../../../../hooks/api/images";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import DeleteModal from "../../../ui/DeleteModal";
+import Loader from "../../../ui/Loader/Loader";
 
 export const UploadImagesModal = () => {
   const [selectedImage, setSelectedImage] = React.useState<File | null>(null);
@@ -26,7 +27,7 @@ export const UploadImagesModal = () => {
     },
   });
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Loader />;
 
   return (
     <div className="text-center">

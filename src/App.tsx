@@ -5,8 +5,9 @@ import { AuthLayout } from "./pages/Auth";
 import { Modals } from "./components/Modals";
 import CheckTokenExpirationAndRefresh from "./hooks/api/checkToken";
 import { useGetRoutes } from "./hooks/api/useRoutes";
-import {Client} from "./pages/Client";
+import { Client } from "./pages/Client";
 import { IStructureRoutes } from "./types/common";
+import Loader from "./components/ui/Loader/Loader";
 
 const App = () => {
   setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000);
@@ -14,6 +15,7 @@ const App = () => {
   // TODO (Almaz) ! Добавить анимацию Loader для общего контента.
   const { route, isLoading } = useGetRoutes();
 
+  if (isLoading) return <Loader />
   return (
     <React.Fragment>
       <Modals />

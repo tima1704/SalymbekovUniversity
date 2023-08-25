@@ -9,11 +9,12 @@ export const AddBlocksModal = () => {
 
   const [selectedTemplate, setSelectedTemplate] = React.useState<ITemplate | null>(null)
 
-  const { setTemplateAction } = useAppDispatch()
+  const { setTemplateAction, setModalViewAction } = useAppDispatch()
+  const onCloseModal = () => setModalViewAction();
 
   function selectTemplate(event: React.MouseEvent, template: ITemplate) {
     let element = event.target as HTMLElement
-    for (;;) {
+    for (; ;) {
       if (element.dataset.container && element.parentElement) {
 
         setSelectedTemplate(template)
@@ -35,7 +36,9 @@ export const AddBlocksModal = () => {
   function addTemplate() {
     if (!selectedTemplate) return;
 
-    setTemplateAction(selectedTemplate) 
+    setTemplateAction(selectedTemplate);
+
+    onCloseModal();
   }
 
   return (

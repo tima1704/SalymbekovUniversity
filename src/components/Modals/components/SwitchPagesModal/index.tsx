@@ -7,17 +7,28 @@ import {
   useSendRoutes,
 } from "../../../../hooks/api/useRoutes";
 import { IStructureRoutes } from "../../../../types/common";
-
+import { TrashIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
 
 import { Link } from "react-router-dom";
+import DeleteModal from "../../../ui/DeleteModal";
+import { useAppDispatch } from "../../../../hooks/redux";
 
 interface IForm {
   route: string;
 }
 
 export const SwitchPagesModal: React.FC = () => {
-  // TODO (Almaz) ! Использовать хук mouse для отображения иконки удаления.
-  const [mouse, setMouse] = React.useState<boolean | null>(null);
+  const { setModalViewAction } = useAppDispatch();
+  const onCloseModal = () => setModalViewAction();
+
+
+  const [openModal, setOpenModal] = React.useState(false);
+  const [deleteId, setDeleteId] = React.useState<number | string>("");
+
+  const onClickOpenModal = (id: number | string) => {
+    setOpenModal(true);
+    setDeleteId(id);
+  }
 
   // Query hooks:
   const { route, isLoading } = useGetRoutes();
@@ -33,7 +44,10 @@ export const SwitchPagesModal: React.FC = () => {
   const onSubmit: SubmitHandler<IForm> = async (formData) => {
     try {
       await mutate(formData.route);
-    } catch (error) {}
+      onCloseModal();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   // TODO (Almaz) Создать ui иконку удаления маршрута. Пример использования иконки есть в pages/cabinet.
@@ -42,7 +56,9 @@ export const SwitchPagesModal: React.FC = () => {
   const handleDelete = async (id: number | string) => {
     try {
       await mutateId(id);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -64,7 +80,7 @@ export const SwitchPagesModal: React.FC = () => {
           placeholder="create new route"
         />
         <button>
-          {sendLoading ? <span>loading..</span> : <span>send new route</span>}
+          {sendLoading ? <ArrowPathIcon className="w-[20px] text-black" /> : <span>send new route</span>}
         </button>
       </form>
       {errors.route && (
@@ -77,17 +93,36 @@ export const SwitchPagesModal: React.FC = () => {
           route?.map((item: IStructureRoutes, index: string) => (
             <div className="relative">
               <button
-                onMouseEnter={() => setMouse(true)}
-                onMouseLeave={() => setMouse(false)}
                 className="text-white bg-[#0a0e0f] relative hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-7 py-4 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 mt-4"
                 key={"route" + index}
               >
-                <Link to={item.route}>{item.route}</Link>
+                <Link to={item.route}>
+                  {
+                    item.route === "/"
+                      ? "Home"
+                      : item.route
+                  }
+                </Link>
+              </button>
+              <button
+                onClick={() => onClickOpenModal(item.id)}
+                className="disabled: opacity-70"
+                disabled={isLoading}
+              >
+                <TrashIcon className="w-[20px]" />
               </button>
             </div>
           ))
         )}
       </div>
+      {openModal && (
+        <DeleteModal
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          onClick={() => handleDelete(deleteId)}
+          deleteSubject="route"
+        />
+      )}
     </React.Fragment>
   );
 };
