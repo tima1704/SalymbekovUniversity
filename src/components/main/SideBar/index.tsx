@@ -1,6 +1,8 @@
 import React from "react";
 import { useAppDispatch } from "../../../hooks/redux";
 import { TModals } from "../../../redux/ModalReducer/types";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../constants/routes";
 
 interface ILinks {
   name: string;
@@ -23,11 +25,19 @@ const sidebarModalText: ILinks[] = [
   {
     name: "Загрузить фото",
     modal: "uploadImages",
-  }
+  },
 ];
 
 const Sidebar: React.FC = () => {
   const { setModalViewAction } = useAppDispatch();
+
+  const navigate = useNavigate();
+
+  const handleExit = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    navigate(ROUTES.auth.authRoute);
+  };
 
   return (
     <aside
@@ -55,16 +65,17 @@ const Sidebar: React.FC = () => {
             ))}
           </ul>
         </div>
-        <div className="flex mt-auto">
+        <div className="flex mt-auto justify-around">
           <button
+            onClick={handleExit}
             type="button"
-            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
             выйти
           </button>
           <button
             type="button"
-            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+            className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
             Вернуться на сайт
           </button>

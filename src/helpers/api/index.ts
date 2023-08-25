@@ -13,7 +13,7 @@ $API.interceptors.response.use(
     if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
-      const refreshToken = localStorage.getItem('refreshToken');
+      const refreshToken = localStorage.getItem('refreshToken')
       if (!refreshToken) {
         return Promise.reject(error)
       }
@@ -23,16 +23,16 @@ $API.interceptors.response.use(
           refreshToken,
         })
 
-        const newAccessToken = response.data.access;
-        const newRefreshToken = response.data.refresh;
+        const newAccessToken = response.data.access
+        const newRefreshToken = response.data.refresh
 
-        localStorage.setItem('accessToken', newAccessToken);
+        localStorage.setItem('accessToken', newAccessToken)
         localStorage.setItem('refreshToken', newRefreshToken)
 
         originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-        return $API(originalRequest);
+        return $API(originalRequest)
       } catch (refreshError) {
-        return Promise.reject(refreshError);
+        return Promise.reject(refreshError)
       }
     }
     return Promise.reject(error);

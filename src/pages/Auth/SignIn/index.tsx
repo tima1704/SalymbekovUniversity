@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FORMERRORMESAGE, FORMREGEX } from "../../../constants/common";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 import AuthService from "../../../helpers/api/authorization";
 
@@ -11,6 +11,12 @@ interface IForm {
 }
 
 export const SignIn = () => {
+  const [loading, setLoading] = React.useState<boolean | null>(null);
+
+  // check user
+  const user = localStorage.getItem("accessToken");
+  if (user) return <Navigate to={ROUTES.home} />;
+
   const {
     handleSubmit,
     register,
@@ -21,17 +27,20 @@ export const SignIn = () => {
 
   const onSubmit: SubmitHandler<IForm> = async (data) => {
     try {
+      setLoading(true);
       const { password, username } = data;
-      const response = await AuthService.login(password, username)
+      const response = await AuthService.login(password, username);
 
-      if(response.access && response.refresh) {
-        localStorage.setItem('accessToken', response.access)
-        localStorage.setItem('refreshToken', response.refresh)
+      if (response.access && response.refresh) {
+        localStorage.setItem("accessToken", response.access);
+        localStorage.setItem("refreshToken", response.refresh);
 
-        navigate(ROUTES.home)
+        navigate(ROUTES.home);
       }
-    } catch(error) {
+    } catch (error) {
       console.error("Login failed", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -100,7 +109,7 @@ export const SignIn = () => {
               </label>
             </div>
             <button className="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded">
-              Login
+              {loading ? <span>loading...</span> : <span>login</span>}
             </button>
           </form>
         </div>
