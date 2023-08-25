@@ -14,7 +14,7 @@ export interface ITemplatePlaceholder {
 
 export interface ITemplateFunction {
   id: string
-  func: object
+  func: Record<string, unknown>
 }
 
 export enum TemplateActionsTypes {

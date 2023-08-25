@@ -41,12 +41,14 @@ export const ModifyContentModal = () => {
   return (
     <div className='text-center'>
       {
-        addedTemplates.map(({ placeholders, layout }, index) => {
+        addedTemplates.map(({ placeholders, layout, functions }, index) => {
           if (!placeholders) return;
           if (!layout) return;
+          if (!functions) return;
           return (
             <Form
               placeholders={placeholders}
+              functions={functions}
               layout={layout}
               index={index}
               data={data}

@@ -1,5 +1,5 @@
 import React from "react";
-import { ITemplatePlaceholder } from '../../../redux/TemplatesReducer/types'
+import { ITemplateFunction, ITemplatePlaceholder } from '../../../redux/TemplatesReducer/types'
 
 interface IHeader {
   id: number;
@@ -7,6 +7,13 @@ interface IHeader {
   description: string;
   style: string;
   functionId: string;
+}
+
+interface INetwork {
+  id: number
+  img: string
+  style: string
+  link: string
 }
 
 const LANGUAGES: IHeader[] = [
@@ -30,34 +37,30 @@ const LANGUAGES: IHeader[] = [
   },
 ]
 
-const NETWORKS: IHeader[] = [
+const NETWORKS: INetwork[] = [
   {
     id: 1,
     img: "$HeaderNetworkFB$",
-    description: "$HeaderNetworkTextFB$",
     style: "w-[30px] h-[30px]",
-    functionId: "funcHeaderNetworkFB",
+    link: 'https://facebook.com'
   },
   {
     id: 2,
     img: "$HeaderNetworkIN$",
-    description: "$HeaderNetworkTextIN$",
     style: "w-[30px] h-[30px]",
-    functionId: "funcHeaderNetworkIN",
+    link: 'https://instagram.com'
   },
   {
     id: 3,
     img: "$HeaderNetworkVI$",
-    description: "$HeaderNetworkTextVI$",
     style: "w-[30px] h-[30px]",
-    functionId: "funcHeaderNetworkVI",
+    link: 'https://youtube.com'
   },
   {
     id: 4,
     img: "$HeaderNetworkWS$",
-    description: "$HeaderNetworkTextWS$",
     style: "w-[30px] h-[30px]",
-    functionId: "funcHeaderNetworkWS",
+    link: 'https://ru.wikipedia.org/wiki/WhatsApp'
   },
 ]
 
@@ -80,9 +83,9 @@ const Layout = ({ ...props }) => {
 
           <div className="flex items-center gap-[15px]">
             {
-              NETWORKS.map(({ id, description, img, style, functionId }) =>
-                <a key={id} id={functionId}>
-                  <img className={style} src={img} alt={description} />
+              NETWORKS.map(({ id, img, style, link }) =>
+                <a key={id} href={link}>
+                  <img className={style} src={img} alt={link} />
                 </a>
               )
             }
@@ -158,36 +161,7 @@ const placeholders: ITemplatePlaceholder[] = [
   },
 ]
 
-const functions = [
-  {
-    id: 'funcHeaderNetworkFB',
-    func: {
-      type: 'link',
-      to: '/'
-    }
-  },
-  {
-    id: 'funcHeaderNetworkIN',
-    func: {
-      type: 'link',
-      to: '/'
-    }
-  },
-  {
-    id: 'funcHeaderNetworkVI',
-    func: {
-      type: 'link',
-      to: '/'
-    }
-  },
-  {
-    id: 'funcHeaderNetworkWS',
-    func: {
-      type: 'link',
-      to: '/'
-    }
-  },
-]
+const functions: ITemplateFunction[] = []
 
 export default {
   layout: <Layout />,
