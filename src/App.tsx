@@ -11,8 +11,7 @@ import Loader from "./components/ui/Loader/Loader";
 
 const App = () => {
   setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000);
-
-  // TODO (Almaz) ! Добавить анимацию Loader для общего контента.
+  
   const { route, isLoading } = useGetRoutes();
 
   if (isLoading) return <Loader />

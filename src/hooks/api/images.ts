@@ -1,10 +1,8 @@
+import React from 'react'
 import axios from 'axios'
 import { IDataImages } from '../../types/common'
-import { useMutation, useQuery, useQueryClient } from 'react-query'
-import React from 'react'
 
 export const getImages = async () => {
-  // TODO (Anvar) Перенести requst functions в дерикторию helpers => api 
   const { data } = await axios.get<IDataImages[]>('http://13.127.216.121/api/v1/images/')
   return data
 }

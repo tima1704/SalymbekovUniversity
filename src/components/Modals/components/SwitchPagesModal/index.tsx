@@ -50,9 +50,6 @@ export const SwitchPagesModal: React.FC = () => {
     }
   };
 
-  // TODO (Almaz) Создать ui иконку удаления маршрута. Пример использования иконки есть в pages/cabinet.
-  // TODO (Almaz) Сделать проверку конпки на home (route == "/" ? 'home').
-
   const handleDelete = async (id: number | string) => {
     try {
       await mutateId(id);
