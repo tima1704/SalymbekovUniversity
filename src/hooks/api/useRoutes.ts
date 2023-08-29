@@ -46,7 +46,7 @@ export const useCreateHomePage = () => {
   const queryClient = useQueryClient();
   const { mutate } = useMutation({
     mutationFn: () => {
-      return RouteService.postRoutesApi('')
+      return RouteService.postRoutesApi('/')
     },
     onSuccess: () => {
       queryClient.invalidateQueries(['route'], { exact: true })

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, /* useLocation */ } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import parse from "html-react-parser";
@@ -46,10 +46,13 @@ function RenderedTemplate({
   const addedTemplates = useAppSelector((s) => s.Template);
   const { editTemplateAction } = useAppDispatch();
 
+  // const { pathname } = useLocation()
+  
   function removeBlock() {
     const newTemplates = addedTemplates.filter((_, i) => i !== index);
     editTemplateAction(newTemplates);
   }
+
 
   if (!placeholders) return;
   return (
