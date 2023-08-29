@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, /* useLocation */ } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import parse from "html-react-parser";
@@ -10,17 +10,25 @@ import { ITemplate } from "../../../redux/TemplatesReducer/types";
 
 interface IRenderedTemplateProps extends ITemplate {
   index: number;
+  pathname: string;
+}
+
+interface ILocation {
+  pathname: string
 }
 
 export const Cabinet = () => {  
   const user = localStorage.getItem("accessToken");
 
   const addedTemplates = useAppSelector((s) => s.Template);
-  if (!user) return <Navigate to={ROUTES.auth.authRoute} />;
 
+  const { pathname }: ILocation  = useLocation()
+
+  if (!user) return <Navigate to={ROUTES.auth.authRoute} />;
+  if (Object.keys(addedTemplates).length === 0) return <h1>Страница на данный момент пуста</h1>
   return (
     <React.Fragment>
-      {addedTemplates.map(({ placeholders, layout }, index) => {
+      {addedTemplates[pathname].map(({ placeholders, layout }, index) => {
         if (!placeholders) return;
         return (
           <RenderedTemplate
@@ -28,6 +36,7 @@ export const Cabinet = () => {
             layout={layout}
             key={index}
             index={index}
+            pathname={pathname}
           />
         );
       })}
@@ -39,20 +48,21 @@ function RenderedTemplate({
   placeholders,
   layout,
   index,
+  pathname,
 }: IRenderedTemplateProps) {
   const [isActive, setIsActive] = React.useState(false);
   const [openModal, setOpenModal] = React.useState(false);
 
   const addedTemplates = useAppSelector((s) => s.Template);
   const { editTemplateAction } = useAppDispatch();
-
-  // const { pathname } = useLocation()
   
   function removeBlock() {
-    const newTemplates = addedTemplates.filter((_, i) => i !== index);
+    const newTemplates = {
+      ...addedTemplates,
+      [pathname]: addedTemplates[pathname].filter((_, i) => i !== index)
+    }
     editTemplateAction(newTemplates);
   }
-
 
   if (!placeholders) return;
   return (
