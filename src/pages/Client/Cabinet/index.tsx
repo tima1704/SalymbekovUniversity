@@ -23,7 +23,7 @@ export const Cabinet = ({ route }: ICabinetProps) => {
   const addedTemplates = useAppSelector((s) => s.Template);
 
   if (!user) return <Navigate to={ROUTES.auth.authRoute} />;
-  if (Object.keys(addedTemplates).length === 0) return <h1>Страница на данный момент пуста</h1>
+  if (Object.keys(addedTemplates).length === 0 || !addedTemplates[route]) return <h1>Страница на данный момент пуста</h1>
   return (
     <React.Fragment>
       {addedTemplates[route].map(({ placeholders, layout }, index) => {
