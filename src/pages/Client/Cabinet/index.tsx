@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import parse from "html-react-parser";
@@ -10,25 +10,23 @@ import { ITemplate } from "../../../redux/TemplatesReducer/types";
 
 interface IRenderedTemplateProps extends ITemplate {
   index: number;
-  pathname: string;
+  route: string;
 }
 
-interface ILocation {
-  pathname: string
+interface ICabinetProps {
+  route: string
 }
 
-export const Cabinet = () => {  
+export const Cabinet = ({ route }: ICabinetProps) => {
   const user = localStorage.getItem("accessToken");
 
   const addedTemplates = useAppSelector((s) => s.Template);
-
-  const { pathname }: ILocation  = useLocation()
 
   if (!user) return <Navigate to={ROUTES.auth.authRoute} />;
   if (Object.keys(addedTemplates).length === 0) return <h1>Страница на данный момент пуста</h1>
   return (
     <React.Fragment>
-      {addedTemplates[pathname].map(({ placeholders, layout }, index) => {
+      {addedTemplates[route].map(({ placeholders, layout }, index) => {
         if (!placeholders) return;
         return (
           <RenderedTemplate
@@ -36,7 +34,7 @@ export const Cabinet = () => {
             layout={layout}
             key={index}
             index={index}
-            pathname={pathname}
+            route={route}
           />
         );
       })}
@@ -48,18 +46,18 @@ function RenderedTemplate({
   placeholders,
   layout,
   index,
-  pathname,
+  route,
 }: IRenderedTemplateProps) {
   const [isActive, setIsActive] = React.useState(false);
   const [openModal, setOpenModal] = React.useState(false);
 
   const addedTemplates = useAppSelector((s) => s.Template);
   const { editTemplateAction } = useAppDispatch();
-  
+
   function removeBlock() {
     const newTemplates = {
       ...addedTemplates,
-      [pathname]: addedTemplates[pathname].filter((_, i) => i !== index)
+      [route]: addedTemplates[route].filter((_, i) => i !== index)
     }
     editTemplateAction(newTemplates);
   }

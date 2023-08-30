@@ -4,10 +4,9 @@ import { AppWrapper } from "../../components/main/AppWrapper";
 import { IRoutes } from "../../types/common";
 
 export const Client: React.FC<IRoutes> = ({ item }) => {
-
   return (
     <AppWrapper>
-      <Cabinet />
+      <Cabinet route={item.route} />
     </AppWrapper>
   );
 };
