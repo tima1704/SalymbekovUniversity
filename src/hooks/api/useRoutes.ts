@@ -1,11 +1,26 @@
 import { useMutation, useQuery, useQueryClient } from "react-query"
 import RouteService from "../../helpers/api/routes"
-
+import { useAppDispatch } from '../redux'
+import { IGetRoutes } from '../../types/common'
+import { ITemplate } from '../../redux/TemplatesReducer/types'
 
 export const useGetRoutes = () => {
+
+  const { editTemplateAction } = useAppDispatch()
+
   const { data: route, isLoading, isError } = useQuery({
     queryKey: 'route',
-    queryFn: () => RouteService.getRoutesApi()
+    queryFn: () => RouteService.getRoutesApi(),
+    onSuccess: (data) => {
+      const newData = data.reduce((total: Record<string, ITemplate>, {route, block_page}: IGetRoutes) => {
+        return {
+          ...total,
+          [route]: block_page,
+        }
+      }, {})
+      editTemplateAction(newData)
+    },
+    staleTime: Infinity
   })
 
   return { route, isLoading, isError }

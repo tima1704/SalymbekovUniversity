@@ -109,10 +109,11 @@ export const SwitchPagesModal: React.FC = () => {
               <Link
                 to={item.route}
                 className="text-white bg-[#0a0e0f] relative hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-7 py-4 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 mt-4"
+                onClick={onCloseModal}
               >
                 {
                   item.route === "/"
-                    ? "Home"
+                    ? "Home ( / )"
                     : item.route
                 }
               </Link>
