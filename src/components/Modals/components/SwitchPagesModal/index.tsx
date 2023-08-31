@@ -35,6 +35,10 @@ export const SwitchPagesModal: React.FC = () => {
   const { mutate, sendLoading } = useSendRoutes();
   const { mutate: mutateId } = useDeleteRoutes();
 
+  if (!route.length) {
+    onCloseModal()
+  }
+
   const {
     handleSubmit,
     register,
@@ -44,14 +48,10 @@ export const SwitchPagesModal: React.FC = () => {
   const onSubmit: SubmitHandler<IForm> = async (formData) => {
     try {
       await mutate(formData.route);
-      onCloseModal();
     } catch (error) {
       console.log(error);
     }
   };
-
-  // TODO (Almaz) Создать ui иконку удаления маршрута. Пример использования иконки есть в pages/cabinet.
-  // TODO (Almaz) Сделать проверку конпки на home (route == "/" ? 'home').
 
   const handleDelete = async (id: number | string) => {
     try {
@@ -77,10 +77,21 @@ export const SwitchPagesModal: React.FC = () => {
             },
           })}
           type="text"
-          placeholder="create new route"
+          placeholder="New Route"
+          className="rounded border-2 mr-4 px-3 py-2"
         />
-        <button>
-          {sendLoading ? <ArrowPathIcon className="w-[20px] text-black" /> : <span>send new route</span>}
+        <button
+          className="
+            rounded
+            bg-blue-400
+            text-white
+            px-3
+            py-2
+            hover:bg-blue-500
+            active:bg-blue-700
+          "
+        >
+          {sendLoading ? <ArrowPathIcon className="w-[20px] text-black" /> : <span>Create New Route</span>}
         </button>
       </form>
       {errors.route && (
@@ -91,19 +102,21 @@ export const SwitchPagesModal: React.FC = () => {
           <p className="text-blue-400">loading..</p>
         ) : (
           route?.map((item: IStructureRoutes, index: string) => (
-            <div className="relative">
-              <button
+            <div
+              className="relative"
+              key={"route" + index}
+            >
+              <Link
+                to={item.route}
                 className="text-white bg-[#0a0e0f] relative hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-7 py-4 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 mt-4"
-                key={"route" + index}
+                onClick={onCloseModal}
               >
-                <Link to={item.route}>
-                  {
-                    item.route === "/"
-                      ? "Home"
-                      : item.route
-                  }
-                </Link>
-              </button>
+                {
+                  item.route === "/"
+                    ? "Home ( / )"
+                    : item.route
+                }
+              </Link>
               <button
                 onClick={() => onClickOpenModal(item.id)}
                 className="disabled: opacity-70"

@@ -10,17 +10,23 @@ import { ITemplate } from "../../../redux/TemplatesReducer/types";
 
 interface IRenderedTemplateProps extends ITemplate {
   index: number;
+  route: string;
 }
 
-export const Cabinet = () => {  
+interface ICabinetProps {
+  route: string
+}
+
+export const Cabinet = ({ route }: ICabinetProps) => {
   const user = localStorage.getItem("accessToken");
 
   const addedTemplates = useAppSelector((s) => s.Template);
-  if (!user) return <Navigate to={ROUTES.auth.authRoute} />;
 
+  if (!user) return <Navigate to={ROUTES.auth.authRoute} />;
+  if (Object.keys(addedTemplates).length === 0) return <h1>Страница на данный момент пуста</h1>
   return (
     <React.Fragment>
-      {addedTemplates.map(({ placeholders, layout }, index) => {
+      {addedTemplates[route].map(({ placeholders, layout }, index) => {
         if (!placeholders) return;
         return (
           <RenderedTemplate
@@ -28,6 +34,7 @@ export const Cabinet = () => {
             layout={layout}
             key={index}
             index={index}
+            route={route}
           />
         );
       })}
@@ -39,6 +46,7 @@ function RenderedTemplate({
   placeholders,
   layout,
   index,
+  route,
 }: IRenderedTemplateProps) {
   const [isActive, setIsActive] = React.useState(false);
   const [openModal, setOpenModal] = React.useState(false);
@@ -47,7 +55,10 @@ function RenderedTemplate({
   const { editTemplateAction } = useAppDispatch();
 
   function removeBlock() {
-    const newTemplates = addedTemplates.filter((_, i) => i !== index);
+    const newTemplates = {
+      ...addedTemplates,
+      [route]: addedTemplates[route].filter((_, i) => i !== index)
+    }
     editTemplateAction(newTemplates);
   }
 

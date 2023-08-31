@@ -49,7 +49,7 @@ export const UploadImagesModal = () => {
           {mutation.isLoading ? "Loading" : "Upload"}
         </button>
       </div>
-      <div className="flex gap-3 flex-wrap items-start">
+      <div className="flex gap-3 flex-wrap items-center justify-between">
         {data?.map(({ id, image }: IDataImages) => (
           <Image id={id} key={id} image={image} />
         ))}
