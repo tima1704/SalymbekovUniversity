@@ -9,6 +9,7 @@ const CheckTokenExpirationAndRefresh = async () => {
 
       if (response.access) {
         localStorage.setItem('accessToken', response.access);
+        localStorage.setItem('refreshToken', response.refresh);
       }
     } catch (error) {
       console.error("Token refresh faild", error);

@@ -2,14 +2,17 @@ import React from 'react'
 import { useAppSelector, useAppDispatch } from '../../../../hooks/redux'
 import { useQuery } from 'react-query'
 import { getImages } from '../../../../hooks/api/images'
-import { ITemplate } from '../../../../redux/TemplatesReducer/types'
+import { ITemplateState } from '../../../../redux/TemplatesReducer/types'
 import Form from './Form'
 import { SubmitHandler } from 'react-hook-form'
+import { useLocation } from 'react-router-dom'
 
 export const ModifyContentModal = () => {
 
-  const addedTemplates: ITemplate[] = useAppSelector(s => s.Template)
+  const addedTemplates: ITemplateState = useAppSelector(s => s.Template)
   const { editTemplateAction } = useAppDispatch()
+
+  const { pathname } = useLocation()
 
   const { data } = useQuery({
     queryKey: 'images',
@@ -22,31 +25,36 @@ export const ModifyContentModal = () => {
   })
 
   const onSubmit: SubmitHandler<Record<string, string | number>> = (data) => {
-    const newTemplates: ITemplate[] = addedTemplates.map((template, index) => {
-      if (index !== data.index) return template
-      return {
-        ...template,
-        placeholders: template?.placeholders?.map(ph => {
-          return {
-            ...ph,
-            key: ph.key,
-            value: data[ph.key] as string
-          }
-        })
-      }
-    })
+    const newTemplates: ITemplateState = {
+      ...addedTemplates,
+      [pathname]: addedTemplates[pathname].map((template, index) => {
+        if (index !== data.index) return template
+        return {
+          ...template,
+          placeholders: template?.placeholders?.map(ph => {
+            return {
+              ...ph,
+              key: ph.key,
+              value: data[ph.key] as string
+            }
+          })
+        }
+      })
+    }
     editTemplateAction(newTemplates)
   }
 
   return (
     <div className='text-center'>
       {
-        addedTemplates.map(({ placeholders, layout }, index) => {
+        addedTemplates[pathname].map(({ placeholders, layout, functions }, index) => {
           if (!placeholders) return;
           if (!layout) return;
+          if (!functions) return;
           return (
             <Form
               placeholders={placeholders}
+              functions={functions}
               layout={layout}
               index={index}
               data={data}

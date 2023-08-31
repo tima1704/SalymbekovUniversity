@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch } from "../../../hooks/redux";
 import { TModals } from "../../../redux/ModalReducer/types";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 
 interface ILinks {
@@ -39,6 +39,8 @@ const Sidebar: React.FC = () => {
     navigate(ROUTES.auth.authRoute);
   };
 
+  const { pathname } = useLocation()
+
   return (
     <aside
       id="logo-sidebar"
@@ -47,8 +49,11 @@ const Sidebar: React.FC = () => {
     >
       <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto">
         <div>
-          <p className="flex items-center pl-2.5 mt-5 text-white text-2xl">
+          <p className="flex items-center pl-2.5 mt-5 text-white text-xl">
             Salymbekov admin
+          </p>
+          <p className="flex items-center pl-2.5 my-3 text-white">
+            Current page: {pathname}
           </p>
           <ul className="space-y-2 font-medium mt-10">
             {sidebarModalText.map((item, index) => (

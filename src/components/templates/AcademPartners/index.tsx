@@ -50,10 +50,10 @@ const placeholders = [
   },
 ]
 
-const functions = [];
+// const functions = [];
 
-export default {
-  layout: <Layout />,
-  placeholders,
-  functions,
-}
+// export default {
+//   layout: <Layout />,
+//   placeholders,
+//   functions,
+// }
