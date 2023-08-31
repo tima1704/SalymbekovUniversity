@@ -39,7 +39,13 @@ export const AddBlocksModal = () => {
   function addTemplate() {
     if (!selectedTemplate) return;
 
-    setTemplateAction({ template: selectedTemplate, pathname });
+    setTemplateAction({
+      template: {
+        ...selectedTemplate,
+        layout: renderToString(selectedTemplate.layout as React.ReactElement )
+      },
+      pathname
+    });
 
     onCloseModal();
   }

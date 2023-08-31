@@ -1,8 +1,9 @@
 import React from "react";
-import { useAppDispatch } from "../../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { TModals } from "../../../redux/ModalReducer/types";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
+import { useSendBlocks } from '../../../hooks/api/useBlocks';
 
 interface ILinks {
   name: string;
@@ -33,13 +34,14 @@ const Sidebar: React.FC = () => {
 
   const navigate = useNavigate();
 
+  const { pathname } = useLocation()
+
   const handleExit = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     navigate(ROUTES.auth.authRoute);
   };
 
-  const { pathname } = useLocation()
 
   return (
     <aside
@@ -76,7 +78,7 @@ const Sidebar: React.FC = () => {
             type="button"
             className="text-white bg-[#0a0e0f] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-3 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2"
           >
-            выйти
+            Выйти
           </button>
           <button
             type="button"
@@ -90,6 +92,41 @@ const Sidebar: React.FC = () => {
   );
 };
 
+const PostBlocksButton = () => {
+  const { pathname } = useLocation()
+
+  const { mutate, isLoading } = useSendBlocks()
+
+  const addedBlocks = useAppSelector(s => s.Template)
+
+  function handlePatchBlocks() {
+    const block = addedBlocks[pathname]
+    mutate(block)
+  }
+
+  return (
+    <button
+      className="
+        fixed
+        right-4
+        bottom-4
+        bg-green-500
+        text-white
+        rounded
+        px-3
+        py-2
+        hover:bg-green-600
+        active:bg-green-700
+        disabled:bg-slate-400
+      "
+      onClick={handlePatchBlocks}
+      disabled={isLoading}
+    >
+      Отправить
+    </button>
+  )
+}
+
 interface ISideBarBlock {
   children: React.ReactNode;
 }
@@ -98,6 +135,7 @@ const SideBarBlock: React.FC<ISideBarBlock> = ({ children }) => {
   return (
     <div className="flex">
       <Sidebar />
+      <PostBlocksButton />
       <div className="p-4 w-5/6 absolute right-0">{children}</div>
     </div>
   );

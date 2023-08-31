@@ -27,19 +27,22 @@ export const ModifyContentModal = () => {
   const onSubmit: SubmitHandler<Record<string, string | number>> = (data) => {
     const newTemplates: ITemplateState = {
       ...addedTemplates,
-      [pathname]: addedTemplates[pathname].map((template, index) => {
-        if (index !== data.index) return template
-        return {
-          ...template,
-          placeholders: template?.placeholders?.map(ph => {
-            return {
-              ...ph,
-              key: ph.key,
-              value: data[ph.key] as string
-            }
-          })
-        }
-      })
+      [pathname]: {
+        ...addedTemplates[pathname],
+        blocks: addedTemplates[pathname].blocks.map((template, index) => {
+          if (index !== data.index) return template
+          return {
+            ...template,
+            placeholders: template?.placeholders?.map(ph => {
+              return {
+                ...ph,
+                key: ph.key,
+                value: data[ph.key] as string
+              }
+            })
+          }
+        })
+      }
     }
     editTemplateAction(newTemplates)
   }
@@ -47,7 +50,7 @@ export const ModifyContentModal = () => {
   return (
     <div className='text-center'>
       {
-        addedTemplates[pathname].map(({ placeholders, layout, functions }, index) => {
+        addedTemplates[pathname].blocks.map(({ placeholders, layout, functions }, index) => {
           if (!placeholders) return;
           if (!layout) return;
           if (!functions) return;
@@ -55,10 +58,11 @@ export const ModifyContentModal = () => {
             <Form
               placeholders={placeholders}
               functions={functions}
-              layout={layout}
+              layout={layout as string}
               index={index}
               data={data}
               onSubmit={onSubmit}
+              key={index}
             />
           )
         })
