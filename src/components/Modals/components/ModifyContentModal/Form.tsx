@@ -1,13 +1,12 @@
 import React from 'react'
 import parse from 'html-react-parser'
-import { renderToString } from 'react-dom/server'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import Select, { GroupBase, OptionsOrGroups } from 'react-select'
 import { ITemplateFunction, ITemplatePlaceholder } from '../../../../redux/TemplatesReducer/types'
 
 interface IFormProps {
   placeholders: ITemplatePlaceholder[]
-  layout: React.ReactElement | React.FC
+  layout: string
   functions: ITemplateFunction[]
   index: number
   onSubmit: SubmitHandler<Record<string, string | number>>
@@ -37,7 +36,7 @@ const Form = ({ placeholders, layout, functions, index, data, onSubmit }: IFormP
           parse(
             placeholders.reduce((total, { key, value }) => {
               return total.replace(key, value)
-            }, renderToString(layout as React.ReactElement))
+            }, layout)
           )
         }
         {

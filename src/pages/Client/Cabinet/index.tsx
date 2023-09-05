@@ -3,7 +3,6 @@ import { Navigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import parse from "html-react-parser";
-import { renderToString } from "react-dom/server";
 import DeleteModal from "../../../components/ui/DeleteModal";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { ITemplate } from "../../../redux/TemplatesReducer/types";
@@ -23,10 +22,9 @@ export const Cabinet = ({ route }: ICabinetProps) => {
   const addedTemplates = useAppSelector((s) => s.Template);
 
   if (!user) return <Navigate to={ROUTES.auth.authRoute} />;
-  if (Object.keys(addedTemplates).length === 0) return <h1>Страница на данный момент пуста</h1>
   return (
     <React.Fragment>
-      {addedTemplates[route].map(({ placeholders, layout }, index) => {
+      {addedTemplates[route].blocks.map(({ placeholders, layout }, index) => {
         if (!placeholders) return;
         return (
           <RenderedTemplate
@@ -57,7 +55,10 @@ function RenderedTemplate({
   function removeBlock() {
     const newTemplates = {
       ...addedTemplates,
-      [route]: addedTemplates[route].filter((_, i) => i !== index)
+      [route]: {
+        blocks: addedTemplates[route].blocks.filter((_, i) => i !== index),
+        id: addedTemplates[route].id
+      }
     }
     editTemplateAction(newTemplates);
   }
@@ -73,7 +74,7 @@ function RenderedTemplate({
       {parse(
         placeholders.reduce((total, { key, value }) => {
           return total.replace(key, value);
-        }, renderToString(layout as React.ReactElement))
+        }, layout as string)
       )}
       {isActive && (
         <button

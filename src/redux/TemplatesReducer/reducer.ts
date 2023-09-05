@@ -9,7 +9,14 @@ export function TemplateReducer(
   switch (action.type) {
     case TemplateActionsTypes.SET_TEMPLATES:
       return {
-        ...state, [action.payload.pathname]: [...state[action.payload.pathname], action.payload.template]
+        ...state,
+        [action.payload.pathname]: {
+          ...state[action.payload.pathname],
+          blocks:[
+            ...state[action.payload.pathname].blocks,
+            action.payload.template,
+          ]
+        }
       };
     case TemplateActionsTypes.EDIT_TEMPLATES:
       return { ...action.payload }

@@ -1,12 +1,13 @@
 import React from 'react'
+import { ISendBlock } from '../../types/common'
 
 export interface ITemplate {
-  layout?: React.ReactElement | React.FC
+  layout?: React.ReactElement | React.FC | string
   placeholders?: ITemplatePlaceholder[]
   functions?: ITemplateFunction[]
 }
 
-export type ITemplateState = Record<string, ITemplate[]>
+export type ITemplateState = Record<string, ISendBlock>
 
 export interface ITemplatePayload {
   template: ITemplate

@@ -1,3 +1,5 @@
+import { ITemplate } from '../../redux/TemplatesReducer/types'
+
 export interface IDataImages {
   id: number
   key?: number
@@ -20,5 +22,19 @@ export interface IRoutes {
 export interface IGetRoutes {
   id: number
   route: string
-  block_page: unknown[]
+  block_page: IBlock[]
+}
+
+export interface IBlock {
+  id?: number
+  front_json: ITemplate[]
+  ordering: number
+  is_active: boolean
+  page: number
+  block_type: string
+}
+
+export interface ISendBlock {
+  id?: number
+  blocks: ITemplate[]
 }
