@@ -1,9 +1,9 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
-import { TModals } from "../../../redux/ModalReducer/types";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { TModals } from "../../redux/ModalReducer/types";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../../constants/routes";
-import { useSendBlocks } from "../../../hooks/api/useBlocks";
+import { ROUTES } from "../../constants/routes";
+import { useSendBlocks } from "../../hooks/api/useBlocks";
 
 interface ILinks {
   name: string;
