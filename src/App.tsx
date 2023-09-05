@@ -7,8 +7,8 @@ import CheckTokenExpirationAndRefresh from "./hooks/api/checkToken";
 import { useGetRoutes } from "./hooks/api/useRoutes";
 import { Client } from "./pages/Client";
 import { IStructureRoutes } from "./types/common";
-import Loader from "./components/ui/Loader/Loader";
-import CreateFirstPage from './components/ui/CreateFirstPage';
+import Loader from "./components/common/Loader/Loader";
+import CreateFirstPage from './components/common/CreateFirstPage';
 
 const App = () => {
   setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000);  

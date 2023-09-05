@@ -10,7 +10,7 @@ import { IStructureRoutes } from "../../../../types/common";
 import { TrashIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
 
 import { Link } from "react-router-dom";
-import DeleteModal from "../../../ui/DeleteModal";
+import DeleteModal from "../../../common/DeleteModal";
 import { useAppDispatch } from "../../../../hooks/redux";
 
 interface IForm {
@@ -108,7 +108,7 @@ export const SwitchPagesModal: React.FC = () => {
             <div className="relative" key={"route" + index}>
               <Link
                 to={item.route}
-                className="text-white bg-[#0a0e0f] relative hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-7 py-4 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 mt-4"
+                className="text-white bg-blue-400 relative hover:bg-blue-300/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-3.5 py-2.5 text-center inline-flex items-center mr-1.5 mb-2.5 mt-2.5"
                 onClick={onCloseModal}
               >
                 {item.route === "/" ? "Home" : item.route.slice(1)}

@@ -7,8 +7,8 @@ import {
   postImages,
 } from "../../../../hooks/api/images";
 import { TrashIcon } from "@heroicons/react/24/outline";
-import DeleteModal from "../../../ui/DeleteModal";
-import Loader from "../../../ui/Loader/Loader";
+import DeleteModal from "../../../common/DeleteModal";
+import Loader from "../../../common/Loader/Loader";
 
 export const UploadImagesModal = () => {
   const [selectedImage, setSelectedImage] = React.useState<File | null>(null);
@@ -49,7 +49,7 @@ export const UploadImagesModal = () => {
           {mutation.isLoading ? "Loading" : "Upload"}
         </button>
       </div>
-      {data && Array.isArray(data) && data.length < 0 ? (
+      {data && Array.isArray(data) && data.length > 1 ? (
         <div className="flex gap-3 flex-wrap items-center justify-between">
           {data.map(({ id, image }: IDataImages) => (
             <Image id={id} key={id} image={image} />

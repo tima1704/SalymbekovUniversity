@@ -11,7 +11,7 @@ export const Modals: React.FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
 
   const { setModalViewAction } = useAppDispatch();
-  
+
   const onClickCloseModal = () => setModalViewAction();
 
   const bodyRef = useGetBody();
@@ -28,9 +28,9 @@ export const Modals: React.FC = () => {
   if (!typeModal) return null;
 
   return (
-    <div className={cls["modalWrapper"]}>
-      <div className={cls["modal"]}>
-        <div className={cls["modalTop"]}>
+    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-opacity-50 bg-black z-20 transition-opacity">
+      <div className="max-w-[80%] p-9 bg-white max-h-[90vh] overflow-x-hidden">
+        <div className="modalTop">
           <button className="scale" onClick={onClickCloseModal}>
             X
           </button>
