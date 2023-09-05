@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import parse from "html-react-parser";
-import DeleteModal from "../../../components/ui/DeleteModal";
+import DeleteModal from "../../../components/common/DeleteModal";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { ITemplate } from "../../../redux/TemplatesReducer/types";
 
