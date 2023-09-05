@@ -21,14 +21,13 @@ export const SwitchPagesModal: React.FC = () => {
   const { setModalViewAction } = useAppDispatch();
   const onCloseModal = () => setModalViewAction();
 
-
   const [openModal, setOpenModal] = React.useState(false);
   const [deleteId, setDeleteId] = React.useState<number | string>("");
 
   const onClickOpenModal = (id: number | string) => {
     setOpenModal(true);
     setDeleteId(id);
-  }
+  };
 
   // Query hooks:
   const { route, isLoading } = useGetRoutes();
@@ -36,7 +35,7 @@ export const SwitchPagesModal: React.FC = () => {
   const { mutate: mutateId } = useDeleteRoutes();
 
   if (!route.length) {
-    onCloseModal()
+    onCloseModal();
   }
 
   const {
@@ -91,7 +90,11 @@ export const SwitchPagesModal: React.FC = () => {
             active:bg-blue-700
           "
         >
-          {sendLoading ? <ArrowPathIcon className="w-[20px] text-black" /> : <span>Create New Route</span>}
+          {sendLoading ? (
+            <ArrowPathIcon className="w-[20px] text-black" />
+          ) : (
+            <span>Create New Route</span>
+          )}
         </button>
       </form>
       {errors.route && (
@@ -102,20 +105,13 @@ export const SwitchPagesModal: React.FC = () => {
           <p className="text-blue-400">loading..</p>
         ) : (
           route?.map((item: IStructureRoutes, index: string) => (
-            <div
-              className="relative"
-              key={"route" + index}
-            >
+            <div className="relative" key={"route" + index}>
               <Link
                 to={item.route}
                 className="text-white bg-[#0a0e0f] relative hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-7 py-4 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 mt-4"
                 onClick={onCloseModal}
               >
-                {
-                  item.route === "/"
-                    ? "Home ( / )"
-                    : item.route
-                }
+                {item.route === "/" ? "Home" : item.route.slice(1)}
               </Link>
               <button
                 onClick={() => onClickOpenModal(item.id)}

@@ -53,7 +53,6 @@ const Sidebar: React.FC = () => {
     navigate(ROUTES.auth.authRoute);
   };
 
-
   return (
     <aside
       id="logo-sidebar"
@@ -62,15 +61,24 @@ const Sidebar: React.FC = () => {
     >
       <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto">
         <div>
-          <p className="text-[#013CC6] text-[26px] font-[500]">Salymbekov admin</p>
+          <p className="text-[#013CC6] text-[26px] font-[500]">
+            Salymbekov admin
+          </p>
           <div className="flex items-center mt-2">
             <img
-              className="w-5"
+              className="w-4"
               src="/src/components/common/icon/homik.svg"
               alt="home"
             />
-            <p className="flex items-center pl-2 my-3 text-[#CBCCCC]">
-               : &nbsp; {pathname === '/' ?  <span>Home</span> : <span>{pathname}</span>}
+            <p className="flex items-center pl-2 my-3 text-[#CBCCCC] text-lg">
+              {pathname === "/" ? (
+                <span>Home</span>
+              ) : (
+                <span>
+                  {pathname.slice(1).charAt(0).toUpperCase() +
+                    pathname.slice(2)}
+                </span>
+              )}
             </p>
           </div>
           <ul className="space-y-8 font-medium mt-10">
@@ -110,6 +118,7 @@ const Sidebar: React.FC = () => {
 };
 
 const PostBlocksButton = () => {
+  const [disabled, setDisabled] = React.useState<boolean>(false);
   const { pathname } = useLocation();
 
   const { mutate, isLoading } = useSendBlocks();
@@ -121,8 +130,24 @@ const PostBlocksButton = () => {
     mutate(block);
   }
 
+  React.useEffect(() => {
+    if (
+      addedBlocks[pathname].blocks.length == 0 ||
+      addedBlocks[pathname].blocks.length <= 2
+    ) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [addedBlocks, pathname]);
+
   return (
     <button
+      title={
+        addedBlocks[pathname].blocks.length < 1
+          ? "Минимум один блок должен быть на странице."
+          : undefined
+      }
       className="
         fixed
         right-4
@@ -137,7 +162,7 @@ const PostBlocksButton = () => {
         disabled:bg-slate-400
       "
       onClick={handlePatchBlocks}
-      disabled={isLoading}
+      disabled={disabled}
     >
       Отправить
     </button>
