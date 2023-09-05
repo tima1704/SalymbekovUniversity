@@ -15,7 +15,7 @@ export const UploadImagesModal = () => {
 
   const { data, isLoading } = useQuery({
     queryKey: ["images"],
-    queryFn: getImages,
+    queryFn: getImages!,
   });
 
   const queryClient = useQueryClient();
@@ -49,11 +49,15 @@ export const UploadImagesModal = () => {
           {mutation.isLoading ? "Loading" : "Upload"}
         </button>
       </div>
-      <div className="flex gap-3 flex-wrap items-center justify-between">
-        {data?.map(({ id, image }: IDataImages) => (
-          <Image id={id} key={id} image={image} />
-        ))}
-      </div>
+      {data && Array.isArray(data) && data.length < 0 ? (
+        <div className="flex gap-3 flex-wrap items-center justify-between">
+          {data.map(({ id, image }: IDataImages) => (
+            <Image id={id} key={id} image={image} />
+          ))}
+        </div>
+      ) : (
+        <p className="text-lg">Нет доступных изображений.</p>
+      )}
     </div>
   );
 };
@@ -78,7 +82,7 @@ function Image({ id, image }: IDataImages) {
       onMouseOver={() => setIsActive(true)}
       onMouseOut={() => setIsActive(false)}
     >
-      <img src={image} className="max-w-xs" />
+      <img src={image} className="max-w-xs max-h-28" alt={`Image ${id}`} />
       {isActive && (
         <button
           className="bg-red-600 text-white rounded text-xs p-1 absolute right-1 bottom-1 hover:bg-red-700"

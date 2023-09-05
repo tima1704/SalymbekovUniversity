@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { TModals } from "../../../redux/ModalReducer/types";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
-import { useSendBlocks } from '../../../hooks/api/useBlocks';
+import { useSendBlocks } from "../../../hooks/api/useBlocks";
 
 interface ILinks {
   name: string;
@@ -34,14 +34,13 @@ const Sidebar: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
   const handleExit = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     navigate(ROUTES.auth.authRoute);
   };
-
 
   return (
     <aside
@@ -93,15 +92,15 @@ const Sidebar: React.FC = () => {
 };
 
 const PostBlocksButton = () => {
-  const { pathname } = useLocation()
+  const { pathname } = useLocation();
 
-  const { mutate, isLoading } = useSendBlocks()
+  const { mutate, isLoading } = useSendBlocks();
 
-  const addedBlocks = useAppSelector(s => s.Template)
+  const addedBlocks = useAppSelector((s) => s.Template);
 
   function handlePatchBlocks() {
-    const block = addedBlocks[pathname]
-    mutate(block)
+    const block = addedBlocks[pathname];
+    mutate(block);
   }
 
   return (
@@ -124,8 +123,8 @@ const PostBlocksButton = () => {
     >
       Отправить
     </button>
-  )
-}
+  );
+};
 
 interface ISideBarBlock {
   children: React.ReactNode;
