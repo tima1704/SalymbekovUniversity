@@ -62,6 +62,7 @@ export const SwitchPagesModal: React.FC = () => {
 
   return (
     <React.Fragment>
+      <h1 className="text-center text-2xl font-medium mb-8">Страницы</h1>
       <form className="flex" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("route", {
@@ -76,7 +77,7 @@ export const SwitchPagesModal: React.FC = () => {
             },
           })}
           type="text"
-          placeholder="New Route"
+          placeholder="например: settings"
           className="rounded border-2 mr-4 px-3 py-2"
         />
         <button
@@ -93,33 +94,33 @@ export const SwitchPagesModal: React.FC = () => {
           {sendLoading ? (
             <ArrowPathIcon className="w-[20px] text-black" />
           ) : (
-            <span>Create New Route</span>
+            <span>Создать страницу</span>
           )}
         </button>
       </form>
       {errors.route && (
         <p className="text-left text-red-600">{errors.route.message}</p>
       )}
-      <div className="mt-2">
+      <div className="mt-5 flex text-center justify-center">
         {isLoading ? (
           <p className="text-blue-400">loading..</p>
         ) : (
           route?.map((item: IStructureRoutes, index: string) => (
             <div className="relative" key={"route" + index}>
-              <Link
-                to={item.route}
-                className="text-white bg-blue-400 relative hover:bg-blue-300/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-3.5 py-2.5 text-center inline-flex items-center mr-1.5 mb-2.5 mt-2.5"
-                onClick={onCloseModal}
-              >
-                {item.route === "/" ? "Home" : item.route.slice(1)}
-              </Link>
               <button
                 onClick={() => onClickOpenModal(item.id)}
-                className="disabled: opacity-70"
+                className="disabled: opacity-70 relative -top-3.5 -right-0.5"
                 disabled={isLoading}
               >
                 <TrashIcon className="w-[20px]" />
               </button>
+              <Link
+                to={item.route}
+                className="text-white bg-blue-400 relative hover:bg-blue-300/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 rounded-lg px-3.5 py-2.5 text-center inline-flex items-center mr-4 mb-2.5 mt-3"
+                onClick={onCloseModal}
+              >
+                {item.route === "/" ? "Home" : item.route.slice(1)}
+              </Link>
             </div>
           ))
         )}
