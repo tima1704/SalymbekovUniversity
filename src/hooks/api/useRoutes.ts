@@ -3,7 +3,6 @@ import RouteService from "../../helpers/api/routes"
 import { useAppDispatch } from '../redux'
 import { IGetRoutes } from '../../types/common'
 import { ITemplate } from '../../redux/TemplatesReducer/types'
-import BlocksService from '../../helpers/api/blocks'
 
 export const useGetRoutes = () => {
 
@@ -13,12 +12,12 @@ export const useGetRoutes = () => {
     queryKey: 'route',
     queryFn: () => RouteService.getRoutesApi(),
     onSuccess: (data) => {
-      const newData = data.reduce((total: Record<string, ITemplate>, { route, block_page }: IGetRoutes) => {
+      const newData = data.reduce((total: Record<string, ITemplate>, { id, route, block_page }: IGetRoutes) => {
         return {
           ...total,
           [route]: {
-            id: block_page[0].id,
-            blocks: block_page[0].front_json,
+            id,
+            blocks: block_page,
           },
         }
       }, {})
@@ -39,8 +38,7 @@ export const useSendRoutes = () => {
       const formatedRoute = '/' + trimmedRoute
       return RouteService.postRoutesApi(formatedRoute)
     },
-    onSuccess: async (data) => {
-      await createDefaultBlock(data)
+    onSuccess: () => {
       queryClient.invalidateQueries(['route'], { exact: true })
     }
   })
@@ -68,21 +66,10 @@ export const useCreateHomePage = () => {
     mutationFn: () => {
       return RouteService.postRoutesApi('/')
     },
-    onSuccess: async (data) => {
-      await createDefaultBlock(data)
+    onSuccess: () => {
       queryClient.invalidateQueries(['route'], { exact: true })
     }
   })
 
   return { mutate }
-}
-
-function createDefaultBlock({ id }: IGetRoutes) {
-  return BlocksService.postBlocksApi({
-    front_json: [],
-    ordering: 1,
-    is_active: true,
-    block_type: 'static',
-    page: id
-  })
 }

@@ -2,13 +2,10 @@ import React from 'react'
 import parse from 'html-react-parser'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import Select, { GroupBase, OptionsOrGroups } from 'react-select'
-import { ITemplateFunction, ITemplatePlaceholder } from '../../../../redux/TemplatesReducer/types'
+import { IBlock } from '../../../../types/common'
 
 interface IFormProps {
-  placeholders: ITemplatePlaceholder[]
-  layout: string
-  functions: ITemplateFunction[]
-  index: number
+  block: IBlock,
   onSubmit: SubmitHandler<Record<string, string | number>>
   data: OptionsOrGroups<{
     value: string;
@@ -19,28 +16,29 @@ interface IFormProps {
   }>> | undefined
 }
 
-const Form = ({ placeholders, layout, functions, index, data, onSubmit }: IFormProps) => {
+const Form = ({ block: {front_json, id}, data, onSubmit }: IFormProps) => {
 
   const {
     register,
     handleSubmit,
     control,
   } = useForm()
-
-  if (!placeholders) return;
-  if (!layout) return;
+  
+  if (!front_json.placeholders) return;
+  if (!front_json.layout) return;
+  if (!front_json.functions) return;
   return (
     <div>
-      <form key={index} onSubmit={handleSubmit(data => onSubmit({ ...data, index }))}>
+      <form key={id} onSubmit={handleSubmit(data => onSubmit({ ...data }))}>
         {
           parse(
-            placeholders.reduce((total, { key, value }) => {
+            front_json.placeholders.reduce((total, { key, value }) => {
               return total.replace(key, value)
-            }, layout)
+            }, front_json.layout as string)
           )
         }
         {
-          placeholders?.map(({ key, type, value }) => {
+          front_json.placeholders?.map(({ key, type, value }) => {
             return (
               <label
                 className="flex items-center py-3 gap-2 relative border-b"
@@ -89,7 +87,7 @@ const Form = ({ placeholders, layout, functions, index, data, onSubmit }: IFormP
           })
         }
         {
-          functions.map(({ id, func }) => {
+          front_json.functions.map(({ id, func }) => {
             if (func.type === 'link') {
               return <div>
                 <label

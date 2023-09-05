@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAppSelector, useAppDispatch } from '../../../../hooks/redux'
+import { useAppSelector } from '../../../../hooks/redux'
 import { useQuery } from 'react-query'
 import { getImages } from '../../../../hooks/api/images'
 import { ITemplateState } from '../../../../redux/TemplatesReducer/types'
@@ -8,12 +8,9 @@ import { SubmitHandler } from 'react-hook-form'
 import { useLocation } from 'react-router-dom'
 
 export const ModifyContentModal = () => {
-
-  const addedTemplates: ITemplateState = useAppSelector(s => s.Template)
-  const { editTemplateAction } = useAppDispatch()
-
+  
   const { pathname } = useLocation()
-
+  
   const { data } = useQuery({
     queryKey: 'images',
     queryFn: getImages,
@@ -24,45 +21,28 @@ export const ModifyContentModal = () => {
     }))
   })
 
+  const addedTemplates: ITemplateState = useAppSelector(s => s.Template)
+  const currentPage = addedTemplates[pathname]
+
   const onSubmit: SubmitHandler<Record<string, string | number>> = (data) => {
-    const newTemplates: ITemplateState = {
-      ...addedTemplates,
-      [pathname]: {
-        ...addedTemplates[pathname],
-        blocks: addedTemplates[pathname].blocks.map((template, index) => {
-          if (index !== data.index) return template
-          return {
-            ...template,
-            placeholders: template?.placeholders?.map(ph => {
-              return {
-                ...ph,
-                key: ph.key,
-                value: data[ph.key] as string
-              }
-            })
-          }
-        })
-      }
-    }
-    editTemplateAction(newTemplates)
+    const newData = Object.entries(data).map(([key, value]) => ({
+      key,
+      value,
+    }))
+    console.log(newData)
   }
 
+  if (currentPage.blocks.length === 0) return <h2>Данная страница пуста</h2>
   return (
     <div className='text-center'>
       {
-        addedTemplates[pathname].blocks.map(({ placeholders, layout, functions }, index) => {
-          if (!placeholders) return;
-          if (!layout) return;
-          if (!functions) return;
+        currentPage.blocks.map((block) => {
           return (
             <Form
-              placeholders={placeholders}
-              functions={functions}
-              layout={layout as string}
-              index={index}
+              block={block}
+              key={block.id}
               data={data}
               onSubmit={onSubmit}
-              key={index}
             />
           )
         })
