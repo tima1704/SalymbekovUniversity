@@ -17,7 +17,7 @@
 .modal {
   width: 95%;
   padding: 35px;
-  background-color: white;
+  background-color: #F8F8F8;
   max-height: 80vh;
   overflow-x: hidden;
 }
