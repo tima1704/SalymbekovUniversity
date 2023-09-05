@@ -1,6 +1,6 @@
-import { TemplateActionsTypes, ITemplate, ITemplateSetAction, ITemplateEditAction } from "./types";
+import { TemplateActionsTypes, ITemplateSetAction, ITemplateEditAction, ITemplateState, ITemplatePayload } from "./types";
 
-export const setTemplateAction = (payload: ITemplate): ITemplateSetAction => {
+export const setTemplateAction = (payload: ITemplatePayload): ITemplateSetAction => {
   return {
     type: TemplateActionsTypes.SET_TEMPLATES,
     payload,
@@ -8,7 +8,7 @@ export const setTemplateAction = (payload: ITemplate): ITemplateSetAction => {
 };
 
 
-export const editTemplateAction = (payload: ITemplate[]): ITemplateEditAction => {
+export const editTemplateAction = (payload: ITemplateState): ITemplateEditAction => {
   return {
     type: TemplateActionsTypes.EDIT_TEMPLATES,
     payload,

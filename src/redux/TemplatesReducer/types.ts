@@ -6,6 +6,13 @@ export interface ITemplate {
   functions?: ITemplateFunction[]
 }
 
+export type ITemplateState = Record<string, ITemplate[]>
+
+export interface ITemplatePayload {
+  template: ITemplate
+  pathname: string
+}
+
 export interface ITemplatePlaceholder {
   key: string
   type?: string
@@ -14,7 +21,7 @@ export interface ITemplatePlaceholder {
 
 export interface ITemplateFunction {
   id: string
-  func: object
+  func: Record<string, unknown>
 }
 
 export enum TemplateActionsTypes {
@@ -26,10 +33,13 @@ export type TemplateActions = ITemplateSetAction | ITemplateEditAction;
 
 export interface ITemplateSetAction {
   type: TemplateActionsTypes.SET_TEMPLATES
-  payload: ITemplate
+  payload: {
+    template: ITemplate,
+    pathname: string
+  }
 }
 
 export interface ITemplateEditAction {
   type: TemplateActionsTypes.EDIT_TEMPLATES
-  payload: ITemplate[]
+  payload: ITemplateState
 }

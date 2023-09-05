@@ -11,7 +11,7 @@ export const Modals: React.FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
 
   const { setModalViewAction } = useAppDispatch();
-
+  
   const onClickCloseModal = () => setModalViewAction();
 
   const bodyRef = useGetBody();

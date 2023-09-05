@@ -4,12 +4,16 @@ import { renderToString } from 'react-dom/server'
 import parse from 'html-react-parser'
 import { ITemplate } from '../../../../redux/TemplatesReducer/types'
 import { useAppDispatch } from '../../../../hooks/redux'
+import { useLocation } from 'react-router-dom'
 
 export const AddBlocksModal = () => {
 
   const [selectedTemplate, setSelectedTemplate] = React.useState<ITemplate | null>(null)
 
-  const { setTemplateAction } = useAppDispatch()
+  const { setTemplateAction, setModalViewAction } = useAppDispatch()
+  const onCloseModal = () => setModalViewAction();
+
+  const { pathname } = useLocation()
 
   function selectTemplate(event: React.MouseEvent, template: ITemplate) {
     let element = event.target as HTMLElement
@@ -35,7 +39,9 @@ export const AddBlocksModal = () => {
   function addTemplate() {
     if (!selectedTemplate) return;
 
-    setTemplateAction(selectedTemplate) 
+    setTemplateAction({ template: selectedTemplate, pathname });
+
+    onCloseModal();
   }
 
   return (

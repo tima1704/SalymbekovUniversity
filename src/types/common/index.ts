@@ -16,3 +16,9 @@ export interface IStructureRoutes {
 export interface IRoutes {
   item: IStructureRoutes
 }
+
+export interface IGetRoutes {
+  id: number
+  route: string
+  block_page: unknown[]
+}

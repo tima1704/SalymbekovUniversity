@@ -3,11 +3,12 @@ import parse from 'html-react-parser'
 import { renderToString } from 'react-dom/server'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import Select, { GroupBase, OptionsOrGroups } from 'react-select'
-import { ITemplatePlaceholder } from '../../../../redux/TemplatesReducer/types'
+import { ITemplateFunction, ITemplatePlaceholder } from '../../../../redux/TemplatesReducer/types'
 
 interface IFormProps {
   placeholders: ITemplatePlaceholder[]
   layout: React.ReactElement | React.FC
+  functions: ITemplateFunction[]
   index: number
   onSubmit: SubmitHandler<Record<string, string | number>>
   data: OptionsOrGroups<{
@@ -19,7 +20,7 @@ interface IFormProps {
   }>> | undefined
 }
 
-const Form = ({ placeholders, layout, index, data, onSubmit }: IFormProps) => {
+const Form = ({ placeholders, layout, functions, index, data, onSubmit }: IFormProps) => {
 
   const {
     register,
@@ -31,7 +32,7 @@ const Form = ({ placeholders, layout, index, data, onSubmit }: IFormProps) => {
   if (!layout) return;
   return (
     <div>
-      <form key={index} onSubmit={handleSubmit(data => onSubmit({...data, index}))}>
+      <form key={index} onSubmit={handleSubmit(data => onSubmit({ ...data, index }))}>
         {
           parse(
             placeholders.reduce((total, { key, value }) => {
@@ -86,6 +87,36 @@ const Form = ({ placeholders, layout, index, data, onSubmit }: IFormProps) => {
 
               </label>
             )
+          })
+        }
+        {
+          functions.map(({ id, func }) => {
+            if (func.type === 'link') {
+              return <div>
+                <label
+                  className="flex items-center py-3 gap-2 relative border-b"
+                  key={id}
+                >
+                  <h3 className="text-left w-1/6">{id}:</h3>
+                  {
+                    (
+                      <input
+                        type="text"
+                        id={id}
+                        defaultValue={func.to as string}
+                        className="border rounded px-3 py-1 w-5/6"
+                        {
+                        ...register(id)
+                        }
+                      />
+                    )
+                  }
+                </label>
+              </div>
+            }
+            return <div>
+              Функция ещё не написана
+            </div>
           })
         }
         <button
