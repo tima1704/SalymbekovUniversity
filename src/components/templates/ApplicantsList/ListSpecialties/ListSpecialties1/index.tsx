@@ -1,94 +1,93 @@
 import React from 'react';
-import { ITemplateFunction, ITemplatePlaceholder } from '../../../../redux/TemplatesReducer/types';
+import { ITemplateFunction, ITemplatePlaceholder } from '../../../../../redux/TemplatesReducer/types';
 
 interface ISpecialties {
   id: number;
   description: string;
   path: string;
   style: string;
-  functionId: string;
+  functionId?: string;
 }
 
 const SpecialtiesList: ISpecialties[] = [
   {
     id: 1,
-    description: "$Specialties2List1$",
+    description: "$SpecialtiesList1$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link1$"
+    functionId: "$funcSpecialtiesLink1$"
   },
   {
     id: 2,
-    description: "$Specialties2List2$",
+    description: "$SpecialtiesList2$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link2$"
+    functionId: "$funcSpecialtiesLink2$"
   },
   {
     id: 3,
-    description: "$Specialties2List3$",
+    description: "$SpecialtiesList3$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link3$"
+    functionId: "$funcSpecialtiesLink3$"
   },
   {
     id: 4,
-    description: "$Specialties2List4$",
+    description: "$SpecialtiesList4$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link4$"
+    functionId: "$funcSpecialtiesLink4$"
   },
   {
     id: 5,
-    description: "$Specialties2List5$",
+    description: "$SpecialtiesList5$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link5$"
+    functionId: "$funcSpecialtiesLink5$"
   },
   {
     id: 6,
-    description: "$Specialties2List6$",
+    description: "$SpecialtiesList6$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link6$"
+    functionId: "$funcSpecialtiesLink6$"
   },
   {
     id: 7,
-    description: "$Specialties2List7$",
+    description: "$SpecialtiesList7$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link7$"
+    functionId: "$funcSpecialtiesLink7$"
   },
   {
     id: 8,
-    description: "$Specialties2List8$",
+    description: "$SpecialtiesList8$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link8$"
+    functionId: "$funcSpecialtiesLink8$"
   },
   {
     id: 9,
-    description: "$Specialties2List9$",
+    description: "$SpecialtiesList9$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link9$"
+    functionId: "$funcSpecialtiesLink9$"
   },
   {
     id: 10,
-    description: "$Specialties2List10$",
+    description: "$SpecialtiesList10$",
     path: "/",
     style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
-    functionId: "$funcSpecialties2Link10$"
+    functionId: "$funcSpecialtiesLink10$"
   },
 ];
-
 
 const Layout = () => {
   return (
     <div className="pt-[20px] pb-[25px] sm:pt-[40px] sm:pb-[50px]">
-      <ul className="border-[#D3D4DB] border-[1px] border-solid rounded-[15px] w-[100%]">
-        <h2 className="text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[26px] not-italic font-[600] leading-[37px] bg-[#E3E3E7] py-[10px] sm:pt-[21px] sm:pb-[26px] pl-[22px] rounded-t-[15px]">
-          $Specialties2Title$
+      <ul className="border-[#D3D4DB] border-[1px] border-solid rounded-[8px] w-[100%] md:w-[90%]">
+        <h2 className="text-[#202124] font-['Inter'] text-[18px] not-italic font-[600] leading-[26px] bg-[#E3E3E7] py-[10px] pl-[16px]">
+          $SpecialtiesTitle$
         </h2>
         {
           SpecialtiesList.map(obj =>
@@ -105,50 +104,49 @@ const Layout = () => {
 };
 
 
-
 const placeholders: ITemplatePlaceholder[] = [
   {
-    key: '$Specialties2List1$',
+    key: '$SpecialtiesList1$',
     value: 'Инженер',
   },
   {
-    key: '$Specialties2List2$',
+    key: '$SpecialtiesList2$',
     value: 'Программист'
   },
   {
-    key: '$Specialties2List3$',
+    key: '$SpecialtiesList3$',
     value: 'Стэнфордский университет'
   },
   {
-    key: '$Specialties2List4$',
+    key: '$SpecialtiesList4$',
     value: 'Принстонский университет'
   },
   {
-    key: '$Specialties2List5$',
+    key: '$SpecialtiesList5$',
     value: 'Научно-технологический университет имени короля Абдаллы'
   },
   {
-    key: '$Specialties2List6$',
+    key: '$SpecialtiesList6$',
     value: 'Массачусетский технологический институт (MIT)'
   },
   {
-    key: '$Specialties2List7$',
+    key: '$SpecialtiesList7$',
     value: 'Пенсильванский университет'
   },
   {
-    key: '$Specialties2List8$',
+    key: '$SpecialtiesList8$',
     value: 'Техасский университет'
   },
   {
-    key: '$Specialties2List9$',
+    key: '$SpecialtiesList9$',
     value: 'Нотрдамский университет'
   },
   {
-    key: '$Specialties2List10$',
+    key: '$SpecialtiesList10$',
     value: 'Кембриджский университет'
   },
   {
-    key: '$Specialties2Title$',
+    key: '$SpecialtiesTitle$',
     value: 'Специальности'
   }
 ]
@@ -156,70 +154,70 @@ const placeholders: ITemplatePlaceholder[] = [
 
 const functions: ITemplateFunction[] = [
   {
-    id: '$funcSpecialties2Link1$',
+    id: '$funcSpecialtiesLink1$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link2$',
+    id: '$funcSpecialtiesLink2$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link3$',
+    id: '$funcSpecialtiesLink3$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$  1 $',
+    id: '$funcSpecialtiesLink4$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link5$',
+    id: '$funcSpecialtiesLink5$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link6$',
+    id: '$funcSpecialtiesLink6$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link7$',
+    id: '$funcSpecialtiesLink7$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link8$',
+    id: '$funcSpecialtiesLink8$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link9$',
+    id: '$funcSpecialtiesLink9$',
     func: {
       type: 'link',
       to: '/'
     }
   },
   {
-    id: '$funcSpecialties2Link10$',
+    id: '$funcSpecialtiesLink10$',
     func: {
       type: 'link',
       to: '/'
@@ -228,7 +226,7 @@ const functions: ITemplateFunction[] = [
 ]
 
 export default {
-  layout: <Layout />,
+  layout: Layout,
   placeholders,
   functions,
 }

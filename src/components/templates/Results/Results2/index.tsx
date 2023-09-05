@@ -10,42 +10,42 @@ interface IResult {
 const ResultsList: IResult[] = [
   {
     id: 1,
-    description: "$ResultsList1$",
+    description: "$Results2List1$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 2,
-    description: "$ResultsList2$",
+    description: "$Results2List2$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 3,
-    description: "$ResultsList3$",
+    description: "$Results2List3$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 4,
-    description: "$ResultsList4$",
+    description: "$Results2List4$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 5,
-    description: "$ResultsList5$",
+    description: "$Results2List5$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 6,
-    description: "$ResultsList6$",
+    description: "$Results2List6$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 7,
-    description: "$ResultsList7$",
+    description: "$Results2List7$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 8,
-    description: "$ResultsList8$",
+    description: "$Results2List8$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
 ];
@@ -74,35 +74,35 @@ const Layout = () => {
 
 const placeholders: ITemplatePlaceholder[] = [
   {
-    key: '$ResultsList1$',
+    key: '$Results2List1$',
     value: 'Умение применять знания базовых естественных, гуманитарных, социальных, фундаментальных и клинических дисциплин в практической деятельности работника здравоохранения;'
   },
   {
-    key: '$ResultsList2$',
+    key: '$Results2List2$',
     value: 'Умение четко излагать свои мысли, полемизировать в рамках освоенных компетенций на государственном, официальном и английском языках с использованием медицинской терминологии на латинском языке;'
   },
   {
-    key: '$ResultsList3$',
+    key: '$Results2List3$',
     value: 'Получение навыка работы в интернациональной команде, принимать решения и нести ответственность как лидера и члена команды с использованием коммуникативных и базовых психологических навыков, умение делегировать полномочия в команде;'
   },
   {
-    key: '$ResultsList4$',
+    key: '$Results2List4$',
     value: 'Знание основных форм и методов профилактики заболеваний, санитарно­-просветительской работы с населением, знание противоэпидемических мероприятий на уровне врача общей практики;'
   },
   {
-    key: '$ResultsList5$',
+    key: '$Results2List5$',
     value: 'Умение использовать современные информационные технологии для поиска, анализа, обработки и предоставлению общественности информации согласно получаемой компетенции, во врачебной, научной и педагогической деятельности;'
   },
   {
-    key: '$ResultsList6$',
+    key: '$Results2List6$',
     value: 'Владение навыками нравственного, культурного и профессионального самосовершенствования путем самостоятельного обзора учебников, научных статей, монографий и прочей литературы в рамках, формируемых компетенции;'
   },
   {
-    key: '$ResultsList7$',
+    key: '$Results2List7$',
     value: 'Знать, уметь применять и представлять общественности приобретенные общенаучные, профессиональные знания и инструментальные навыки для проведения научно­-практических исследований в области медицины на международном уровне;'
   },
   {
-    key: '$ResultsList8$',
+    key: '$Results2List8$',
     value: 'Демонстрация профессиональных компетенций во врачебной, научной и педагогической деятельности в организациях — потенциальных работодателей.'
   },
   {

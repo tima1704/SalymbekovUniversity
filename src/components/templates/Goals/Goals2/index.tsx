@@ -10,17 +10,17 @@ interface IGoals {
 const GoalsList: IGoals[] = [
   {
     id: 1,
-    description: "$GoalsList1$",
+    description: "$Goals2List1$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 2,
-    description: "$GoalsList2$",
+    description: "$Goals2List2$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 3,
-    description: "$GoalsList3$",
+    description: "$Goals2List3$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
 ];
@@ -49,15 +49,15 @@ const Layout = () => {
 
 const placeholders: ITemplatePlaceholder[] = [
   {
-    key: '$GoalsList1$',
+    key: '$Goals2List1$',
     value: 'Предоставление образование и подготовка высококвалифицированных кадров по востребованным направлениям рынка труда и в соответствии с международными стандартами качества образования.'
   },
   {
-    key: '$GoalsList2$',
+    key: '$Goals2List2$',
     value: 'Развитие человеческих ресурсов, системы образования и здравоохранения страны путем открытия современных и инновационных образовательных и медицинских учреждений.'
   },
   {
-    key: '$GoalsList3$',
+    key: '$Goals2List3$',
     value: 'Превращение Университета в один из первоклассных, инновационных и современных образовательных организаций страны с сильной материальной-технической базой, качественным кадровым составом и высокой репутацией.'
   },
   {

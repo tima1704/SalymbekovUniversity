@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITemplateFunction, ITemplatePlaceholder } from '../../../../redux/TemplatesReducer/types';
+import { ITemplateFunction, ITemplatePlaceholder } from '../../../../../redux/TemplatesReducer/types';
 
 interface IFaculties {
   id: number;
@@ -226,7 +226,7 @@ const functions: ITemplateFunction[] = [
 ]
 
 export default {
-  layout: <Layout />,
+  layout: Layout,
   placeholders,
   functions,
 }

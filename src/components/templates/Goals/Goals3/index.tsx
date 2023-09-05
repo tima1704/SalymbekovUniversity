@@ -10,17 +10,17 @@ interface IGoals {
 const GoalsList: IGoals[] = [
   {
     id: 1,
-    description: "$GoalsList1$",
+    description: "$Goals3List1$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 2,
-    description: "$GoalsList2$",
+    description: "$Goals3List2$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
   {
     id: 3,
-    description: "$GoalsList3$",
+    description: "$Goals3List3$",
     style: "text-[15px] sm:text-[18px] font-[500] leading-[30px] sm:leading-[40px] py-[10px]"
   },
 ];
@@ -32,7 +32,7 @@ const Layout = () => {
         <h2 className="text-center text-[20px] sm:text-[28px] font-[600] leading-[30px] sm:leading-[36px] pb-[10px] sm:pb-[40px]">
           $Goals3Title$
         </h2>
-        <ul className="ml-[15px] w-[100%]">
+        <ul className="ml-[0] md:ml-[15px] w-[100%]">
           {
             GoalsList.map(({ id, description, style }) =>
               <li key={id} className={style}>
@@ -48,15 +48,15 @@ const Layout = () => {
 
 const placeholders: ITemplatePlaceholder[] = [
   {
-    key: '$GoalsList1$',
+    key: '$Goals3List1$',
     value: 'Предоставление образование и подготовка высококвалифицированных кадров по востребованным направлениям рынка труда и в соответствии с международными стандартами качества образования.'
   },
   {
-    key: '$GoalsList2$',
+    key: '$Goals3List2$',
     value: 'Развитие человеческих ресурсов, системы образования и здравоохранения страны путем открытия современных и инновационных образовательных и медицинских учреждений.'
   },
   {
-    key: '$GoalsList3$',
+    key: '$Goals3List3$',
     value: 'Превращение Университета в один из первоклассных, инновационных и современных образовательных организаций страны с сильной материальной-технической базой, качественным кадровым составом и высокой репутацией.'
   },
   {

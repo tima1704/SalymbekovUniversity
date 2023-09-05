@@ -240,7 +240,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$RectorArrow1$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListDirectorsInstitutes$',
@@ -317,63 +317,67 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$BodiesListArrow1$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow2$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow3$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow4$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow5$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow6$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow7$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow8$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow9$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow10$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow11$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
   {
     key: '$BodiesListArrow12$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
   },
+  {
+    key: '$BodiesTitle$',
+    value: 'Органы отвечающие за образовательную и научную деятельность Университета'
+  }
 ]
 
 const functions: ITemplateFunction[] = []

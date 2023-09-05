@@ -83,7 +83,7 @@ const placeholders: ITemplatePlaceholder[] = [
 const functions: ITemplateFunction[] = []
 
 export default {
-  layout: <Layout />,
+  layout: Layout,
   placeholders,
   functions,
 }
