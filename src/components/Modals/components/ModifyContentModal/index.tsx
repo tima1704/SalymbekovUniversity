@@ -2,10 +2,17 @@ import React from 'react'
 import { useAppSelector } from '../../../../hooks/redux'
 import { useQuery } from 'react-query'
 import { getImages } from '../../../../hooks/api/images'
-import { ITemplateState } from '../../../../redux/TemplatesReducer/types'
+import { ITemplate, ITemplateState } from '../../../../redux/TemplatesReducer/types'
 import Form from './Form'
 import { SubmitHandler } from 'react-hook-form'
 import { useLocation } from 'react-router-dom'
+import { usePatchBlocks } from '../../../../hooks/api/useBlocks'
+import { IBlock } from '../../../../types/common'
+
+export interface ISubmitProps {
+  data: Record<string, string>
+  block: IBlock
+}
 
 export const ModifyContentModal = () => {
 
@@ -21,16 +28,27 @@ export const ModifyContentModal = () => {
     }))
   })
 
+  const { mutate, isLoading } = usePatchBlocks()
+
   const addedTemplates: ITemplateState = useAppSelector(s => s.Template)
   const currentPage = addedTemplates[pathname]
 
-  const onSubmit: SubmitHandler<Record<string, number | Record<string, string>>> = ({ data, id }) => {
-    const newData = Object.entries(data).map(([key, value]) => ({
-      key,
-      value,
-    }))
-    console.log(newData)
-    console.log(id)
+  const onSubmit: SubmitHandler<ISubmitProps> = ({ data, block }) => {
+
+    if (!block.front_json.placeholders) return;
+    const newBlock: IBlock = {
+      ...block,
+      front_json: {
+        ...block.front_json as ITemplate,
+        placeholders: block.front_json.placeholders.map(ph => {
+          return {
+            ...ph,
+            value: data[ph.key]
+          }
+        }),
+      }
+    }
+    mutate(newBlock)
   }
 
   if (currentPage.blocks.length === 0) return <h2>Данная страница пуста</h2>
@@ -44,6 +62,7 @@ export const ModifyContentModal = () => {
               key={block.id}
               data={data}
               onSubmit={onSubmit}
+              isLoading={isLoading}
             />
           )
         })

@@ -3,10 +3,12 @@ import parse from 'html-react-parser'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import Select, { GroupBase, OptionsOrGroups } from 'react-select'
 import { IBlock } from '../../../../types/common'
+import { ISubmitProps } from '.'
 
 interface IFormProps {
   block: IBlock,
-  onSubmit: SubmitHandler<Record<string, number | Record<string, string>>>
+  onSubmit: SubmitHandler<ISubmitProps>
+  isLoading: boolean
   data: OptionsOrGroups<{
     value: string;
     label: JSX.Element;
@@ -16,29 +18,29 @@ interface IFormProps {
   }>> | undefined
 }
 
-const Form = ({ block: {front_json, id}, data, onSubmit }: IFormProps) => {
+const Form = ({ block, data, onSubmit, isLoading }: IFormProps) => {
   const {
     register,
     handleSubmit,
     control,
   } = useForm()
   
-  if (!front_json.placeholders) return;
-  if (!front_json.layout) return;
-  if (!front_json.functions) return;
-  if (!id) return;
+  if (!block.front_json.placeholders) return;
+  if (!block.front_json.layout) return;
+  if (!block.front_json.functions) return;
+  if (!block.id) return;
   return (
     <div>
-      <form key={id} onSubmit={handleSubmit(data => onSubmit({ data: {...data}, id }))}>
+      <form key={block.id} onSubmit={handleSubmit(data => onSubmit({ data, block }))}>
         {
           parse(
-            front_json.placeholders.reduce((total, { key, value }) => {
+            block.front_json.placeholders.reduce((total, { key, value }) => {
               return total.replace(key, value)
-            }, front_json.layout as string)
+            }, block.front_json.layout as string)
           )
         }
         {
-          front_json.placeholders?.map(({ key, type, value }) => {
+          block.front_json.placeholders?.map(({ key, type, value }) => {
             return (
               <label
                 className="flex items-center py-3 gap-2 relative border-b"
@@ -87,7 +89,7 @@ const Form = ({ block: {front_json, id}, data, onSubmit }: IFormProps) => {
           })
         }
         {
-          front_json.functions.map(({ id, func }) => {
+          block.front_json.functions.map(({ id, func }) => {
             if (func.type === 'link') {
               return <div>
                 <label
@@ -117,8 +119,9 @@ const Form = ({ block: {front_json, id}, data, onSubmit }: IFormProps) => {
           })
         }
         <button
-          className="py-2 px-4 bg-blue-500 text-white rounded border mt-3"
+          className="py-2 px-4 bg-blue-500 text-white rounded border mt-3 disabled:bg-blue-200"
           type="submit"
+          disabled={isLoading}
         >
           Update
         </button>
