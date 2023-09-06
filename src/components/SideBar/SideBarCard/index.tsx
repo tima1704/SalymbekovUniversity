@@ -25,10 +25,10 @@ export const SideBarCard: React.FC<ISideBarCardProps> = ({ name, image, option }
         </p>
       </li>
       {
-        openSideBar || option &&
+        openSideBar &&
         <ul className="ml-3 pt-2">
           {
-            option.map((obj, index) => (
+            option && option.map((obj, index) => (
               <li
                 key={index}
                 className="text-['Poppins'] font-[400] text-[14px] text-[#717171] cursor-pointer py-[5px] dark:hover:text-[#0B63F8]"
