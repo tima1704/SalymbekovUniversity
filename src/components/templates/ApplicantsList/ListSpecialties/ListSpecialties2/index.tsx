@@ -14,70 +14,70 @@ const SpecialtiesList: ISpecialties[] = [
     id: 1,
     description: "$Specialties2List1$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link1$"
   },
   {
     id: 2,
     description: "$Specialties2List2$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link2$"
   },
   {
     id: 3,
     description: "$Specialties2List3$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link3$"
   },
   {
     id: 4,
     description: "$Specialties2List4$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link4$"
   },
   {
     id: 5,
     description: "$Specialties2List5$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link5$"
   },
   {
     id: 6,
     description: "$Specialties2List6$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link6$"
   },
   {
     id: 7,
     description: "$Specialties2List7$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link7$"
   },
   {
     id: 8,
     description: "$Specialties2List8$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link8$"
   },
   {
     id: 9,
     description: "$Specialties2List9$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#ffffff] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link9$"
   },
   {
     id: 10,
     description: "$Specialties2List10$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[26px] underline bg-[#f4f4f5] py-[10px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[28px] not-italic font-[400] leading-[40px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcSpecialties2Link10$"
   },
 ];

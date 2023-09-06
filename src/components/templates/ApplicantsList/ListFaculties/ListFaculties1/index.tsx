@@ -14,70 +14,70 @@ const FacultiesList: IFaculties[] = [
     id: 1,
     description: "$FacultiesList1$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#ffffff] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink1$"
   },
   {
     id: 2,
     description: "$FacultiesList2$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#f4f4f5] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#f4f4f5] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink2$"
   },
   {
     id: 3,
     description: "$FacultiesList3$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#ffffff] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink3$"
   },
   {
     id: 4,
     description: "$FacultiesList4$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#f4f4f5] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#f4f4f5] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink4$"
   },
   {
     id: 5,
     description: "$FacultiesList5$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#ffffff] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink5$"
   },
   {
     id: 6,
     description: "$FacultiesList6$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#f4f4f5] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#f4f4f5] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink6$"
   },
   {
     id: 7,
     description: "$FacultiesList7$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#ffffff] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink7$"
   },
   {
     id: 8,
     description: "$FacultiesList8$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#f4f4f5] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#f4f4f5] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink8$"
   },
   {
     id: 9,
     description: "$FacultiesList9$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#ffffff] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#ffffff] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink9$"
   },
   {
     id: 10,
     description: "$FacultiesList10$",
     path: "/",
-    style: "text-[#202124] font-['Inter'] text-[20px] sm:text-[22px] md:text-[27px] not-italic font-[400] leading-[37px] underline bg-[#f4f4f5] py-[10px] sm:pt-[21px] sm:pb-[25px] pl-[23px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
+    style: "text-[#202124] font-['Inter'] text-[18px] not-italic font-[400] leading-[20px] underline bg-[#f4f4f5] py-[10px] sm:py-[15px] pl-[16px] block transition duration-[0.3s] ease-in-out hover:no-underline hover:text-[#818287]",
     functionId: "$funcFacultiesLink10$"
   },
 ];

@@ -56,7 +56,7 @@ const Layout = () => {
   return (
     <section className="flex items-center justify-between flex-col lg:flex-row gap-[20px] sm:gap-[70px] py-[30px] sm:pt-[40px] sm:pb-[60px] bg-[#F4F4F5]">
       <div className="h-[200px] sm:h-[400px] lg:h-[auto] w-[100%] lg:w-[90%]">
-        <img className="w-[100%] h-[100%] cursor-pointer object-cover lg:rounded-se-[160px] lg:rounded-es-[160px]" src="/src/components/common/images/answer.png" alt="People" />
+        <img className="w-[100%] h-[100%] cursor-pointer object-cover lg:rounded-se-[160px] lg:rounded-es-[160px]" src="$AnswerImage$" alt="People" />
       </div>
       <div className="w-[90%] sm:w-[80%] m-[auto] lg:mr-[5%]">
         <h2 className="text-[#3838C7] text-[26px] sm:text-[48px] not-italic font-[600] leading-[44px] mb-[10px] sm:mb-[35px]">
@@ -141,6 +141,11 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$AnswerBtn$',
     value: 'Оставить заявку'
+  },
+  {
+    key: '$AnswerImage$',
+    type: 'image',
+    value: ''
   }
 ]
 

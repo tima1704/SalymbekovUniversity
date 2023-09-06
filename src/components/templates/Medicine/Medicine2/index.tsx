@@ -11,39 +11,40 @@ const MedicineList: IMedicine[] = [
   {
     id: 1,
     description: "$Medicine2List1$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#72C976] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[53px] border-[2px] border-[#7280C9] border-solid rounded-[15px] w-[100%] md:w-[30%] h-[180px]"
   },
   {
     id: 2,
     description: "$Medicine2List2$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#72C976] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[53px] border-[2px] border-[#7280C9] border-solid rounded-[15px] w-[100%] md:w-[30%] h-[180px]"
   },
   {
     id: 3,
     description: "$Medicine2List3$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#72C976] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[53px] border-[2px] border-[#7280C9] border-solid rounded-[15px] w-[100%] md:w-[30%] h-[180px]"
   },
   {
     id: 4,
     description: "$Medicine2List4$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[57px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[40%] lg:w-[22%] h-[180px]"
   },
   {
     id: 5,
     description: "$Medicine2List5$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[57px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[40%] lg:w-[22%] h-[180px]"
   },
   {
     id: 6,
     description: "$Medicine2List6$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[57px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[40%] lg:w-[22%] h-[180px]"
   },
   {
     id: 7,
     description: "$Medicine2List7$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[57px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[40%] lg:w-[22%] h-[180px]"
   },
 ]
+
 
 const Layout = () => {
   return (

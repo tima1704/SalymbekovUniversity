@@ -33,7 +33,7 @@ const Layout = () => {
         $Admission2Title$
       </h2>
       <div className="flex flex-col lg:flex-row items-start justify-between gap-[20px] sm:gap-[90px]">
-        <ul className="text-left sm:text-center flex flex-col gap-[10px sm:gap-[20px] list-decimal w-[90%] m-auto lg:w-[50%]">
+        <ul className="text-left sm:text-center flex flex-col gap-[10px] sm:gap-[20px] list-decimal w-[90%] m-auto lg:w-[50%]">
           {
             AdminList.map(obj =>
               <li key={obj.id} className={obj.style}>

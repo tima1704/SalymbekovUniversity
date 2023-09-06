@@ -11,37 +11,37 @@ const MedicineList: IMedicine[] = [
   {
     id: 1,
     description: "$Medicine3List1$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#72C976] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[40px] px-[52px] border-[2px] border-[#7280C9] border-solid rounded-[15px] w-[100%] md:w-[30%] h-[106px]"
   },
   {
     id: 2,
     description: "$Medicine3List2$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#72C976] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[40px] px-[52px] border-[2px] border-[#7280C9] border-solid rounded-[15px] w-[100%] md:w-[30%] h-[106px]"
   },
   {
     id: 3,
     description: "$Medicine3List3$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#72C976] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[40px] px-[52px] border-[2px] border-[#7280C9] border-solid rounded-[15px] w-[100%] md:w-[30%] h-[106px]"
   },
   {
     id: 4,
     description: "$Medicine3List4$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px]  border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[30%] lg:w-[22%] h-[200px] md:h-[256px] px-[50px]"
   },
   {
     id: 5,
     description: "$Medicine3List5$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px]  border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[30%] lg:w-[22%] h-[200px] md:h-[256px] px-[50px]"
   },
   {
     id: 6,
     description: "$Medicine3List6$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px]  border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[30%] lg:w-[22%] h-[200px] md:h-[256px] px-[50px]"
   },
   {
     id: 7,
     description: "$Medicine3List7$",
-    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px] py-[69px] px-[52px] border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[33%] h-[180px]"
+    style: "flex items-center justify-center text-[#000000] text-center text-[17px] font-[500] leading-[21px]  border-[2px] border-[#3A96AA] border-solid rounded-[15px] w-[100%] md:w-[30%] lg:w-[22%] h-[200px] md:h-[256px] px-[50px]"
   },
 ]
 

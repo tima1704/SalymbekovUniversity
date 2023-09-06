@@ -71,7 +71,7 @@ const Layout = () => {
       </div>
 
       <div className="h-[200px] sm:h-[auto] w-[100%] lg:w-[50%]">
-        <img className="w-[100%] h-[100%] object-cover cursor-pointer" src="/src/components/common/images/answer2.png" alt="People" />
+        <img className="w-[100%] h-[100%] object-cover cursor-pointer" src="$Answer2Image$" alt="People" />
       </div>
     </section>
   )
@@ -141,6 +141,11 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$Answer2Btn$',
     value: 'Оставить заявку'
+  },
+  {
+    key: '$Answer2Image$',
+    type: 'image',
+    value: ''
   }
 ]
 
