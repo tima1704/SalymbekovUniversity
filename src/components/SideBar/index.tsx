@@ -3,34 +3,61 @@ import { useAppDispatch } from "../../hooks/redux";
 import { TModals } from "../../redux/ModalReducer/types";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
+import { SideBarCard } from "./SideBarCard";
+
+import "./index.css";
+
+interface IOption {
+  page: string;
+}
 
 interface ILinks {
   name: string;
   modal: TModals;
   image: string;
+  option?: IOption[];
 }
 
-<img src="/src/components/common/icon/" alt="" />;
+
 const sidebarModalText: ILinks[] = [
   {
-    name: "Переключить страницу",
+    name: "Страницы",
     modal: "switchPages",
     image: "/src/components/common/icon/pages.svg",
+    option: [
+      {
+        page: "Создать страницу"
+      },
+      {
+        page: "Переключить страницу"
+      },
+    ]
   },
   {
-    name: "Добавить блок",
+    name: "Блоки",
     modal: "addBlocks",
     image: "/src/components/common/icon/add_block.svg",
+    option: [
+      {
+        page: "Добавить блок"
+      },
+      {
+        page: "Изменить блок"
+      },
+    ]
   },
   {
-    name: "Добавить пост",
+    name: "Посты",
     modal: "addBlocks",
     image: "/src/components/common/icon/add_post.svg",
-  },
-  {
-    name: "Изменить контент",
-    modal: "modifyContent",
-    image: "/src/components/common/icon/add_post.svg",
+    option: [
+      {
+        page: "Добавить пост"
+      },
+      {
+        page: "Изменить пост"
+      },
+    ]
   },
   {
     name: "Загрузить фото",
@@ -40,6 +67,7 @@ const sidebarModalText: ILinks[] = [
 ];
 
 const Sidebar: React.FC = () => {
+
   const { setModalViewAction } = useAppDispatch();
 
   const navigate = useNavigate();
@@ -58,7 +86,7 @@ const Sidebar: React.FC = () => {
       className="fixed top-0 left-0 z-10 w-[17%] h-screen transition-transform -translate-x-full sm:translate-x-0 bg-[rgba(255,255,255,1)] dark:bg-[rgba(255,255,255,1)]"
       aria-label="Sidebar"
     >
-      <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto">
+      <div className="h-full flex flex-col justify-between px-3 py-4 overflow-y-auto sidebar-scroll">
         <div>
           <p className="text-[#013CC6] text-[26px] font-[500]">
             Salymbekov admin
@@ -80,19 +108,12 @@ const Sidebar: React.FC = () => {
               )}
             </p>
           </div>
-          <ul className="space-y-8 font-medium mt-10">
+          <ul className="space-y-8 font-medium my-10">
             {sidebarModalText.map((item, index) => (
-              <li className="flex" key={index}>
-                <img className="w-4" src={item.image} alt={item.name} />
-                <p
-                  className="block whitespace-nowrap leading-[0.32px] hover:duration-500 px-2 py-2 cursor-pointer text-['Poppins'] font-[400] text-[16px] text-[#717171] dark:hover:text-[#0B63F8]"
-                  onClick={() => {
-                    setModalViewAction(item.modal);
-                  }}
-                >
-                  {item.name}
-                </p>
-              </li>
+              <SideBarCard
+                key={index}
+                {...item}
+              />
             ))}
           </ul>
         </div>

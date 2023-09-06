@@ -1,0 +1,4 @@
+.sidebar-scroll::-webkit-scrollbar {
+  width: 2px;
+  background-color: #aaa;
+}
