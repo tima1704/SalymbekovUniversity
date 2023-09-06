@@ -10,7 +10,7 @@ import { IStructureRoutes } from "../../../../types/common";
 import { TrashIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
 
 import { Link } from "react-router-dom";
-import DeleteModal from "../../../ui/DeleteModal";
+import DeleteModal from "../../../common/DeleteModal";
 import { useAppDispatch } from "../../../../hooks/redux";
 
 interface IForm {
@@ -21,14 +21,13 @@ export const SwitchPagesModal: React.FC = () => {
   const { setModalViewAction } = useAppDispatch();
   const onCloseModal = () => setModalViewAction();
 
-
   const [openModal, setOpenModal] = React.useState(false);
   const [deleteId, setDeleteId] = React.useState<number | string>("");
 
   const onClickOpenModal = (id: number | string) => {
     setOpenModal(true);
     setDeleteId(id);
-  }
+  };
 
   // Query hooks:
   const { route, isLoading } = useGetRoutes();
@@ -36,7 +35,7 @@ export const SwitchPagesModal: React.FC = () => {
   const { mutate: mutateId } = useDeleteRoutes();
 
   if (!route.length) {
-    onCloseModal()
+    onCloseModal();
   }
 
   const {
@@ -63,6 +62,7 @@ export const SwitchPagesModal: React.FC = () => {
 
   return (
     <React.Fragment>
+      <h1 className="text-center text-2xl font-medium mb-8">Страницы</h1>
       <form className="flex" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("route", {
@@ -77,7 +77,7 @@ export const SwitchPagesModal: React.FC = () => {
             },
           })}
           type="text"
-          placeholder="New Route"
+          placeholder="например: settings"
           className="rounded border-2 mr-4 px-3 py-2"
         />
         <button
@@ -91,39 +91,36 @@ export const SwitchPagesModal: React.FC = () => {
             active:bg-blue-700
           "
         >
-          {sendLoading ? <ArrowPathIcon className="w-[20px] text-black" /> : <span>Create New Route</span>}
+          {sendLoading ? (
+            <ArrowPathIcon className="w-[20px] text-black" />
+          ) : (
+            <span>Создать страницу</span>
+          )}
         </button>
       </form>
       {errors.route && (
         <p className="text-left text-red-600">{errors.route.message}</p>
       )}
-      <div className="mt-2">
+      <div className="mt-5 flex text-center justify-center">
         {isLoading ? (
           <p className="text-blue-400">loading..</p>
         ) : (
           route?.map((item: IStructureRoutes, index: string) => (
-            <div
-              className="relative"
-              key={"route" + index}
-            >
-              <Link
-                to={item.route}
-                className="text-white bg-[#0a0e0f] relative hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-base px-7 py-4 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 mt-4"
-                onClick={onCloseModal}
-              >
-                {
-                  item.route === "/"
-                    ? "Home ( / )"
-                    : item.route
-                }
-              </Link>
+            <div className="relative" key={"route" + index}>
               <button
                 onClick={() => onClickOpenModal(item.id)}
-                className="disabled: opacity-70"
+                className="disabled: opacity-70 relative -top-3.5 -right-0.5"
                 disabled={isLoading}
               >
                 <TrashIcon className="w-[20px]" />
               </button>
+              <Link
+                to={item.route}
+                className="text-white bg-blue-400 relative hover:bg-blue-300/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 rounded-lg px-3.5 py-2.5 text-center inline-flex items-center mr-4 mb-2.5 mt-3"
+                onClick={onCloseModal}
+              >
+                {item.route === "/" ? "Home" : item.route.slice(1)}
+              </Link>
             </div>
           ))
         )}

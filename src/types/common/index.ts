@@ -27,14 +27,14 @@ export interface IGetRoutes {
 
 export interface IBlock {
   id?: number
-  front_json: ITemplate[]
+  front_json: ITemplate
   ordering: number
   is_active: boolean
   page: number
-  block_type: string
+  block_type: 'static' | 'get_list'
 }
 
 export interface ISendBlock {
   id?: number
-  blocks: ITemplate[]
+  blocks: IBlock[]
 }

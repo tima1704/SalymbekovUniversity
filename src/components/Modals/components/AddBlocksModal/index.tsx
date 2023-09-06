@@ -3,17 +3,22 @@ import templates from '../../../templates'
 import { renderToString } from 'react-dom/server'
 import parse from 'html-react-parser'
 import { ITemplate } from '../../../../redux/TemplatesReducer/types'
-import { useAppDispatch } from '../../../../hooks/redux'
+import { useAppDispatch, useAppSelector } from '../../../../hooks/redux'
 import { useLocation } from 'react-router-dom'
+import { useSendBlocks } from '../../../../hooks/api/useBlocks'
 
 export const AddBlocksModal = () => {
 
   const [selectedTemplate, setSelectedTemplate] = React.useState<ITemplate | null>(null)
 
-  const { setTemplateAction, setModalViewAction } = useAppDispatch()
-  const onCloseModal = () => setModalViewAction();
+  const pages = useAppSelector(s => s.Template)
 
   const { pathname } = useLocation()
+
+  const { mutate, isLoading } = useSendBlocks()
+
+  const { setModalViewAction } = useAppDispatch()
+  const onCloseModal = () => setModalViewAction()
 
   function selectTemplate(event: React.MouseEvent, template: ITemplate) {
     let element = event.target as HTMLElement
@@ -39,12 +44,17 @@ export const AddBlocksModal = () => {
   function addTemplate() {
     if (!selectedTemplate) return;
 
-    setTemplateAction({
-      template: {
+    const pageId = pages[pathname].id
+
+    mutate({
+      front_json: {
         ...selectedTemplate,
-        layout: renderToString(selectedTemplate.layout as React.ReactElement )
+        layout: renderToString(selectedTemplate.layout as React.ReactElement)
       },
-      pathname
+      page: pageId as number,
+      ordering: 1,
+      block_type: 'static',
+      is_active: true
     });
 
     onCloseModal();
@@ -77,7 +87,7 @@ export const AddBlocksModal = () => {
       <button
         type="button"
         className="p-2 border rounded bg-blue-600 text-white w-fit self-end disabled:bg-blue-200"
-        disabled={!!!selectedTemplate}
+        disabled={!!!selectedTemplate || isLoading}
         onClick={addTemplate}
       >Add</button>
     </div>
