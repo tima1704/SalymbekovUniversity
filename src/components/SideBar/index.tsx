@@ -1,9 +1,8 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { useAppDispatch } from "../../hooks/redux";
 import { TModals } from "../../redux/ModalReducer/types";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
-import { useSendBlocks } from "../../hooks/api/useBlocks";
 
 interface ILinks {
   name: string;
@@ -117,58 +116,6 @@ const Sidebar: React.FC = () => {
   );
 };
 
-const PostBlocksButton = () => {
-  const [disabled, setDisabled] = React.useState<boolean>(false);
-  const { pathname } = useLocation();
-
-  const { mutate, isLoading } = useSendBlocks();
-
-  const addedBlocks = useAppSelector((s) => s.Template);
-
-  function handlePatchBlocks() {
-    const block = addedBlocks[pathname];
-    mutate(block);
-  }
-
-  React.useEffect(() => {
-    if (
-      addedBlocks[pathname].blocks.length == 0 ||
-      addedBlocks[pathname].blocks.length <= 2
-    ) {
-      setDisabled(true);
-    } else {
-      setDisabled(false);
-    }
-  }, [addedBlocks, pathname]);
-
-  return (
-    <button
-      title={
-        addedBlocks[pathname].blocks.length < 1
-          ? "Минимум один блок должен быть на странице."
-          : undefined
-      }
-      className="
-        fixed
-        right-4
-        bottom-4
-        bg-[#013CC6]
-        text-white
-        rounded
-        px-3
-        py-2
-        hover:bg-blue-700
-        active:bg-blue-700
-        disabled:bg-slate-400
-      "
-      onClick={handlePatchBlocks}
-      disabled={disabled}
-    >
-      Отправить
-    </button>
-  );
-};
-
 interface ISideBarBlock {
   children: React.ReactNode;
 }
@@ -177,7 +124,6 @@ const SideBarBlock: React.FC<ISideBarBlock> = ({ children }) => {
   return (
     <div className="flex">
       <Sidebar />
-      <PostBlocksButton />
       <div className="p-4 w-5/6 absolute right-0">{children}</div>
     </div>
   );
