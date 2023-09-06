@@ -10,7 +10,6 @@ interface RenderedTemplateProps {
 }
 
 const RenderedTemplate = ({ block }: RenderedTemplateProps) => {
-  const [isActive, setIsActive] = React.useState(false);
   const [openModal, setOpenModal] = React.useState(false);
 
   const { mutate } = useDeleteBlocks()
@@ -20,14 +19,12 @@ const RenderedTemplate = ({ block }: RenderedTemplateProps) => {
   }
 
   const frontJson = block.front_json
-  
+
   if (!frontJson.placeholders) return <h1>Something went wrong...</h1>
 
   if (block.block_type === 'static') return (
     <div
       key={block.id}
-      onMouseOver={() => setIsActive(true)}
-      onMouseOut={() => setIsActive(false)}
       className="relative"
     >
       {parse(
@@ -35,14 +32,12 @@ const RenderedTemplate = ({ block }: RenderedTemplateProps) => {
           return total.replace(key, value);
         }, frontJson.layout as string)
       )}
-      {isActive && (
-        <button
-          className="bg-red-600 text-white rounded text-xs p-1 absolute right-1 bottom-1 hover:bg-red-700"
-          onClick={() => setOpenModal(true)}
-        >
-          <TrashIcon className="w-[20px]" />
-        </button>
-      )}
+      <button
+        className="bg-red-600 text-white rounded text-xs p-1 absolute right-1 bottom-1 hover:bg-red-700"
+        onClick={() => setOpenModal(true)}
+      >
+        <TrashIcon className="w-[20px]" />
+      </button>
       {openModal && (
         <DeleteModal
           openModal={openModal}
