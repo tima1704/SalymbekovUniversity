@@ -8,9 +8,9 @@ import { SubmitHandler } from 'react-hook-form'
 import { useLocation } from 'react-router-dom'
 
 export const ModifyContentModal = () => {
-  
+
   const { pathname } = useLocation()
-  
+
   const { data } = useQuery({
     queryKey: 'images',
     queryFn: getImages,
@@ -24,12 +24,13 @@ export const ModifyContentModal = () => {
   const addedTemplates: ITemplateState = useAppSelector(s => s.Template)
   const currentPage = addedTemplates[pathname]
 
-  const onSubmit: SubmitHandler<Record<string, string | number>> = (data) => {
+  const onSubmit: SubmitHandler<Record<string, number | Record<string, string>>> = ({ data, id }) => {
     const newData = Object.entries(data).map(([key, value]) => ({
       key,
       value,
     }))
     console.log(newData)
+    console.log(id)
   }
 
   if (currentPage.blocks.length === 0) return <h2>Данная страница пуста</h2>

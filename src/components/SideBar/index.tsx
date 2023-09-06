@@ -1,5 +1,4 @@
 import React from "react";
-import { useAppDispatch } from "../../hooks/redux";
 import { TModals } from "../../redux/ModalReducer/types";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
@@ -9,11 +8,12 @@ import "./index.css";
 
 interface IOption {
   page: string;
+  modal?: TModals
 }
 
 interface ILinks {
   name: string;
-  modal: TModals;
+  modal?: TModals,
   image: string;
   option?: IOption[];
 }
@@ -22,40 +22,41 @@ interface ILinks {
 const sidebarModalText: ILinks[] = [
   {
     name: "Страницы",
-    modal: "switchPages",
     image: "/src/components/common/icon/pages.svg",
     option: [
       {
-        page: "Создать страницу"
+        page: "Создать страницу",
+        modal: "switchPages",
       },
       {
-        page: "Переключить страницу"
+        page: "Переключить страницу",
+        modal: "switchPages",
       },
     ]
   },
   {
     name: "Блоки",
-    modal: "addBlocks",
     image: "/src/components/common/icon/add_block.svg",
     option: [
       {
-        page: "Добавить блок"
+        page: "Добавить блок",
+        modal: "addBlocks",
       },
       {
-        page: "Изменить блок"
+        page: "Изменить блок",
+        modal: "modifyContent",
       },
     ]
   },
   {
     name: "Посты",
-    modal: "addBlocks",
     image: "/src/components/common/icon/add_post.svg",
     option: [
       {
-        page: "Добавить пост"
+        page: "Добавить пост",
       },
       {
-        page: "Изменить пост"
+        page: "Изменить пост",
       },
     ]
   },
@@ -67,8 +68,6 @@ const sidebarModalText: ILinks[] = [
 ];
 
 const Sidebar: React.FC = () => {
-
-  const { setModalViewAction } = useAppDispatch();
 
   const navigate = useNavigate();
 

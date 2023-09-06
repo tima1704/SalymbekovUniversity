@@ -6,7 +6,7 @@ import { IBlock } from '../../../../types/common'
 
 interface IFormProps {
   block: IBlock,
-  onSubmit: SubmitHandler<Record<string, string | number>>
+  onSubmit: SubmitHandler<Record<string, number | Record<string, string>>>
   data: OptionsOrGroups<{
     value: string;
     label: JSX.Element;
@@ -17,7 +17,6 @@ interface IFormProps {
 }
 
 const Form = ({ block: {front_json, id}, data, onSubmit }: IFormProps) => {
-
   const {
     register,
     handleSubmit,
@@ -27,9 +26,10 @@ const Form = ({ block: {front_json, id}, data, onSubmit }: IFormProps) => {
   if (!front_json.placeholders) return;
   if (!front_json.layout) return;
   if (!front_json.functions) return;
+  if (!id) return;
   return (
     <div>
-      <form key={id} onSubmit={handleSubmit(data => onSubmit({ ...data }))}>
+      <form key={id} onSubmit={handleSubmit(data => onSubmit({ data: {...data}, id }))}>
         {
           parse(
             front_json.placeholders.reduce((total, { key, value }) => {
