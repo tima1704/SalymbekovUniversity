@@ -1,8 +1,13 @@
+import { renderToString } from 'react-dom/server'
 import { useMutation, useQuery, useQueryClient } from "react-query"
 import RouteService from "../../helpers/api/routes"
 import { useAppDispatch } from '../redux'
 import { IGetRoutes } from '../../types/common'
 import { ITemplate } from '../../redux/TemplatesReducer/types'
+import BlocksService from '../../helpers/api/blocks'
+import Header from '../../components/templates/Header'
+import Navbar from '../../components/templates/Navbar'
+import Footer from '../../components/templates/Footer'
 
 export const useGetRoutes = () => {
 
@@ -38,7 +43,8 @@ export const useSendRoutes = () => {
       const formatedRoute = '/' + trimmedRoute
       return RouteService.postRoutesApi(formatedRoute)
     },
-    onSuccess: () => {
+    onSuccess: async (data: IGetRoutes) => {
+      await createDefaultHeaderAndFooter(data)
       queryClient.invalidateQueries(['route'], { exact: true })
     }
   })
@@ -60,16 +66,35 @@ export const useDeleteRoutes = () => {
   return { mutate, isLoading }
 }
 
-export const useCreateHomePage = () => {
-  const queryClient = useQueryClient();
-  const { mutate } = useMutation({
-    mutationFn: () => {
-      return RouteService.postRoutesApi('/')
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries(['route'], { exact: true })
+async function createDefaultHeaderAndFooter(data: IGetRoutes) {
+  await BlocksService.postBlocksApi({
+    page: data.id,
+    ordering: 1,
+    block_type: 'static',
+    is_active: true,
+    front_json: {
+      ...Header,
+      layout: renderToString(Header.layout as React.ReactElement)
     }
   })
-
-  return { mutate }
+  await BlocksService.postBlocksApi({
+    page: data.id,
+    ordering: 1,
+    block_type: 'static',
+    is_active: true,
+    front_json: {
+      ...Navbar,
+      layout: renderToString(Navbar.layout as React.ReactElement)
+    }
+  })
+  await BlocksService.postBlocksApi({
+    page: data.id,
+    ordering: 1,
+    block_type: 'static',
+    is_active: true,
+    front_json: {
+      ...Footer,
+      layout: renderToString(Footer.layout as React.ReactElement)
+    }
+  })
 }

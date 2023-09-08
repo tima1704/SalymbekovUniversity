@@ -101,33 +101,33 @@ interface INetwork {
 const NETWORKS: INetwork[] = [
   {
     id: 1,
-    img: "/src/components/common/icon/facebook.svg",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/facebook.png",
     description: "$NetworksFC$",
-    style: "w-[40px] h-[40px] sm:max-w-[30px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
+    style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
     functionId: "$funcFooterNetworks1$"
   },
   {
     id: 2,
-    img: "/src/components/common/icon/instagram.svg",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/instagram.png",
     description: "$NetworksIN$",
-    style: "w-[40px] h-[40px] sm:max-w-[30px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
+    style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
     functionId: "$funcFooterNetworks2$"
   },
   {
     id: 3,
-    img: "/src/components/common/icon/video.svg",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/youtube.png",
     description: "$NetworksVI$",
-    style: "w-[40px] h-[40px] sm:max-w-[30px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
+    style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
     functionId: "$funcFooterNetworks3$"
   },
   {
     id: 4,
-    img: "/src/components/common/icon/whatsapp.svg",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whatsapp.png",
     description: "$NetworksWA$",
-    style: "w-[40px] h-[40px] sm:max-w-[30px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
+    style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
     functionId: "$funcFooterNetworks4$"
   },

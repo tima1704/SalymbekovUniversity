@@ -1,9 +1,9 @@
 import React from 'react'
-import { useCreateHomePage } from '../../../hooks/api/useRoutes'
+import { useSendRoutes } from '../../../hooks/api/useRoutes'
 
 const CreateFirstPage = () => {
 
-  const { mutate } = useCreateHomePage()
+  const { mutate } = useSendRoutes()
 
   return (
     <div
@@ -11,7 +11,7 @@ const CreateFirstPage = () => {
     >
       <h2 className="mb-3">Создайте первую страницу</h2>
       <button
-        onClick={() => mutate()}
+        onClick={() => mutate('')}
         className="
           px-3
           py-2

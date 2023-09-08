@@ -61,7 +61,7 @@ export const AddBlocksModal = () => {
   }
 
   return (
-    <div className='text-center flex flex-col gap-4'>
+    <div className='relative text-center flex flex-col gap-4'>
       {
         templates.map((template, index) => {
           return (
@@ -86,7 +86,7 @@ export const AddBlocksModal = () => {
 
       <button
         type="button"
-        className="p-2 border rounded bg-blue-600 text-white w-fit self-end disabled:bg-blue-200"
+        className="p-2 border rounded bg-blue-600 text-white w-fit disabled:bg-blue-200 sticky left-full bottom-0"
         disabled={!!!selectedTemplate || isLoading}
         onClick={addTemplate}
       >Add</button>
