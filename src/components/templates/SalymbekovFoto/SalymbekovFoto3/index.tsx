@@ -1,4 +1,4 @@
-simport React from "react";
+import React from "react";
 import {
   ITemplateFunction,
   ITemplatePlaceholder,
@@ -39,9 +39,9 @@ const Layout = ({ ...props }) => {
                 />
               </div>
             </div>
-          </swiper-sli>
+          </swiper-slide>
 
-          <SwiperSlide>
+          <swiper-slide>
             <div className="flex gap-[29px]">
               <div className="flex flex-col gap-[29px]">
                 <img
@@ -68,9 +68,9 @@ const Layout = ({ ...props }) => {
                 />
               </div>
             </div>
-          </SwiperSlide>
+          </swiper-slide>
 
-          <SwiperSlide>
+          <swiper-slide>
             <div className="flex gap-[29px]">
               <div className="flex flex-col gap-[29px]">
                 <img
@@ -97,7 +97,7 @@ const Layout = ({ ...props }) => {
                 />
               </div>
             </div>
-          </SwiperSlide>
+          </swiper-slide>
         </swiper-container>
       </div>
     </div>

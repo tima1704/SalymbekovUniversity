@@ -13,7 +13,7 @@ const CONTACTS: IFooter[] = [
   {
     id: 1,
     description: "$ContactsNum$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: ""
     ,
     functionId: "$funcFooterContacts1$"
@@ -21,14 +21,14 @@ const CONTACTS: IFooter[] = [
   {
     id: 2,
     description: "$ContactsEmail$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterContacts2$"
   },
   {
     id: 3,
     description: "$ContactsAddress$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterContacts3$"
   },
@@ -38,21 +38,21 @@ const EDUCATION: IFooter[] = [
   {
     id: 1,
     description: "$EducationMedicine$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterEducation1$"
   },
   {
     id: 2,
     description: "$EducationIT$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterEducation2$"
   },
   {
     id: 3,
     description: "$EducationBusiness$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterEducation3$"
   },
@@ -62,28 +62,28 @@ const CLINICS: IFooter[] = [
   {
     id: 1,
     description: "$ClinicsLazmed$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterClinics1$"
   },
   {
     id: 2,
     description: "$ClinicsDocClinic$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterClinics2$"
   },
   {
     id: 3,
     description: "$ClinicsDocHospital$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterClinics3$"
   },
   {
     id: 4,
     description: "$ClinicsOftolmalik$",
-    style: "font-['DM_Sans'] text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
+    style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
     path: "",
     functionId: "$funcFooterClinics4$"
   },
@@ -197,8 +197,8 @@ const Layout = ({ ...props }) => {
 
         <div className="flex items-center justify-between mt-[38px]">
           <div className="flex items-center gap-[30px] not-italic text-[#B5B7C0] text-[16px] font-[400] leading-[16px]">
-            <p className="font-['DM_Sans']">$FTSalymbekov$</p>
-            <p className="font-['DM_Sans']">$FTPrivacy$</p>
+            <p className=">$FTSalymbekov$</p>
+            <p className=">$FTPrivacy$</p>
           </div>
         </div>
       </div>

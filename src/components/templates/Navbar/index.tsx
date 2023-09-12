@@ -58,7 +58,7 @@ const NavbarList: NavbarItem[] = [
 const Layout = () => {
   return (
     <div className="bg-[#EEEEEECC]">
-      <ul className="relative text-center flex items-center justify-between max-w-[90%] w-[100%] m-[auto] overflow-x-scroll py-[20px] sm:py-[30px] lg:overflow-auto gap-[20px]">
+      <ul className="relative text-center flex items-center justify-between max-w-[90%] w-[100%] m-[auto] overflow-y-hidden py-[20px] sm:py-[30px] gap-[20px]">
         {
           NavbarList.map(({ id, description, style, functionId }) =>
             <li key={id}>

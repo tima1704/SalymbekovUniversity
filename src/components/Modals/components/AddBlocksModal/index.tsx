@@ -61,7 +61,7 @@ export const AddBlocksModal = () => {
   }
 
   return (
-    <div className='relative text-center flex flex-col gap-4'>
+    <div className="relative text-center flex flex-col gap-4 w-[90vw]">
       {
         templates.map((template, index) => {
           return (
@@ -70,6 +70,7 @@ export const AddBlocksModal = () => {
               onClick={(event) => {
                 selectTemplate(event, template)
               }}
+              className="scale-75"
               data-container
             >
               {
