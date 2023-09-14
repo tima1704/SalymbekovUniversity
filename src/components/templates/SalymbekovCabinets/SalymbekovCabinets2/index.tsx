@@ -15,56 +15,62 @@ const Layout = ({ ...props }) => {
       <div className="pb-[20px] lg:pb-[50px]">
         <swiper-container id="CabinetsSliderSecond">
           <swiper-slide>
-            <div className="flex gap-[17px]">
-              <div className="flex flex-col gap-[17px]">
-                <img src="$SalymbekovCabinets2Foto1$" alt="auditory" />
-                <img src="$SalymbekovCabinets2Foto2$" alt="castle" />
-              </div>
-              <div>
-                <img src="$SalymbekovCabinets2Foto3$" alt="library" />
-              </div>
+            <div className="flex justify-between">
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto1$"
+                alt="auditory"
+              />
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto2$"
+                alt="castle"
+              />
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto3$"
+                alt="library"
+              />
             </div>
           </swiper-slide>
 
           <swiper-slide>
-            <div className="flex gap-[17px]">
-              <div className="flex flex-col gap-[17px]">
-                <img
-                  src="$SalymbekovCabinets2Foto4$"
-                  alt="auditory"
-                />
-                <img
-                  src="$SalymbekovCabinets2Foto5$"
-                  alt="castle"
-                />
-              </div>
-              <div>
-                <img
-                  src="$SalymbekovCabinets2Foto6$"
-                  alt="library"
-                />
-              </div>
+            <div className="flex justify-between">
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto4$"
+                alt="auditory"
+              />
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto5$"
+                alt="castle"
+              />
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto6$"
+                alt="library"
+              />
             </div>
           </swiper-slide>
 
           <swiper-slide>
-            <div className="flex gap-[17px]">
-              <div className="flex flex-col gap-[17px]">
-                <img
-                  src="$SalymbekovCabinets2Foto7$"
-                  alt="auditory"
-                />
-                <img
-                  src="$SalymbekovCabinets2Foto8$"
-                  alt="castle"
-                />
-              </div>
-              <div>
-                <img
-                  src="$SalymbekovCabinets2Foto9$"
-                  alt="library"
-                />
-              </div>
+            <div className="flex justify-between">
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto7$"
+                alt="auditory"
+              />
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto8$"
+                alt="castle"
+              />
+              <img
+                className="w-[350px] h-[380px]"
+                src="$SalymbekovCabinets2Foto9$"
+                alt="library"
+              />
             </div>
           </swiper-slide>
         </swiper-container>
@@ -81,47 +87,56 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$SalymbekovCabinets2Foto1$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto2$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto3$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto4$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto5$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto6$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto7$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto8$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto9$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
 ];
 

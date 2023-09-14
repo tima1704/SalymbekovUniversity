@@ -7,7 +7,7 @@ import {
 const Layout = ({ ...props }) => {
   return (
     <div
-      className="bg-[url('/src/components/common/images/clinicsBG2.png')] bg-cover relative overflow-hidden rounded-b-[50px]"
+      className="bg-[url('$DordoiBGFirst2$')] bg-cover relative overflow-hidden rounded-b-[50px]"
       {...props}
     >
       <div className="flex justify-center max-w-[90%] w-[100%] m-[auto] pt-[113px] pb-[124px]">

@@ -54,7 +54,7 @@ const Layout = ({ ...props }) => {
         </p>
       </div>
 
-      <div className="pt-[20px] md:pt-[40px] lg:pt-[60px] flex flex-col lg:flex-row gap-[20px] xl:gap-[70px]">
+      <div className="pt-[20px] md:pt-[40px] lg:pt-[60px] flex flex-col lg:flex-row gap-[10px] xl:gap-[20px]">
         <Slider2.layout />
         <p className="text-[#202124] text-[15px] xl:text-[18px] font-[500] leading-[30px] xl:leading-[40px] pb-[10px] lg:pb-[40px]">
           $MedCenterDescription62$
