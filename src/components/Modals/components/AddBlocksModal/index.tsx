@@ -61,7 +61,7 @@ export const AddBlocksModal = () => {
   }
 
   return (
-    <div className="relative text-center flex flex-col gap-4 w-[90vw]">
+    <div className="relative text-center flex flex-col gap-4 w-[80vw]">
       {
         templates.map((template, index) => {
           return (
