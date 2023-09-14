@@ -18,17 +18,17 @@ const Layout = ({ ...props }) => {
             <div className="flex gap-[17px]">
               <div className="flex flex-col gap-[17px]">
                 <img
-                  src="/src/components/common/images/class2.png"
+                  src="$SalymbekovCabinetsFoto1$"
                   alt="auditory"
                 />
                 <img
-                  src="/src/components/common/images/class3.png"
+                  src="$SalymbekovCabinetsFoto2$"
                   alt="castle"
                 />
               </div>
               <div>
                 <img
-                  src="/src/components/common/images/class1.png"
+                  src="$SalymbekovCabinetsFoto3$"
                   alt="library"
                 />
               </div>
@@ -39,17 +39,17 @@ const Layout = ({ ...props }) => {
             <div className="flex gap-[17px]">
               <div className="flex flex-col gap-[17px]">
                 <img
-                  src="/src/components/common/images/book2.png"
+                  src="$SalymbekovCabinetsFoto4$"
                   alt="auditory"
                 />
                 <img
-                  src="/src/components/common/images/book3.png"
+                  src="$SalymbekovCabinetsFoto5$"
                   alt="castle"
                 />
               </div>
               <div>
                 <img
-                  src="/src/components/common/images/book1.png"
+                  src="$SalymbekovCabinetsFoto6$"
                   alt="library"
                 />
               </div>
@@ -60,17 +60,17 @@ const Layout = ({ ...props }) => {
             <div className="flex gap-[17px]">
               <div className="flex flex-col gap-[17px]">
                 <img
-                  src="/src/components/common/images/pen2.png"
+                  src="$SalymbekovCabinetsFoto7$"
                   alt="auditory"
                 />
                 <img
-                  src="/src/components/common/images/pen3.png"
+                  src="$SalymbekovCabinetsFoto8$"
                   alt="castle"
                 />
               </div>
               <div>
                 <img
-                  src="/src/components/common/images/pen1.png"
+                  src="$SalymbekovCabinetsFoto9$"
                   alt="library"
                 />
               </div>
@@ -90,47 +90,47 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$SalymbekovCabinetsFoto1$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
   },
   {
     key: "$SalymbekovCabinetsFoto2$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
   },
   {
     key: "$SalymbekovCabinetsFoto3$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinetsFoto4$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
   },
   {
     key: "$SalymbekovCabinetsFoto5$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
   },
   {
     key: "$SalymbekovCabinetsFoto6$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinetsFoto7$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
   },
   {
     key: "$SalymbekovCabinetsFoto8$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
   },
   {
     key: "$SalymbekovCabinetsFoto9$",
     type: "image",
-    value: "",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
 ];
 

@@ -27,6 +27,10 @@ import SalymbekovFoto from './SalymbekovFoto'
 import StructureBanner from './StructureBanner'
 import Studies from './Studies'
 import Welcome from './Welcome'
+import ResultStudy from './ResultStudy'
+import OurMission from './OurMission'
+import OurPartners from './OurPartners'
+import OurNetworks from './OurNetworks'
 
 export default [
   Header,
@@ -107,4 +111,16 @@ export default [
   Welcome[0],
   Welcome[1],
   Welcome[2],
+  ResultStudy[0],
+  ResultStudy[1],
+  ResultStudy[2],
+  OurMission[0],
+  OurMission[1],
+  OurMission[2],
+  OurPartners[0],
+  OurPartners[1],
+  OurPartners[2],
+  OurNetworks[0],
+  OurNetworks[1],
+  OurNetworks[2],
 ]

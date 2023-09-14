@@ -14,8 +14,7 @@ const CONTACTS: IFooter[] = [
     id: 1,
     description: "$ContactsNum$",
     style: "text-[#ffffff] text-[16px] font-[400] leading-[16px] transition duration-[0.3s] ease-in-out hover:text-[#B7ADAD]",
-    path: ""
-    ,
+    path: "",
     functionId: "$funcFooterContacts1$"
   },
   {
@@ -101,7 +100,7 @@ interface INetwork {
 const NETWORKS: INetwork[] = [
   {
     id: 1,
-    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/facebook.png",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header3.svg",
     description: "$NetworksFC$",
     style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
@@ -109,7 +108,7 @@ const NETWORKS: INetwork[] = [
   },
   {
     id: 2,
-    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/instagram.png",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header4.svg",
     description: "$NetworksIN$",
     style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
@@ -117,7 +116,7 @@ const NETWORKS: INetwork[] = [
   },
   {
     id: 3,
-    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/youtube.png",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header5.svg",
     description: "$NetworksVI$",
     style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
@@ -125,7 +124,7 @@ const NETWORKS: INetwork[] = [
   },
   {
     id: 4,
-    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whatsapp.png",
+    img: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header6.svg",
     description: "$NetworksWA$",
     style: "w-[40px] h-[40px] w-[100%] h-[30px] transition duration-[0.3s] ease-in-out hover:scale-[1.1]",
     path: "/",
@@ -190,7 +189,7 @@ const Layout = ({ ...props }) => {
               }
             </div>
             <div className="hidden sm:block bg-[#ffffff] py-[20px] px-[30px] rounded-[500px] mt-[38px] cursor-pointer w-max">
-              <img className="w-[90%] lg:max-w-[150px] w-[100%] h-[auto]" src="$FTLogo$" alt="Salymbekov University" />
+              <img className="w-[90%] lg:max-w-[150px] h-[auto]" src="$FTLogo$" alt="Salymbekov University" />
             </div>
           </div>
         </div>
@@ -251,22 +250,22 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$NetworksFC$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/facebook.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header2.png'
   },
   {
     key: '$NetworksIN$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/insta.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header3.png'
   },
   {
     key: '$NetworksVI$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/youtube.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header4.png'
   },
   {
     key: '$NetworksWA$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/whatsapp.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header5.png'
   },
   {
     key: '$FTContacts$',
@@ -295,7 +294,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$FTLogo$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/salymbekov-logo.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header1.png'
   }
 ]
 

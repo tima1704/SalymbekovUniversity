@@ -294,32 +294,32 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$BodiesList2Arrow1$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ArrowDown.svg'
   },
   {
     key: '$BodiesList2Arrow2$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ArrowDown.svg'
   },
   {
     key: '$BodiesList2Arrow3$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ArrowDown.svg'
   },
   {
     key: '$BodiesList2Arrow4$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ArrowDown.svg'
   },
   {
     key: '$BodiesList2Arrow5$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ArrowDown.svg'
   },
   {
     key: '$BodiesList2Arrow6$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ArrowDown.svg'
   },
   {
     key: '$Bodies2Title$',

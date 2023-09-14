@@ -46,7 +46,7 @@ const connectionList: IConnection[][] = [
       description: "$ConnectionForeign$",
       style:
         "text-[#202124] px-[20px] py-[20px] pr-[21px] text-[12px] lg:text-[16px] font-['Inter'] font-[400] leading-[15px] lg:leading-[23px] border-[1px] border-solid border-[#D3D4DB]",
-      image: "/src/components/common/icon/blueWhat.svg",
+      image: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/vopros.png",
     },
     {
       id: 3,
@@ -68,7 +68,7 @@ const connectionList: IConnection[][] = [
       description: "$ConnectionOthers$",
       style:
         "text-[#202124] px-[20px] py-[18px] text-[12px] lg:text-[16px] font-['Inter'] font-[400] leading-[15px] lg:leading-[23px] border-[1px] border-solid border-[#D3D4DB]",
-      image: "/src/components/common/icon/blueWhat.svg",
+      image: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/vopros.png",
     },
     {
       id: 3,
@@ -215,6 +215,7 @@ const Layout = ({ ...props }) => {
                     i.description
                   )}
                   <img className="inline ml-[3px]" src={i.image} alt="" />
+                  {/* https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/vopros.png */}
                 </td>
               ))}
             </tr>
@@ -225,7 +226,13 @@ const Layout = ({ ...props }) => {
   );
 };
 
+
 export const placeholders: ITemplatePlaceholder[] = [
+  {
+    key: "$ConnectorImage$",
+    type: "image",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/vopros.png",
+  },
   {
     key: "$ForWhatGoal$",
     value: "Для какой цели",
