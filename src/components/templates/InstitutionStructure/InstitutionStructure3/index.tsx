@@ -297,7 +297,7 @@ const EDUCATIONAL: IStructure[] = [
     cards: [
       {
         id: 12,
-        description: '$Educational3List4$',
+        description: '$Educational3List12$',
         style: "flex items-center justify-center text-center text-[#000000] text-[18px] not-italic font-[500] leading-[23px] border-[2px] border-solid border-[#B5B7C0] w-[100%] md:w-[70%] m-auto lg:w-[33%] h-[82px] rounded-[16px]"
       }
     ]
@@ -575,6 +575,38 @@ const placeholders: ITemplatePlaceholder[] = [
     value: 'Лаборатории и учебно- исследовательские центры'
   },
   {
+    key: '$Rector3List1$',
+    value: 'Клинические базы - клиники, поликлиники и медцентры'
+  },
+  {
+    key: '$Rector3List2$',
+    value: 'Технологические и инновационные центры'
+  },
+  {
+    key: '$Rector3List3$',
+    value: 'Культурные, спортивные и оздоровительные центры'
+  },
+  {
+    key: '$Rector3List4$',
+    value: 'Строительные, монтажные, маркетинговые,полиграфические, рекламные и другие коммерческие структуры'
+  },
+  {
+    key: '$Rector3List5$',
+    value: 'Производственные базы'
+  },
+  {
+    key: '$Rector3List6$',
+    value: 'Творческие и учебно-производственные мастерские'
+  },
+  {
+    key: '$Rector3List7$',
+    value: 'Творческие и учебно-производственные мастерские'
+  },
+  {
+    key: '$Rector3List8$',
+    value: 'Лаборатории и учебно- исследовательские центры'
+  },
+  {
     key: '$President3List1$',
     value: 'Общее собрание учредителей'
   },
@@ -604,27 +636,31 @@ const placeholders: ITemplatePlaceholder[] = [
   },
   {
     key: '$President3List8$',
+    value: 'Ревизионная комиссия'
+  },
+  {
+    key: '$President3List9$',
     value: 'Проекторы'
   },
   {
     key: '$President3Arrow1$',
     type: 'image',
-    value: ''
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure3Arrow.png'
   },
   {
     key: '$President3Arrow2$',
     type: 'image',
-    value: ''
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure3Arrow2.png'
   },
   {
     key: '$President3Arrow3$',
     type: 'image',
-    value: ''
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure3Arrow3.png'
   },
   {
     key: '$President3Arrow4$',
     type: 'image',
-    value: ''
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure3Arrow4.png'
   },
   {
     key: '$InstitutionStructure3Title$',

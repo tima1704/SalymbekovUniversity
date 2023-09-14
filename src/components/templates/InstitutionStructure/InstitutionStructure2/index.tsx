@@ -573,7 +573,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$President2Arrow2$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure2Arrowe.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure2Arrow.png'
   },
   {
     key: '$President2Arrow3$',
@@ -588,7 +588,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$President2Arrow5$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure2Arrowe.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Structure2Arrow.png'
   },
   {
     key: '$President2Arrow6$',
