@@ -43,7 +43,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$Submission3Arrow$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.amazonaws.com/images/arrowToRight.svg'
+    value: 'https://salymbekov-cms.s3.amazonaws.com/images/arrowToRight.png'
   }
 ]
 
