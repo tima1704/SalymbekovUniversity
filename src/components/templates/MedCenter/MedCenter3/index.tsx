@@ -39,6 +39,8 @@ const Layout = ({ ...props }) => {
           </div>
         </div>
 
+
+
         <div className="pb-[10px] lg:pb-[40px]">
           <p className="text-[#202124] text-[15px] md:text-[18px] font-[500] leading-[30px] md:leading-[40px] pb-[10px] lg:pb-[40px]">
           $MedCenterDescription43$
@@ -62,7 +64,7 @@ const Layout = ({ ...props }) => {
           </div>
         </div>
 
-        <div className="hidden lg:flex flex-col gap-[20px] xl:gap-[40px] pb-[20px] lg:pb-[40px]">
+        <div className="hidden md:flex flex-col gap-[20px] xl:gap-[40px] pb-[20px] lg:pb-[40px]">
           <div className="flex gap-[20px] xl:gap-[40px]">
             <img
               className="w-[50%]"
@@ -107,40 +109,40 @@ const Layout = ({ ...props }) => {
 
 const placeholders: ITemplatePlaceholder[] = [
   {
-    key: "$MedCenterArticle2$",
+    key: "$MedCenterArticle3$",
     value: "ОсОО Медицинский центр микрохирургии глаза",
   },
   {
-    key: "$MedCenterDescription2$",
+    key: "$MedCenterDescription3$",
     value: "«Дордой-Офтальмик Сервис»",
   },
   {
-    key: "$MedCenterDescription22$",
+    key: "$MedCenterDescription23$",
     value:
       "Руководитель Эшмамбетов Асизбек Эшмамбетович, отличник здравоохранения КР, создатель в 1995 году и бессменный руководитель МЦ МХГ «Дордой-офтальмик-сервис» и, единственной в Центральной Азии, лаборатории по изготовлению индивидуальных глазных протезов.",
   },
   {
-    key: "$MedCenterDescription32$",
+    key: "$MedCenterDescription33$",
     value:
       "Центр микрохирургии глаза «Дордой-Офтальмик Сервис» создан в 1996 году. На сегодняшний день центр успешно развивается и оказывает практически все виды современных офтальмологических услуг, а также пользуется высоким доверием населения не только Кыргызстана, но и ближнего зарубежья. Центр оснащен уникальной аппаратурой. Ультразвуковой факоэмульсификатор «LEGACI» последней технологии США. Кроме этого приобретен Глазной Аппарат «INFINITI» 2016 года выпуска, который является аппаратом последнего поколения и позволяет удалить катаракту без наложения швов. При этом больной находится в клинике не более суток.",
   },
   {
-    key: "$MedCenterDescription42$",
+    key: "$MedCenterDescription43$",
     value:
       "Специалисты «Дордой-Офтальмик Сервис» используют в своей деятельности и современный метод оперативного лечения катаракты. Успешно действуют единственная в стране лаборатории по изготовлению индивидуальных глазных протезов и лаборатория по производству мягких контактных линз. С 2000 года Медцентр «Дордой-Офтальмик Сервис» является рентабельным предприятием. Четыре года назад «Дордой-Офтальмик Сервис» признан Министерством здравоохранения лучшим лечебным учреждением республики среди негосударственных медицинских структур.",
   },
   {
-    key: "$MedCenterDescription52$",
+    key: "$MedCenterDescription53$",
     value:
       "Сегодня руководства центра считает необходимым не только оснащать клинику современным оборудованием, повышать уровень медицинского персонала и улучшать сервисные условия, но и расширять диапазон предлагаемых услуг. Применение микрохирургической, лазерной и других современных технологий позволит малокровно производить пластические операции по устранению косметических дефектов новообразований с минимальным риском после операционных осложнений и послужит альтернативой сложным, тяжелым операциям под общим наркозом с длительным пребыванием в стационаре.",
   },
   {
-    key: "$MedCenterDescription62$",
+    key: "$MedCenterDescription63$",
     value:
       "Под руководством Генерального директора МЦ МХГ «ДОС» Эшмамбетова Асизбека Эшмамбетовича совместно с Кафедрой глазных болезней Кыргызской Государственной Медицинской Академии впервые Кыргызстане в 2002 году, а затем в 2007, 2011 и 2015гг. организованы Центрально-Азиатские конференции по офтальмологии. В работе конференций участвовало свыше 250 специалистов-офтальмологов из России, Украины, Казахстана, Узбекистана, Таджикистана, Германии, Турции, Индии, США и Финляндии. ",
   },
   {
-    key: "$MedCenterDescription72$",
+    key: "$MedCenterDescription73$",
     value:
       "Сегодня Медицинский центр микрохирургии глаза поддерживает взаимосвязь со специалистами из других стран. В компании работают профессор из Казахстана и специалист по изготовлению протезов из Москвы. Освоение и внедрение новых методик требует определенной подготовки медперсонала. Производятся постоянные стажировки для врачей и медсестер.В 2016 году Учреждению для пожилых и лиц с ограниченными возможностями была оказана бесплатные услуги по проведению операции на глазах, в количестве 10-12 чел. ",
   },
@@ -148,43 +150,43 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$MedCenterFirstImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/mujik.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ded.png",
   },
   {
     key: "$MedCenterSecondImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cab1.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica2page1.png",
   },
   {
     key: "$MedCenterSeventhImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cab3.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica2page1.png",
   },
   {
     key: "$MedCenterThirdImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cab2.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica2page1.png",
   },
   {
     key: "$MedCenterFourthImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/doctors.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto1Small3.png",
   },
   {
     key: "$MedCenterFifthImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/doctors2.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto2Small3.png",
   },
   {
     key: "$MedCenterSixthImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/doctors3.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto3Small3.png",
   },
   ...Slider3.placeholders,
 ];

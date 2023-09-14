@@ -25,7 +25,7 @@ const Layout = ({ ...props }) => {
 
       <div className="flex flex-col lg:flex-row items-center gap-[10px] lg:gap-[40px] pb-[10px] lg:pb-[40px]">
         <p className="text-[#202124] text-[15px] md:text-[18px] font-[500] leading-[30px] md:leading-[40px]">
-        $MedCenterDescription32$
+          $MedCenterDescription32$
         </p>
         <img
           className="h-[300px] md:h-[400px] lg:h-full"
@@ -36,38 +36,34 @@ const Layout = ({ ...props }) => {
 
       <div className="pb-[10px] lg:pb-[40px]">
         <p className="text-[#202124] text-[15px] md:text-[18px] font-[500] leading-[30px] md:leading-[40px] pb-[10px] lg:pb-[40px]">
-        $MedCenterDescription42$
+          $MedCenterDescription42$
         </p>
       </div>
 
       <div className="flex gap-[17px] pb-[10px] md:pb-[40px]">
+        <img className="w-[50%] h-[700px]" src="$MedCenterFourthImage2$" alt="" />
         <div className="flex gap-[16px] flex-col w-[50%]">
-          <img src="$MedCenterSecondImage2$" alt="" />
-          <img src="$MedCenterThirdImage2$" alt="" />
+          <img className="h-[30%]" src="$MedCenterSecondImage2$" alt="" />
+          <img className="h-[70%]" src="$MedCenterThirdImage2$" alt="" />
         </div>
-        <img
-          className="w-[50%]"
-          src="$MedCenterFourthImage2$"
-          alt=""
-        />
       </div>
 
       <div>
         <p className="text-[#202124] text-[15px] md:text-[18px] font-[500] leading-[30px] md:leading-[40px]">
-        $MedCenterDescription52$
+          $MedCenterDescription52$
         </p>
       </div>
 
       <div className="pt-[20px] md:pt-[40px] lg:pt-[60px] flex flex-col lg:flex-row gap-[20px] xl:gap-[70px]">
         <Slider2.layout />
         <p className="text-[#202124] text-[15px] xl:text-[18px] font-[500] leading-[30px] xl:leading-[40px] pb-[10px] lg:pb-[40px]">
-        $MedCenterDescription62$
+          $MedCenterDescription62$
         </p>
       </div>
 
       <div className="pt-[20px] lg:pt-[40px] pb-[20px] lg:pb-[70px]">
         <p className="text-[#202124] text-[15px] md:text-[18px] font-[500] leading-[30px] md:leading-[40px]">
-        $MedCenterDescription72$
+          $MedCenterDescription72$
         </p>
       </div>
     </div>
@@ -116,26 +112,25 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$MedCenterFirstImage2$",
     type: "image",
-    value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/mujik.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ded.png",
   },
   {
     key: "$MedCenterSecondImage2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica1.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica1page1.png",
   },
   {
     key: "$MedCenterThirdImage2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica2.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica2page1.png",
   },
   {
     key: "$MedCenterFourthImage2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica3.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica3page1.png",
   },
   ...Slider2.placeholders,
 ];

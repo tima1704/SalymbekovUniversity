@@ -81,47 +81,47 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$SalymbekovCabinets2Foto1$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
   },
   {
     key: "$SalymbekovCabinets2Foto2$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
   },
   {
     key: "$SalymbekovCabinets2Foto3$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto4$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
   },
   {
     key: "$SalymbekovCabinets2Foto5$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
   },
   {
     key: "$SalymbekovCabinets2Foto6$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
   {
     key: "$SalymbekovCabinets2Foto7$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets1.png",
   },
   {
     key: "$SalymbekovCabinets2Foto8$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets2.png",
   },
   {
     key: "$SalymbekovCabinets2Foto9$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/foto23.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/cabinets3.png",
   },
 ];
 

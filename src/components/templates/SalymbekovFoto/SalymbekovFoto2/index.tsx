@@ -75,73 +75,73 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$SalymbekovFoto11$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/library.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto1.png",
   },
   {
     key: "$SalymbekovFoto22$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/auditory.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto2.png",
   },
   {
     key: "$SalymbekovFoto33$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/castle.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto3.png",
   },
   {
     key: "$SalymbekovFoto44$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/castleBit.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto4.png",
   },
   {
     key: "$SalymbekovFoto55$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/library.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto1.png",
   },
   {
     key: "$SalymbekovFoto66$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/auditory.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto2.png",
   },
   {
     key: "$SalymbekovFoto77$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/castle.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto3.png",
   },
   {
     key: "$SalymbekovFoto88$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/castleBit.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto4.png",
   },
   {
     key: "$SalymbekovFoto99$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/library.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto1.png",
   },
   {
     key: "$SalymbekovFoto101$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/auditory.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto2.png",
   },
   {
     key: "$SalymbekovFoto112$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/castle.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto3.png",
   },
   {
     key: "$SalymbekovFoto122$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/castleBit.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/bigfoto4.png",
   },
 ];
 

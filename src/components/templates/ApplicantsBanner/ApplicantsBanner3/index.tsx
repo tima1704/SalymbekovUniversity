@@ -34,7 +34,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$ApplicantsBanner3Image$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ApplicantsBanner3.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/fakultet3.png'
   }
 ]
 

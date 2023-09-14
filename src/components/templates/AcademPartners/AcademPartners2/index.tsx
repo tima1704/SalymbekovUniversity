@@ -15,7 +15,7 @@ const Layout = ({ ...props }) => {
           <h1 className="text-[25px] lg:text-[36px] text-center font-[600] leading-[30px] lg:leading-[44px] mb-[24px]">
             $AcademPartners2Article$
           </h1>
-          <p className="font-['Inter'] text-[13px] lg:text-[18px] pt-[10px] pb-[10px] font-[400] leading-[20px] lg:leading-[28px] border-l-[4px] border-solid rounded-[2px] pl-[5px] lg:pl-[20px] ml-[170px]">
+          <p className="font-['Inter'] text-[13px] lg:text-[18px] pt-[10px] pb-[10px] font-[400] leading-[20px] lg:leading-[28px] border-l-[4px] border-solid rounded-[2px] pl-[5px] ml-[70px]">
             $ListOfUniversity2$
           </p>
         </div>
@@ -28,7 +28,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$AcademPartnersBackground2$",
     type: "image",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/paetnersBG2.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partners2.png",
   },
   {
     key: "$AcademPartners2Article$",

@@ -29,19 +29,19 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$SliderFirstSlide$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/chairs.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinicSlider1.png",
   },
   {
     key: "$SliderSecondSlide$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/girls.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinicSlider2.png",
   },
   {
     key: "$SliderThirdSlide$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica-large.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinicSlider3.png",
   },
 ];
 

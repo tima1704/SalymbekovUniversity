@@ -29,7 +29,7 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$FotoGalletyBG2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/fotoBG.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/Foto2.png",
   },
   {
     key: "$FotoArticle2$",
