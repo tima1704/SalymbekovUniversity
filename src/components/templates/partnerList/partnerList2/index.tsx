@@ -161,7 +161,7 @@ const partnerList: IPartner[][] = [
     },
     {
       id: 3,
-      description: "PartnerListPrep2$",
+      description: "$PartnerListPrep2$",
       style:
         "text-[#202124] text-[10px] px-[10px] lg:px-[20px] py-[18px] lg:text-[23px] font-['Inter'] font-[500] leading-[15px] lg:leading-[33px] bg-[#E3E3E7] border-[1px] border-solid border-[#D3D4DB]",
     },
@@ -343,7 +343,7 @@ const placeholders: ITemplatePlaceholder[] = [
     value: 'EC English Language Centres'
   },
   {
-    key: '$PartnerListEam2$',
+    key: '$PartnerListExam2$',
     value: 'English, Exam prep., Academic year/semester'
   },
   {

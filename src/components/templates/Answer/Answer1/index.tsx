@@ -47,9 +47,9 @@ const AnswerList: IAnswer[] = [
 ]
 
 const Layout = () => {
-  const [open, setOpen] = React.useState(null);
+  const [open, setOpen] = React.useState<number | null>(null);
 
-  const handleClick = (id) => {
+  const handleClick = (id: number) => {
     setOpen(prev => (prev === id ? null : id));
   };
 
@@ -145,7 +145,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$AnswerImage$',
     type: 'image',
-    value: ''
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/answer1.png'
   }
 ]
 

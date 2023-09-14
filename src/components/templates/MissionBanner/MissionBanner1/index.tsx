@@ -1,5 +1,8 @@
-import React from 'react';
-import { ITemplateFunction, ITemplatePlaceholder } from '../../../../redux/TemplatesReducer/types';
+import React from "react";
+import {
+  ITemplateFunction,
+  ITemplatePlaceholder,
+} from "../../../../redux/TemplatesReducer/types";
 
 const Layout = () => {
   return (
@@ -15,32 +18,38 @@ const Layout = () => {
         </div>
       </div>
       <div>
-        <img className="absolute bottom-[0] right-[0]" src="$MissionBannerImage$" alt="Mission" />
+        <img
+          className="absolute bottom-[0] right-[0]"
+          src="$MissionBannerImage$"
+          alt="Mission"
+        />
       </div>
     </div>
-  )
+  );
 };
 
 const placeholders: ITemplatePlaceholder[] = [
   {
-    key: '$MissionBannerTitle$',
-    value: 'Наша Миссия'
+    key: "$MissionBannerTitle$",
+    value: "Наша Миссия",
   },
   {
-    key: '$MissionBannerText$',
-    value: 'Подготовка современных кадров, способных реализовывать творческие инициативы и инновационные идеи на благо общества'
+    key: "$MissionBannerText$",
+    value:
+      "Подготовка современных кадров, способных реализовывать творческие инициативы и инновационные идеи на благо общества",
   },
   {
-    key: '$MissionBannerImage$',
-    type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/MissionBanner1.png'
-  }
-]
+    key: "$MissionBannerImage$",
+    type: "image",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/MissionBanner1.png",
+  },
+];
 
-const functions: ITemplateFunction[] = []
+const functions: ITemplateFunction[] = [];
 
 export default {
   layout: <Layout />,
   placeholders,
   functions,
-}
+};

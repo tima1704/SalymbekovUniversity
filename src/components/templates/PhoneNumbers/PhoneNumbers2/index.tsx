@@ -97,7 +97,7 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$PhoneWhatsAppIcon2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whiteWhatsApp.svg",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whatsapp.svg",
   },
   {
     key: "$PhoneWhatsAppNumber2$",
@@ -111,7 +111,7 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$PhoneTelegramIcon2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whiteTelegram.svg",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/telagram.svg",
   },
   {
     key: "$PhoneTelegramNumber2$",
@@ -129,7 +129,7 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$PhoneWhatsAppIconSmall2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whiteWhatsApp.svg",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whatsapp.svg",
   },
   {
     key: "$PhoneWhatsAppNumberSmall2$",
@@ -143,7 +143,7 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$PhoneTelegramIconSmall2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whiteTelegram.svg",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/telagram.svg",
   },
   {
     key: "$PhoneTelegramNumberSmall2$",

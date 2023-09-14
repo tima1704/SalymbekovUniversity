@@ -57,17 +57,17 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$SalymbekovArea3Foto1$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/castle.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/orange1.png",
   },
   {
     key: "$SalymbekovArea3Foto2$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/castle.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/orange22.png",
   },
   {
     key: "$SalymbekovArea3Foto3$",
     type: "image",
-    value: "https://salymbekov-cms.s3.amazonaws.com/images/castle.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/orange33.png",
   },
 ];
 

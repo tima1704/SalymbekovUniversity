@@ -43,12 +43,12 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$SalymbekovContactsBackground3$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/contactsBG3.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/contacts3.png'
   },
   {
     key: '$SalymbekovContactsSmallBackground3$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/stekloBG.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/contactsSmall.png'
   }
 ];
 

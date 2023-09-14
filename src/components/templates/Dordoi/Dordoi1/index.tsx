@@ -45,12 +45,12 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$DordoiBGFirst$",
     type: 'image',
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/pills.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/dordoi1.png",
   },
   {
     key: "$DordoiBGFirstSmall$",
     type: 'image',
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/lekarstvaBG.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/dordoiSmall.png",
   },
 ];
 

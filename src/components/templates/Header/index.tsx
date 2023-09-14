@@ -112,12 +112,12 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$HeaderBrandLogo$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/salymbekov-logo.png',
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header1.png',
   },
   {
     key: '$HeaderTelephoneLogo$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/telephone.png',
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header2.svg',
   },
   {
     key: '$HeadLangTxtKG$',
@@ -134,22 +134,22 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$HeaderNetworkFB$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/facebook.png',
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header3.svg',
   },
   {
     key: '$HeaderNetworkIN$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/instagram.png',
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header4.svg',
   },
   {
     key: '$HeaderNetworkVI$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/youtube.png',
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header5.svg',
   },
   {
     key: '$HeaderNetworkWS$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/whatsapp.png',
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header6.svg',
   },
   {
     key: '$HDContacts$',

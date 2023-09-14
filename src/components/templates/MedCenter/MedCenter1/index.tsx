@@ -102,22 +102,22 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$MedCenterFirstImage$",
     type: 'image',
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/mujik.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ded.png",
   },
   {
     key: "$MedCenterSecondImage$",
     type: 'image',
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica1.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica1page1.png",
   },
   {
     key: "$MedCenterThirdImage$",
     type: 'image',
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica2.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica2page1.png",
   },
   {
     key: "$MedCenterFourthImage$",
     type: 'image',
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica3.png",
+    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinica3page1.png",
   },
   ...Slider1.placeholders
 ];

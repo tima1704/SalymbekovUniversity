@@ -38,7 +38,7 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$DordoiBGFirst2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/clinicsBG2.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/dordoi2.png",
   },
 ];
 

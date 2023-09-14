@@ -226,7 +226,7 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$Rector3Arrow1$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/BodiesArrow.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ArrowDown.svg'
   },
   {
     key: '$BodiesList3DirectorsInstitutes$',

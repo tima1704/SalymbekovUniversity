@@ -33,7 +33,7 @@ export const placeholders: ITemplatePlaceholder[] = [
     key: "$SalymbekovContactsBackground2$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/contactsBG2.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/contacts2.png",
   },
   {
     key: "$SalymbekovContacts2$",
