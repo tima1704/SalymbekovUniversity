@@ -113,35 +113,35 @@ const functions: ITemplateFunction[] = [
     id: '$funcNavLink2$',
     func: {
       type: 'link',
-      to: '/structure'
+      to: '/'
     }
   },
   {
     id: '$funcNavLink3$',
     func: {
       type: 'link',
-      to: '/applicants'
+      to: '/'
     }
   },
   {
     id: '$funcNavLink4$',
     func: {
       type: 'link',
-      to: '/gallery'
+      to: '/'
     }
   },
   {
     id: '$funcNavLink5$',
     func: {
       type: 'link',
-      to: '/clinics'
+      to: '/'
     }
   },
   {
     id: '$funcNavLink6$',
     func: {
       type: 'link',
-      to: '/contacts'
+      to: '/'
     }
   },
 ]

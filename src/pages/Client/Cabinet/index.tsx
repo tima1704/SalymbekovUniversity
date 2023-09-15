@@ -3,6 +3,8 @@ import { Navigate } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes";
 import { useAppSelector } from "../../../hooks/redux";
 import RenderedTemplate from '../../../components/common/RenderedTemplate';
+import { register } from "swiper/element/bundle";
+register();
 
 
 interface ICabinetProps {

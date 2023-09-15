@@ -113,14 +113,20 @@ const Form = ({ block, data, onSubmit, isLoading, routes }: IFormProps) => {
         {
           ref.current && block.front_json.functions.map(({ id, func }) => {
 
-            const relatedBlock = ref.current?.querySelector(`[id='${id}']`)
-
+            
             if (func.type === 'link') {
+              const relatedBlock = ref.current?.querySelector(`[id='${id}']`)
+              if (!relatedBlock) return;
               return <label
                 className="flex items-center py-3 gap-2 relative border-b"
                 key={id}
               >
-                <h3 className="text-left w-2/6 text-xs">Куда должна переносить <b>"{relatedBlock?.innerHTML}"</b>:</h3>
+                <h3 className="text-left w-2/6 text-xs">
+                  Куда должна переносить 
+                  <b className='[&>*]:!text-[#000] [&>*]:!text-xs [&>*]:font-bold [&>*]:max-w-[100px]'>
+                    "{parse(relatedBlock.innerHTML)}"
+                  </b>:
+                </h3>
                 <Controller
                   name={id}
                   key={id}

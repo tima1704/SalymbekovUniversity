@@ -22,11 +22,20 @@ export interface IRoutes {
 export interface IGetRoutes {
   id: number
   route: string
-  block_page: IBlock[]
+  block_page: IGetBlock[]
 }
 
 export interface IBlock {
   id?: number
+  front_json: ITemplate
+  ordering: number
+  is_active: boolean
+  page: number
+  block_type: 'static' | 'get_list'
+}
+
+export interface IGetBlock {
+  id: number
   front_json: ITemplate
   ordering: number
   is_active: boolean

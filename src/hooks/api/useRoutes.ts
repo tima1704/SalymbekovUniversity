@@ -7,7 +7,6 @@ import { ITemplate } from '../../redux/TemplatesReducer/types'
 import BlocksService from '../../helpers/api/blocks'
 import Header from '../../components/templates/Header'
 import Navbar from '../../components/templates/Navbar'
-import Footer from '../../components/templates/Footer'
 
 export const useGetRoutes = () => {
 
@@ -22,7 +21,7 @@ export const useGetRoutes = () => {
           ...total,
           [route]: {
             id,
-            blocks: block_page,
+            blocks: block_page.sort((a, b) => a.id - b.id),
           },
         }
       }, {})
@@ -85,16 +84,6 @@ async function createDefaultHeaderAndFooter(data: IGetRoutes) {
     front_json: {
       ...Navbar,
       layout: renderToString(Navbar.layout as React.ReactElement)
-    }
-  })
-  await BlocksService.postBlocksApi({
-    page: data.id,
-    ordering: 1,
-    block_type: 'static',
-    is_active: true,
-    front_json: {
-      ...Footer,
-      layout: renderToString(Footer.layout as React.ReactElement)
     }
   })
 }

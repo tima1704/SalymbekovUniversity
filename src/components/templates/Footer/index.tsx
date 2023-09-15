@@ -142,8 +142,8 @@ const Layout = ({ ...props }) => {
             <h3 className="text-[20px] not-italic font-[600] mb-[15px] lg:mb-[34px] leading-[28px]">$FTContacts$</h3>
             <ul className="flex flex-col gap-[10px] sm:gap-[22px]">
               {
-                CONTACTS.map(({ id, description, style }) =>
-                  <li key={id}>
+                CONTACTS.map(({ id, description, style, functionId }) =>
+                  <li key={id} id={functionId}>
                     <a className={style}>{description}</a>
                   </li>
                 )
@@ -155,8 +155,8 @@ const Layout = ({ ...props }) => {
             <h3 className="text-[20px] not-italic font-[600] mb-[15px] lg:mb-[34px] leading-[28px]">$FTEducational$</h3>
             <ul className="flex flex-col gap-[10px] sm:gap-[22px]">
               {
-                EDUCATION.map(({ id, description, style }) =>
-                  <li key={id}>
+                EDUCATION.map(({ id, description, style, functionId }) =>
+                  <li key={id} id={functionId}>
                     <a className={style}>{description}</a>
                   </li>
                 )
@@ -168,8 +168,8 @@ const Layout = ({ ...props }) => {
             <h3 className="text-[20px] not-italic font-[600] mb-[15px] lg:mb-[34px] leading-[28px]">$FTClinics$</h3>
             <ul className="flex flex-col gap-[10px] sm:gap-[22px]">
               {
-                CLINICS.map(({ id, description, style }) =>
-                  <li key={id}>
+                CLINICS.map(({ id, description, style, functionId }) =>
+                  <li key={id} id={functionId}>
                     <a className={style}>{description}</a>
                   </li>
                 )
@@ -181,8 +181,8 @@ const Layout = ({ ...props }) => {
             <h3 className="text-[20px] not-italic font-[600] mb-[15px] lg:mb-[32px] leading-[28px]">$FTNetworks$</h3>
             <div className="flex justify-between sm:justify-start items-start gap-[16px]">
               {
-                NETWORKS.map(({ id, description, style, img }) =>
-                  <a key={id}>
+                NETWORKS.map(({ id, description, style, img, functionId }) =>
+                  <a key={id} id={functionId}>
                     <img className={style} src={img} alt={description} />
                   </a>
                 )
@@ -250,22 +250,22 @@ const placeholders: ITemplatePlaceholder[] = [
   {
     key: '$NetworksFC$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header2.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header3.svg'
   },
   {
     key: '$NetworksIN$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header3.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header4.svg'
   },
   {
     key: '$NetworksVI$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header4.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header5.svg'
   },
   {
     key: '$NetworksWA$',
     type: 'image',
-    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header5.png'
+    value: 'https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/header6.svg'
   },
   {
     key: '$FTContacts$',
