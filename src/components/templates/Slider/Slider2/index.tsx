@@ -8,7 +8,7 @@ register()
 
 const Layout = ({ ...props }) => {
   return (
-    <div className="pb-[50px]" {...props}>
+    <div className="max-w-[50%] h-[100%] pl-[20px]" {...props}>
       <swiper-container id="SliderSecond">
         <swiper-slide>
           <img src="$SliderFirstSlide2$" alt="chairs" />

@@ -78,7 +78,7 @@ const Layout = ({ ...props }) => {
             />
           </div>
           <img
-            className="w-full"
+            className="w-full object-cover h-[400px]"
             src="$MedCenterSixthImage3$"
             alt=""
           />
@@ -174,19 +174,19 @@ const placeholders: ITemplatePlaceholder[] = [
     key: "$MedCenterFourthImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto1Small3.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto3Small3.png",
   },
   {
     key: "$MedCenterFifthImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto2Small3.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto1Small3.png",
   },
   {
     key: "$MedCenterSixthImage3$",
     type: "image",
     value:
-      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto3Small3.png",
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/foto2Small3.png",
   },
   ...Slider3.placeholders,
 ];

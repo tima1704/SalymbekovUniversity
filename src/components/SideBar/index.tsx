@@ -25,8 +25,8 @@ const sidebarModalText: ILinks[] = [
     image: "/src/components/common/icon/pages.svg",
     option: [
       {
-        page: "Создать страницу",
-        modal: "switchPages",
+        page: "Добавить страницу",
+        modal: "addPages", 
       },
       {
         page: "Переключить страницу",

@@ -33,10 +33,10 @@ const Layout = ({ ...props }) => {
           </div>
         </div>
 
-        <div className="flex ml-[13%] pb-[20px] gap-[15px] lg:gap-[20px] lg:justify-between overflow-x-auto lg:max-w-[920px]">
+        <div className="flex justify-center pb-[20px] gap-[15px] lg:gap-[20px] lg:justify-between px-10">
           <div className="flex p-[5px] bg-[#FFF] w-[170px] h-[180px] lg:h-auto lg:w-[32%] cursor-pointer flex-col justify-center items-center rounded-[12px] lg:pt-[16px] lg:pb-[40px] lg:pl-[28px] lg:pr-[27px] text-center">
             <div className="p-[8px]">
-              <img src="$PartnersFoto111$" alt="james cook" />
+              <img className="h-[100px] lg:h-[100%]" src="$PartnersFoto111$" alt="james cook" />
             </div>
             <h3 className="text-[#202124] text-[12px] lg:text-[16px] font-[600] leading-[17px] lg:leading-[24px]">
               $OurPartnersDescFirst3$
@@ -48,7 +48,7 @@ const Layout = ({ ...props }) => {
 
           <div className="flex p-[5px] bg-[#FFF] w-[170px] h-[180px] lg:h-auto lg:w-[32%] cursor-pointer flex-col justify-center items-center rounded-[12px] lg:pt-[16px] lg:pb-[40px] lg:pl-[28px] lg:pr-[27px] text-center">
             <div className="p-[8px]">
-              <img className="object-fill" src="$PartnersFoto222$" alt="bhms" />
+              <img className="h-[70px] lg:h-[100%]" src="$PartnersFoto222$" alt="bhms" />
             </div>
             <h3 className="text-[#202124] text-[12px] lg:text-[16px] font-[600] leading-[17px] lg:leading-[24px]">
               $OurPartnersDesc2First3$
@@ -61,7 +61,7 @@ const Layout = ({ ...props }) => {
           <div className="flex p-[5px] bg-[#FFF] w-[170px] h-[180px] lg:h-auto lg:w-[32%] cursor-pointer flex-col justify-center items-center rounded-[12px] lg:pt-[16px] lg:pb-[40px] lg:pl-[28px] lg:pr-[27px] text-center">
             <div className="p-[8px]">
               <img
-                className="object-fill"
+                className="h-[70px] lg:h-[100%]"
                 src="$PartnersFoto333$"
                 alt="medipol second version"
               />
