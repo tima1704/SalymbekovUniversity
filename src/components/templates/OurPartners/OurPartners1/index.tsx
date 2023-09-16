@@ -23,21 +23,37 @@ const Layout = ({ ...props }) => {
         </div>
         <div className="flex justify-between max-w-[400px] m-auto pb-[20px]">
           <div className="lg:hidden">
-            <img className="cursor-pointer" src="$PartnersArrowSmall1$" alt="arrow left" />
+            <img
+              className="cursor-pointer"
+              src="$PartnersArrowSmall1$"
+              alt="arrow left"
+            />
           </div>
           <div className="lg:hidden">
-            <img className="cursor-pointer" src="$PartnersArrowSmall2$" alt="arrow right" />
+            <img
+              className="cursor-pointer"
+              src="$PartnersArrowSmall2$"
+              alt="arrow right"
+            />
           </div>
         </div>
         <div className="max-w-[1180px] m-auto flex items-center justify-center gap-[80px]">
           <div className="hidden lg:block">
-            <img className="cursor-pointer" src="$PartnersArrow1$" alt="arrow left" />
+            <img
+              className="cursor-pointer"
+              src="$PartnersArrow1$"
+              alt="arrow left"
+            />
           </div>
 
-          <div className="flex gap-[15px] lg:gap-[20px] lg:justify-between overflow-x-auto lg:max-w-[920px]">
+          <div className="flex gap-[15px] lg:gap-[20px] lg:justify-between lg:max-w-[920px]">
             <div className="flex p-[5px] bg-[#FFF] w-[170px] h-[180px] lg:h-auto lg:w-[32%] cursor-pointer flex-col justify-center items-center rounded-[12px] lg:pt-[16px] lg:pb-[40px] lg:pl-[28px] lg:pr-[27px] text-center">
               <div className="p-[8px]">
-                <img src="$PartnersFoto1$" alt="james cook" />
+                <img
+                  className="h-[100px] lg:h-[100%]"
+                  src="$PartnersFoto1$"
+                  alt="james cook"
+                />
               </div>
               <h3 className="text-[#202124] text-[12px] lg:text-[16px] font-[600] leading-[17px] lg:leading-[24px]">
                 $OurPartnersDescFirst$
@@ -49,7 +65,11 @@ const Layout = ({ ...props }) => {
 
             <div className="flex p-[5px] bg-[#FFF] w-[170px] h-[180px] lg:h-auto lg:w-[32%] cursor-pointer flex-col justify-center items-center rounded-[12px] lg:pt-[16px] lg:pb-[40px] lg:pl-[28px] lg:pr-[27px] text-center">
               <div className="p-[8px]">
-                <img className="object-fill" src="$PartnersFoto2$" alt="bhms" />
+                <img
+                  className="h-[70px] lg:h-[100%]"
+                  src="$PartnersFoto2$"
+                  alt="bhms"
+                />
               </div>
               <h3 className="text-[#202124] text-[12px] lg:text-[16px] font-[600] leading-[17px] lg:leading-[24px]">
                 $OurPartnersDesc2First$
@@ -62,7 +82,7 @@ const Layout = ({ ...props }) => {
             <div className="flex p-[5px] bg-[#FFF] w-[170px] h-[180px] lg:h-auto lg:w-[32%] cursor-pointer flex-col justify-center items-center rounded-[12px] lg:pt-[16px] lg:pb-[40px] lg:pl-[28px] lg:pr-[27px] text-center">
               <div className="p-[8px]">
                 <img
-                  className="object-fill"
+                  className="h-[70px] lg:h-[100%]"
                   src="$PartnersFoto3$"
                   alt="medipol second version"
                 />
@@ -77,7 +97,11 @@ const Layout = ({ ...props }) => {
           </div>
 
           <div className="hidden lg:block">
-            <img className="cursor-pointer" src="$PartnersArrow2$" alt="arrow right" />
+            <img
+              className="cursor-pointer"
+              src="$PartnersArrow2$"
+              alt="arrow right"
+            />
           </div>
         </div>
 
@@ -99,7 +123,8 @@ const Layout = ({ ...props }) => {
 const placeholders: ITemplatePlaceholder[] = [
   {
     key: "$OurPartnersLine1$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersline1.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersline1.png",
     type: "image",
   },
   {
@@ -108,27 +133,32 @@ const placeholders: ITemplatePlaceholder[] = [
   },
   {
     key: "$OurPartnersLine2$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersline2.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersline2.png",
     type: "image",
   },
   {
     key: "$PartnersArrow1$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow1.svg",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow1.svg",
     type: "image",
   },
   {
     key: "$PartnersArrow2$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow2.svg",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow2.svg",
     type: "image",
   },
   {
     key: "$PartnersArrowRight1$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/rightArrowPartners.svg",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/rightArrowPartners.svg",
     type: "image",
   },
   {
     key: "$PartnersArrowSmall1$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow1.svg",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow1.svg",
     type: "image",
   },
   {
@@ -141,7 +171,8 @@ const placeholders: ITemplatePlaceholder[] = [
   },
   {
     key: "$PartnersArrowSmall2$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow2.svg",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/partnersArrow2.svg",
     type: "image",
   },
   {
@@ -154,7 +185,8 @@ const placeholders: ITemplatePlaceholder[] = [
   },
   {
     key: "$PartnersFoto1$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ourPartners1.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ourPartners1.png",
     type: "image",
   },
   {
@@ -167,7 +199,8 @@ const placeholders: ITemplatePlaceholder[] = [
   },
   {
     key: "$PartnersFoto2$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ourPartners2.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ourPartners2.png",
     type: "image",
   },
   {
@@ -176,7 +209,8 @@ const placeholders: ITemplatePlaceholder[] = [
   },
   {
     key: "$PartnersFoto3$",
-    value: "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ourPartners3.png",
+    value:
+      "https://salymbekov-cms.s3.ap-south-1.amazonaws.com/images/ourPartners3.png",
     type: "image",
   },
 ];

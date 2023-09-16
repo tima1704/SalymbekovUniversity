@@ -6,6 +6,7 @@ import { AddBlocksModal } from "./components/AddBlocksModal";
 import { ModifyContentModal } from "./components/ModifyContentModal";
 import { UploadImagesModal } from "./components/UploadImages";
 import { XMarkIcon } from '@heroicons/react/24/outline';
+import { AddPages } from "./components/AddPages";
 
 export const Modals: React.FC = () => {
   const typeModal = useAppSelector((s) => s.Modal.type);
@@ -39,6 +40,7 @@ export const Modals: React.FC = () => {
         {typeModal === "addBlocks" && <AddBlocksModal />}
         {typeModal === "modifyContent" && <ModifyContentModal />}
         {typeModal === "uploadImages" && <UploadImagesModal />}
+        {typeModal === "addPages" && <AddPages />}
       </div>
     </div>
   );
