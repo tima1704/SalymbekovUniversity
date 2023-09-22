@@ -17,7 +17,7 @@ $API.interceptors.response.use(
       if (!refreshToken) {
         return Promise.reject(error)
       }
-      
+
       try {
         const response = await $API.post('/users/token/verify/', {
           refreshToken,
@@ -29,7 +29,7 @@ $API.interceptors.response.use(
         localStorage.setItem('accessToken', newAccessToken)
         localStorage.setItem('refreshToken', newRefreshToken)
 
-        originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
+        originalRequest.headers.Authorization = `Bearer ${newAccessToken}`
         return $API(originalRequest)
       } catch (refreshError) {
         return Promise.reject(refreshError)

@@ -11,7 +11,7 @@ import Loader from "./components/common/Loader/Loader";
 import CreateFirstPage from './components/common/CreateFirstPage';
 
 const App = () => {
-  setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000);  
+  setInterval(CheckTokenExpirationAndRefresh, 10 * 60 * 1000);
 
   const { route, isLoading } = useGetRoutes();
 

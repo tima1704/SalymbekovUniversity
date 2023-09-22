@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Modal } from 'flowbite-react'
 
-type GenericFunction<T = unknown> = (...args: T[]) => void;
+type GenericFunction<T = unknown> = (...args: T[]) => void
 
 interface IModalProps {
   openModal: boolean
