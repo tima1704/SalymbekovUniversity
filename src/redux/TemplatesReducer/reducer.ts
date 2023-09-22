@@ -7,17 +7,6 @@ export function TemplateReducer(
   action: TemplateActions
 ): ITemplateState {
   switch (action.type) {
-    case TemplateActionsTypes.SET_TEMPLATES:
-      return {
-        ...state,
-        [action.payload.pathname]: {
-          ...state[action.payload.pathname],
-          blocks:[
-            ...state[action.payload.pathname].blocks,
-            action.payload.template,
-          ]
-        }
-      };
     case TemplateActionsTypes.EDIT_TEMPLATES:
       return { ...action.payload }
     default:

@@ -6,9 +6,12 @@ import {
 import { register } from "swiper/element/bundle";
 register();
 
+
 const Layout = ({ ...props }) => {
+
+
   return (
-    <div className="w-[90%] lg:max-w-[1180px] m-auto" { ...props }>
+    <div className="w-[90%] lg:max-w-[1180px] m-auto" {...props}>
       <h2 className="text-[#202124] text-[20px] lg:text-[28px] font-[600] leading-[30px] lg:leading-[36px] text-center pb-[20px] lg:pb-[40px]">
         $SalymbekovAreaArticle$
       </h2>

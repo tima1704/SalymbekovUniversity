@@ -1,12 +1,4 @@
-import { TemplateActionsTypes, ITemplateSetAction, ITemplateEditAction, ITemplateState, ITemplatePayload } from "./types";
-
-export const setTemplateAction = (payload: ITemplatePayload): ITemplateSetAction => {
-  return {
-    type: TemplateActionsTypes.SET_TEMPLATES,
-    payload,
-  };
-};
-
+import { TemplateActionsTypes, ITemplateEditAction, ITemplateState } from "./types";
 
 export const editTemplateAction = (payload: ITemplateState): ITemplateEditAction => {
   return {

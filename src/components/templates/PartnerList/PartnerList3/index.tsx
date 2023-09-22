@@ -30,7 +30,7 @@ const partnerList: IPartner[][] = [
         "text-[#202124] text-[10px] px-[10px] lg:px-[20px] py-[18px] lg:text-[23px] font-['Inter'] font-[500] leading-[15px] lg:leading-[33px] bg-[#FFF] border-[1px] border-solid border-[#D3D4DB]",
     },
     {
-      id: 4,
+      id: 6,
       description: "$PartnerListInternational3$",
       style:
         "text-[#202124] text-[10px] px-[10px] lg:px-[20px] py-[18px] lg:text-[23px] font-['Inter'] font-[500] leading-[15px] lg:leading-[33px] bg-[#FFF] border-[1px] border-solid border-[#D3D4DB]",
